@@ -6,6 +6,7 @@ namespace DinoDiner.Menu.Entrees
 {
     class Brontowurst
     {
+        //implemented methods for ingredients
         private bool bun = true;
         private bool peppers = true;
         private bool onions = true;
