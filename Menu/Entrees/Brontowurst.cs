@@ -7,7 +7,9 @@ namespace DinoDiner.Menu.Entrees
 {
     public class Brontowurst
     {
-        // Implement methods for ingredients
+        /// <summary>
+        ///  Private fields for use in Hold Methods
+        /// </summary>
         private bool bun = true;
         private bool peppers = true;
         private bool onion = true;
@@ -16,7 +18,9 @@ namespace DinoDiner.Menu.Entrees
 
         public uint Calories { get; set; }
 
-        // Method to list Ingredients
+        /// <summary>
+        /// This method lists ingredients to the Entree if not hold off
+        /// </summary>
         public List<string> Ingredients
         {
             get

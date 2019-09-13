@@ -7,16 +7,37 @@ namespace DinoDiner.Menu.Entrees
 {
     public class VelociWrap
     {
-        //variables for implementing methods
+        /// <summary>
+        /// Private fields for use in Hold Methods
+        /// Not called outside of class
+        /// </summary>
         private bool dressing = true;
+
+        /// <summary>
+        /// Private fields for use in Hold Methods
+        /// Not called outside of class
+        /// </summary>
         private bool lettuce = true;
+
+        /// <summary>
+        /// Private fields for use in Hold Methods
+        /// Not called outside of class
+        /// </summary>
         private bool cheese = true;
 
+        /// <summary>
+        /// Made available throughout entire class
+        /// </summary>
         public double Price { get; set; }
 
+        /// <summary>
+        /// Made available throughout entire class
+        /// </summary>
         public uint Calories { get; set; }
 
-        //Method to list ingredients
+        /// <summary>
+        /// This method lists ingredients to the Entree if not hold off
+        /// </summary>
         public List<string> Ingredients
         {
             get

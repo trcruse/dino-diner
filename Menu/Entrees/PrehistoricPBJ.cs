@@ -5,13 +5,25 @@ namespace DinoDiner.Menu.Entrees
 {
     public class PrehistoricPBJ
     {
+        /// <summary>
+        ///  Private fields for use in Hold Methods
+        /// </summary>
         private bool peanutButter = true;
         private bool jelly = true;
 
+        /// <summary>
+        /// Double for cents
+        /// </summary>
         public double Price { get; set; }
+
+        /// <summary>
+        /// uint for # of Calories
+        /// </summary>
         public uint Calories { get; set; }
 
-        // Method to list ingredients
+        /// <summary>
+        /// This method lists ingredients to the Entree if not hold off
+        /// </summary>
         public List<string> Ingredients
         {
             get

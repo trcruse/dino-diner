@@ -7,6 +7,10 @@ namespace DinoDiner.Menu.Entrees
 {
     public class TRexKingBurger
     {
+
+        /// <summary>
+        ///  Private fields for use in Hold Methods
+        /// </summary>
         private bool bun = true;
         private bool lettuce = true;
         private bool tomato = true;
@@ -20,7 +24,9 @@ namespace DinoDiner.Menu.Entrees
 
         public uint Calories { get; set; }
 
-        //Method to add needed ingredients
+        /// <summary>
+        /// This method lists ingredients to the Entree if not hold off
+        /// </summary>
         public List<string> Ingredients
         {
             get

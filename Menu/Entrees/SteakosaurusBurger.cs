@@ -7,6 +7,10 @@ namespace DinoDiner.Menu.Entrees
 {
     public class SteakosaurusBurger
     {
+
+        /// <summary>
+        ///  Private fields for use in Hold Methods
+        /// </summary>
         private bool bun = true;
         private bool pickle = true;
         private bool ketchup = true;
@@ -16,7 +20,9 @@ namespace DinoDiner.Menu.Entrees
 
         public uint Calories { get; set; }
 
-        //Method lists Ingredients 
+        /// <summary>
+        /// This method lists ingredients to the Entree if not hold off
+        /// </summary>
         public List<string> Ingredients
         {
             get

@@ -11,7 +11,9 @@ namespace DinoDiner.Menu.Entrees
         public double Price { get; set; }
         public uint Calories { get; set; }
 
-        //Method to list ingredients
+        /// <summary>
+        /// This method lists ingredients to the Entree if not hold off
+        /// </summary>
         public List<string> Ingredients
         {
             get
