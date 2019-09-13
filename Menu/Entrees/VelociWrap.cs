@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DinoDiner.Menu.Entrees;
 
 namespace DinoDiner.Menu.Entrees
 {
-    class VelociWrap
+    public class VelociWrap
     {
         //implemented methods for ingredients
         private bool dressing = true;

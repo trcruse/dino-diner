@@ -65,11 +65,11 @@ namespace MenuTest.Entrees
         {
             DinoNuggets dn = new DinoNuggets();
             dn.AddNugget();
-            Assert.Equal<uint>(dn.Price, 4.50);
+            Assert.Equal(dn.Price, 4.50);
             dn.AddNugget();
-            Assert.Equal<uint>(dn.Price, 4.75);
+            Assert.Equal(dn.Price, 4.75);
             dn.AddNugget();
-            Assert.Equal<uint>(dn.Price, 5.0);
+            Assert.Equal(dn.Price, 5.0);
         }
 
 
@@ -77,11 +77,11 @@ namespace MenuTest.Entrees
         {
             DinoNuggets dn = new DinoNuggets();
             dn.AddNugget();
-            Assert.Equal(dn.Calories, 59*7);
+            Assert.Equal<uint>(dn.Calories, 59*7);
             dn.AddNugget();
-            Assert.Equal(dn.Calories, 59*8);
+            Assert.Equal<uint>(dn.Calories, 59*8);
             dn.AddNugget();
-            Assert.Equal(dn.Calories, 59*9);
+            Assert.Equal<uint>(dn.Calories, 59*9);
         }
     }
 }

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DinoDiner.Menu.Entrees;
 
 namespace DinoDiner.Menu.Entrees
 {
-    class TRexKingBurger
+    public class TRexKingBurger
     {
         private bool bun = true;
         private bool lettuce = true;

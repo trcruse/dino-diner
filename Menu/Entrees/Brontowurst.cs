@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DinoDiner.Menu.Entrees;
 
 namespace DinoDiner.Menu.Entrees
 {
-    class Brontowurst
+    public class Brontowurst
     {
         //implemented methods for ingredients
         private bool bun = true;
@@ -22,7 +23,7 @@ namespace DinoDiner.Menu.Entrees
                 List<string> ingredients = new List<string>() { "Brautwurst"};
                 if (bun) ingredients.Add("Whole Wheat Bun");
                 if (peppers) ingredients.Add("Peppers");
-                if (onions) ingredients.Add("Onion");
+                if (onion) ingredients.Add("Onion");
                 return ingredients;
             }
         }

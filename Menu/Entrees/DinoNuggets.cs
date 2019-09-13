@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DinoDiner.Menu.Entrees;
 
 namespace DinoDiner.Menu.Entrees
 {
-    class DinoNuggets
+    public class DinoNuggets
     {
         //private bool addNug = false;
         private uint chickenNug = 6;
@@ -17,9 +18,12 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
-                List<string> ingredients = new List<string>() {"Chicken Nuggets", "Chicken Nuggets", "Chicken Nuggets", "Chicken Nuggets", "Chicken Nuggets", "Chicken Nuggets"};
-                //if (chickenNug) ingredients.Add("Chicken Nuggets");
-                
+                List<string> ingredients = new List<string>() {};
+                //if (chickenNug) 
+                for (int i = 0; i < chickenNug; i++)
+                {
+                    ingredients.Add("Chicken Nugget");
+                }
                 return ingredients;
             }
         }
@@ -27,17 +31,14 @@ namespace DinoDiner.Menu.Entrees
         public DinoNuggets()
         {
             this.Price = 4.25;
-            this.Calories = 59*6;
+            this.Calories = 59*chickenNug;
         }
 
         //Implement method for adding a nugget at additional 0.25
         public void AddNugget()
         {
-            chickenNug + 1;
+            chickenNug = chickenNug + 1;
             this.Price = 4.25 + 0.25;
-            
-              //  this.Price = chickenNug + 0.25;
-            
             
         }
 
