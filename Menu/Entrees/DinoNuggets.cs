@@ -7,13 +7,14 @@ namespace DinoDiner.Menu.Entrees
 {
     public class DinoNuggets
     {
-        //private bool addNug = false;
+        
         private uint chickenNug = 6;
 
         public double Price { get; set; }
 
         public uint Calories { get; set; }
 
+        // Method to increment number of nuggets
         public List<string> Ingredients
         {
             get
@@ -28,6 +29,7 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        // Sets price and calories for each nugget
         public DinoNuggets()
         {
             this.Price = 4.25;
@@ -44,4 +46,4 @@ namespace DinoDiner.Menu.Entrees
 
 
     }
-}
+} // End of DinoNuggets class

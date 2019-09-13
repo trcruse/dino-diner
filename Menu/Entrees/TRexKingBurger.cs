@@ -20,6 +20,7 @@ namespace DinoDiner.Menu.Entrees
 
         public uint Calories { get; set; }
 
+        //Method to add needed ingredients
         public List<string> Ingredients
         {
             get
@@ -38,6 +39,7 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        //Sets calories and price 
         public TRexKingBurger()
         {
             this.Price = 8.45;
@@ -87,4 +89,4 @@ namespace DinoDiner.Menu.Entrees
 
 
     }
-}
+} // End of TRexKingBurger class

@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Entrees
 {
     public class Brontowurst
     {
-        //implemented methods for ingredients
+        // Implement methods for ingredients
         private bool bun = true;
         private bool peppers = true;
         private bool onion = true;
@@ -16,6 +16,7 @@ namespace DinoDiner.Menu.Entrees
 
         public uint Calories { get; set; }
 
+        // Method to list Ingredients
         public List<string> Ingredients
         {
             get
@@ -28,22 +29,26 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        // Price and Calories
         public Brontowurst()
         {
             this.Price = 5.36;
             this.Calories = 498;
         }
 
+        // Method to Hold Bun
         public void HoldBun()
         {
             this.bun = false;
         }
 
+        // Method to Hold Peppers
         public void HoldPeppers()
         {
             this.peppers = false;
         }
 
+        // Method to Hold Onion
         public void HoldOnion()
         {
             this.onion = false;
@@ -51,4 +56,4 @@ namespace DinoDiner.Menu.Entrees
 
 
     }
-}
+} // End of Brontowurst class

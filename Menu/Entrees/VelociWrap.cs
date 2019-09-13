@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Entrees
 {
     public class VelociWrap
     {
-        //implemented methods for ingredients
+        //variables for implementing methods
         private bool dressing = true;
         private bool lettuce = true;
         private bool cheese = true;
@@ -16,6 +16,7 @@ namespace DinoDiner.Menu.Entrees
 
         public uint Calories { get; set; }
 
+        //Method to list ingredients
         public List<string> Ingredients
         {
             get
@@ -28,6 +29,7 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        //Sets price and calories
         public VelociWrap()
         {
             this.Price = 6.86;
@@ -51,4 +53,4 @@ namespace DinoDiner.Menu.Entrees
 
 
     }
-}
+} // End of VelociWrap class

@@ -11,6 +11,7 @@ namespace DinoDiner.Menu.Entrees
         public double Price { get; set; }
         public uint Calories { get; set; }
 
+        //Method to list ingredients
         public List<string> Ingredients
         {
             get
@@ -21,6 +22,7 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        //Sets price and calories
         public PterodactylWings()
         {
             this.Price = 7.21;
@@ -30,4 +32,4 @@ namespace DinoDiner.Menu.Entrees
        
 
     }
-}
+} // End of PterodactylWings class

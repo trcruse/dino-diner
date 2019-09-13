@@ -16,6 +16,7 @@ namespace DinoDiner.Menu.Entrees
 
         public uint Calories { get; set; }
 
+        //Method lists Ingredients 
         public List<string> Ingredients
         {
             get
@@ -30,6 +31,7 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        //Sets price and calories
         public SteakosaurusBurger()
         {
             this.Price = 5.15;
@@ -59,4 +61,4 @@ namespace DinoDiner.Menu.Entrees
 
 
     }
-}
+} // End of SteakosaurusBurger class

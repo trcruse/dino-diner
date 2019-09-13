@@ -11,6 +11,7 @@ namespace DinoDiner.Menu.Entrees
         public double Price { get; set; }
         public uint Calories { get; set; }
 
+        // Method to list ingredients
         public List<string> Ingredients
         {
             get
@@ -22,20 +23,23 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        // Sets prices and calories
         public PrehistoricPBJ()
         {
             this.Price = 6.52;
             this.Calories = 483;
         }
 
+        //Method to hold peanut butter
         public void HoldPeanutButter()
         {
             this.peanutButter = false;
         }
 
+        //Method to hold jelly
         public void HoldJelly()
         {
             this.jelly = false;
         }
     }
-}
+} // end of PrehistoricPBJ class
