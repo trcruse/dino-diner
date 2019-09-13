@@ -9,7 +9,7 @@ namespace DinoDiner.Menu.Entrees
         //implemented methods for ingredients
         private bool bun = true;
         private bool peppers = true;
-        private bool onions = true;
+        private bool onion = true;
         
         public double Price { get; set; }
 
@@ -19,10 +19,10 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
-                List<string> ingredients = new List<string>() { "brautwurst"};
-                if (bun) ingredients.Add("Whole-Wheat Bun");
+                List<string> ingredients = new List<string>() { "Brautwurst"};
+                if (bun) ingredients.Add("Whole Wheat Bun");
                 if (peppers) ingredients.Add("Peppers");
-                if (onions) ingredients.Add("Onions");
+                if (onions) ingredients.Add("Onion");
                 return ingredients;
             }
         }
@@ -43,9 +43,9 @@ namespace DinoDiner.Menu.Entrees
             this.peppers = false;
         }
 
-        public void HoldOnions()
+        public void HoldOnion()
         {
-            this.onions = false;
+            this.onion = false;
         }
 
 

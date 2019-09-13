@@ -6,7 +6,7 @@ namespace DinoDiner.Menu.Entrees
 {
     class DinoNuggets
     {
-        private bool addNug = false;
+        //private bool addNug = false;
         private uint chickenNug = 6;
 
         public double Price { get; set; }
@@ -17,7 +17,7 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
-                List<string> ingredients = new List<string>() {"Chicken Nuggets"};
+                List<string> ingredients = new List<string>() {"Chicken Nuggets", "Chicken Nuggets", "Chicken Nuggets", "Chicken Nuggets", "Chicken Nuggets", "Chicken Nuggets"};
                 //if (chickenNug) ingredients.Add("Chicken Nuggets");
                 
                 return ingredients;
@@ -27,17 +27,18 @@ namespace DinoDiner.Menu.Entrees
         public DinoNuggets()
         {
             this.Price = 4.25;
-            this.Calories = 59;
+            this.Calories = 59*6;
         }
 
         //Implement method for adding a nugget at additional 0.25
-        public void AddNug()
+        public void AddNugget()
         {
-            if (chickenNug > 6)
-            {
-                this.Price = chickenNug + 0.25;
-            }
-             this.addNug = true;
+            chickenNug + 1;
+            this.Price = 4.25 + 0.25;
+            
+              //  this.Price = chickenNug + 0.25;
+            
+            
         }
 
 
