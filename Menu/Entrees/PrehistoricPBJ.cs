@@ -3,7 +3,7 @@ using DinoDiner.Menu.Entrees;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class PrehistoricPBJ
+    public class PrehistoricPBJ : Entree
     {
         /// <summary>
         ///  Private fields for use in Hold Methods
@@ -14,17 +14,12 @@ namespace DinoDiner.Menu.Entrees
         /// <summary>
         /// Double for cents
         /// </summary>
-        public double Price { get; set; }
-
-        /// <summary>
-        /// uint for # of Calories
-        /// </summary>
-        public uint Calories { get; set; }
+       
 
         /// <summary>
         /// This method lists ingredients to the Entree if not hold off
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

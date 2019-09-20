@@ -5,7 +5,7 @@ using DinoDiner.Menu.Entrees;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class Brontowurst
+    public class Brontowurst : Entree
     {
         /// <summary>
         ///  Private fields for use in Hold Methods
@@ -14,14 +14,12 @@ namespace DinoDiner.Menu.Entrees
         private bool peppers = true;
         private bool onion = true;
         
-        public double Price { get; set; }
-
-        public uint Calories { get; set; }
+        
 
         /// <summary>
         /// This method lists ingredients to the Entree if not hold off
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

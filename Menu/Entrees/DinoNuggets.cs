@@ -5,27 +5,19 @@ using DinoDiner.Menu.Entrees;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class DinoNuggets
+    public class DinoNuggets : Entree
     {
         /// <summary>
         ///  Private field for use in Add Method
         /// </summary>
         private uint chickenNug = 6;
 
-        /// <summary>
-        /// Double for cents
-        /// </summary>
-        public double Price { get; set; }
-
-        /// <summary>
-        /// uint for # of Calories
-        /// </summary>
-        public uint Calories { get; set; }
+        
 
         /// <summary>
         /// This method lists ingredients to the Entree and increments # of Nuggets
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

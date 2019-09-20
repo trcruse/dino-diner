@@ -5,7 +5,7 @@ using DinoDiner.Menu.Entrees;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class VelociWrap
+    public class VelociWrap : Entree
     {
         /// <summary>
         /// Private fields for use in Hold Methods
@@ -25,20 +25,12 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         private bool cheese = true;
 
-        /// <summary>
-        /// Made available throughout entire class
-        /// </summary>
-        public double Price { get; set; }
-
-        /// <summary>
-        /// Made available throughout entire class
-        /// </summary>
-        public uint Calories { get; set; }
+        
 
         /// <summary>
         /// This method lists ingredients to the Entree if not hold off
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

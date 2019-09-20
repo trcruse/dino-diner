@@ -5,7 +5,7 @@ using DinoDiner.Menu.Entrees;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class TRexKingBurger
+    public class TRexKingBurger : Entree
     {
 
         /// <summary>
@@ -20,14 +20,11 @@ namespace DinoDiner.Menu.Entrees
         private bool mustard = true;
         private bool mayo = true;
 
-        public double Price { get; set; }
-
-        public uint Calories { get; set; }
 
         /// <summary>
         /// This method lists ingredients to the Entree if not hold off
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
