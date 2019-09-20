@@ -39,7 +39,7 @@ namespace Menu
             }
             set
             {
-
+                calories = value;
             }
 
         }

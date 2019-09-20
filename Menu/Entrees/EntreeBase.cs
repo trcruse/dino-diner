@@ -34,7 +34,7 @@ namespace DinoDiner.Menu.Entrees
             }
             set
             {
-
+                calories = value;
             }
 
         }
