@@ -32,9 +32,7 @@ namespace Menu
             set
             {
                 price = value;
-
             }
-                
         }
 
         /// <summary>
