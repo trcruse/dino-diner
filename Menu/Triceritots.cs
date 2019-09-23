@@ -7,7 +7,10 @@ namespace Menu
 {
     public class Triceritots : Side
     {
-        
+
+        /// <summary>
+        /// constructor for Triceritots to implement Price, Calories, and Ingredients
+        /// </summary>
         public Triceritots()
         {
             Price = 0.99;
@@ -17,6 +20,9 @@ namespace Menu
             Ingredients.Add("Vegetable Oil");
         }
 
+        /// <summary>
+        ///  override method leads into abstract to make changes in Price and Calories for called enum Sizes
+        /// </summary>
         public override Size Size
         {
             set
@@ -36,7 +42,6 @@ namespace Menu
                         Price = 1.95;
                         Calories = 590;
                         break;
-
                 }
             }
             get
@@ -44,5 +49,5 @@ namespace Menu
                 return size;
             }
         }
-    }
-} // End of Triceritots class
+    }// End of Triceritots class
+} 

@@ -4,6 +4,10 @@ using System.Text;
 
 namespace Menu
 {
+
+    /// <summary>
+    /// enum assigns names to integral constants, making easy to read names
+    /// </summary>
     public enum Size
     {
         Small,
@@ -11,10 +15,13 @@ namespace Menu
         Large
     } 
 
+    /// <summary>
+    /// abstract method is intended to be a base class for Sides
+    /// </summary>
     public abstract class Side
     {
         /// <summary>
-        /// inherited classes have their own access to the variable
+        /// inherited classes have their own access to the variable Price
         /// </summary>
         protected double price;
         public double Price {
@@ -30,7 +37,9 @@ namespace Menu
                 
         }
 
-
+        /// <summary>
+        ///  inherited classes have their own access to the variable Calories
+        /// </summary>
         protected uint calories;
         public uint Calories {
             get
@@ -41,20 +50,23 @@ namespace Menu
             {
                 calories = value;
             }
-
         }
 
-
-        protected  List<string> ingredients;
+        /// <summary>
+        ///  inherited classes have their own access to the variable Ingredients
+        /// </summary>
+        protected List<string> ingredients;
         public virtual List<string> Ingredients
         {
             get;
         }
 
-
+        /// <summary>
+        ///  inherited classes have their own access to the variable Size
+        /// </summary>
         protected Size size;
         /// <summary>
-        /// multiple implementations in different classes
+        /// virtual allows multiple implementations in different classes
         /// </summary>
         public virtual Size Size
         {
@@ -69,5 +81,5 @@ namespace Menu
         }
 
         
-    }
+    } // End of SideBase class
 }

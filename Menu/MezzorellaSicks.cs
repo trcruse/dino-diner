@@ -7,6 +7,9 @@ namespace Menu
     public class MezzorellaSicks : Side
     {
 
+        /// <summary>
+        /// constructor for MezzorellaSicks to implement Price, Calories, and Ingredients
+        /// </summary>
         public MezzorellaSicks()
         {
             Price = 0.99;
@@ -16,6 +19,9 @@ namespace Menu
             Ingredients.Add("Vegetable Oil");
         }
 
+        /// <summary>
+        ///  override method leads into abstract to make changes in Price and Calories for called enum Sizes
+        /// </summary>
         public override Size Size
         {
             set
@@ -43,5 +49,5 @@ namespace Menu
                 return size;
             }
         }
-    }
+    } // End of MezzorellaSicks class
 }

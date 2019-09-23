@@ -8,7 +8,7 @@ namespace Menu
     public class Fryceritops : Side
     {
         /// <summary>
-        /// constructor
+        /// constructor for each class that implements Price, Calories, and Ingredients
         /// </summary>
         public Fryceritops()
         {
@@ -19,6 +19,9 @@ namespace Menu
             Ingredients.Add("Vegetable Oil");
         }
 
+        /// <summary>
+        /// override method leads into abstract to make changes in Price and Calories for called enum Sizes
+        /// </summary>
         public override Size Size
         {
             set
@@ -38,7 +41,6 @@ namespace Menu
                         Price = 1.95;
                         Calories = 480;
                         break;
-
                 }
             }
             get
@@ -47,5 +49,5 @@ namespace Menu
             }
         }
 
-    }
-} // End of Fryceritops
+    } //End of Fryceritops class
+} 

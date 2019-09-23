@@ -8,7 +8,6 @@ namespace DinoDiner.Menu.Entrees
     public class PterodactylWings : Entree
     {
 
-
         /// <summary>
         /// This method lists ingredients to the Entree if not hold off
         /// </summary>

@@ -9,11 +9,12 @@ namespace DinoDiner.Menu.Entrees
         ///  Private fields for use in Hold Methods
         /// </summary>
         private bool peanutButter = true;
-        private bool jelly = true;
 
         /// <summary>
-        /// Double for cents
+        /// private field for use in Hold methods
         /// </summary>
+        private bool jelly = true;
+
        
 
         /// <summary>

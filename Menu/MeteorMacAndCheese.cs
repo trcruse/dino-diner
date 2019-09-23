@@ -6,6 +6,10 @@ namespace Menu
 {
     public class MeteorMacAndCheese : Side
     {
+
+        /// <summary>
+        /// constructor for MeteorMacAndCheese to implement Price, Calories, and Ingredients
+        /// </summary>
         public MeteorMacAndCheese()
         {
             Price = 0.99;
@@ -15,6 +19,10 @@ namespace Menu
             Ingredients.Add("Pork Sausage");
         }
 
+
+        /// <summary>
+        ///  override method leads into abstract to make changes in Price and Calories for called enum Sizes
+        /// </summary>
         public override Size Size
         {
             set
@@ -34,7 +42,6 @@ namespace Menu
                         Price = 1.95;
                         Calories = 520;
                         break;
-
                 }
             }
             get
@@ -43,5 +50,5 @@ namespace Menu
             }
         }
 
-    }
+    } // End of MeteorMacAndCheese class
 }

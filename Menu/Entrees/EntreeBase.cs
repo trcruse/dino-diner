@@ -9,6 +9,10 @@ namespace DinoDiner.Menu.Entrees
     /// </summary>
     public abstract class Entree
     {
+
+        /// <summary>
+        /// inherited classes have their own access to the variable Price
+        /// </summary>
         protected double price;
         public double Price
         {
@@ -21,10 +25,11 @@ namespace DinoDiner.Menu.Entrees
                 price = value;
 
             }
-
         }
 
-
+        /// <summary>
+        /// inherited classes have their own access to the variable Calories
+        /// </summary>
         protected uint calories;
         public uint Calories
         {
@@ -36,15 +41,16 @@ namespace DinoDiner.Menu.Entrees
             {
                 calories = value;
             }
-
         }
 
 
-
+        /// <summary>
+        /// inherited classes have their own access to the variable Ingredients
+        /// </summary>
         protected List<string> ingredients;
         public abstract List<string> Ingredients
         {
             get;
         }
-    }
+    } // End of EntreeBase class
 }
