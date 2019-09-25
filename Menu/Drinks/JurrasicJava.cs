@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 
-namespace Menu.Drinks 
+namespace DinoDiner.Menu.Drinks
 {
     public class JurrasicJava : Drink
     {
@@ -11,30 +11,30 @@ namespace Menu.Drinks
         /// <summary>
         /// Property Defaults ice to false
         /// </summary>
-        private bool ice = false;
+        public bool Ice { get; set; } = false;
 
-        private bool roomForCream = false;
+        public bool RoomForCream { get; set; } = false;
 
-        private bool decaf = false;
+        public bool Decaf { get; set; } = false;
 
         public JurrasicJava()
         {
-            //Price = 0.99;
-            //Calories = 8;
-            Ingredients.Add("Water");
-            Ingredients.Add("Coffee");
+            Price = 0.99;
+            Calories = 8;
+            ingredients.Add("Water");
+            ingredients.Add("Coffee");
         }
 
 
        public void LeaveRoomForCream()
         {
-            this.roomForCream = false;
+            this.RoomForCream = true;
         }
 
 
         public void AddIce()
         {
-            this.ice = true;
+            this.Ice = true;
         }
 
     } // End of JurrasicJava class

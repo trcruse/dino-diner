@@ -2,16 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Menu.Drinks
+namespace DinoDiner.Menu.Drinks
 {
    
-        public enum Size
-        {
-            Small,
-            Medium,
-            Large
-        }
-
         public abstract class Drink
         {
 
@@ -50,13 +43,18 @@ namespace Menu.Drinks
 
 
 
-            /// <summary>
-            ///  inherited classes have their own access to the variable Ingredients
-            /// </summary>
-            protected List<string> ingredients;
+        /// <summary>
+        ///  inherited classes have their own access to the variable Ingredients
+        /// </summary>
+
+            protected List<string> ingredients = new List<string>();
             public virtual List<string> Ingredients
             {
-                get;
+                get
+                {
+                    return ingredients;
+                }
+   
             }
 
             /// <summary>

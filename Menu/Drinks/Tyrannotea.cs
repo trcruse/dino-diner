@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Menu.Drinks
+namespace DinoDiner.Menu.Drinks
 {
     public class Tyrannotea : Drink
     {
@@ -10,13 +10,13 @@ namespace Menu.Drinks
         /// <summary>
         /// Lemon property
         /// </summary>
-        private bool lemon = false;
+        public bool Lemon { get; set; } = false;
 
 
         /// <summary>
         /// Sweet property
         /// </summary>
-        private bool sweet = false;
+        public bool Sweet { get; set; } = false;
 
 
         /// <summary>
@@ -26,14 +26,14 @@ namespace Menu.Drinks
         {
             Price = 0.99;
             Calories = 8;
-            Ingredients.Add("Water");
-            Ingredients.Add("Tea");
+            ingredients.Add("Water");
+            ingredients.Add("Tea");
 
             // If lemon was added???????????????
-            Ingredients.Add("Lemon");
+            ingredients.Add("Lemon");
 
             // If sweet ????????????
-            Ingredients.Add("Cane Sugar");
+            ingredients.Add("Cane Sugar");
         }
 
 
@@ -72,7 +72,12 @@ namespace Menu.Drinks
         /// </summary>
         public void AddLemon()
         {
-            this.lemon = true;
+            this.Lemon = true;
+        }
+
+        public void AddSweet()
+        {
+            this.Sweet = true;
         }
 
     } // End of Tyrannotea class

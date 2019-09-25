@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Menu
+namespace DinoDiner.Menu.Side
 {
     public class MezzorellaSicks : Side
     {

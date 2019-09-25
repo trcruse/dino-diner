@@ -2,18 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Menu
+namespace DinoDiner.Menu.Side
 {
-
-    /// <summary>
-    /// enum assigns names to integral constants, making easy to read names
-    /// </summary>
-    public enum Size
-    {
-        Small,
-        Medium,
-        Large
-    } 
 
     /// <summary>
     /// abstract method is intended to be a base class for Sides

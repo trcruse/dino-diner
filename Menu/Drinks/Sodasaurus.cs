@@ -1,29 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DinoDiner.Menu;
 
-namespace Menu.Drinks
+
+
+namespace DinoDiner.Menu.Drinks
 {
     
     /// <summary>
     /// enum assigns names to integral constants, making easy to read names
     /// </summary>
-    public enum SodasaurusFlavor
-    {
-        Cola,
-        Orange,
-        Vanilla,
-        Chocolate,
-        RootBeer,
-        Cherry,
-        Lime
-    }
-
-
+    
     public class Sodasaurus : Drink
     {
-        ///NEEDS SODASAURUS FLAVOR
-        //private SodasaurusFlavor flavor = true;
+
+        ///NEEDS SODASAURUS FLAVOR camel case
+        protected SodasaurusFlavor flavor;
+
+        //public bool Ice { get; set; } = true;
+
+
+       
+        public SodasaurusFlavor Flavor
+        { 
+            get
+            {
+                return flavor;
+            }
+            set
+            {
+                flavor = value;
+            }
+        }
+
 
         /// <summary>
         /// constructor for each class that implements Price, Calories, and Ingredients
@@ -32,9 +42,9 @@ namespace Menu.Drinks
         {
             Price = 1.50;
             Calories = 112;
-            Ingredients.Add("Water");
-            Ingredients.Add("Natural Flavors");
-            Ingredients.Add("Cane Sugar");
+            ingredients.Add("Water");
+            ingredients.Add("Natural Flavors");
+            ingredients.Add("Cane Sugar");
         }
 
 

@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Menu.Drinks
+namespace DinoDiner.Menu.Drinks
 {
     public class Water : Drink
     {
         /// <summary>
         /// Property for bool lemon to default as false
         /// </summary>
-        private bool lemon = false;
+        public bool Lemon { get; set; } = false;
 
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace Menu.Drinks
 
         public void AddLemon()
         {
-            this.lemon = true;
+            this.Lemon = true;
         }
 
 
