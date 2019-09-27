@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Menu;
 
 
-namespace DinoDiner.Menu.Side
+namespace DinoDiner.Menu.Sides
 {
     public class Triceritots : Side
     {

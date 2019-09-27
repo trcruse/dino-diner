@@ -11,7 +11,7 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// Property Defaults ice to false
         /// </summary>
-        public bool Ice { get; set; } = false;
+        public override bool Ice { get; set; } = false;
 
         public bool RoomForCream { get; set; } = false;
 
@@ -23,6 +23,7 @@ namespace DinoDiner.Menu.Drinks
             Calories = 8;
             ingredients.Add("Water");
             ingredients.Add("Coffee");
+            
         }
 
 

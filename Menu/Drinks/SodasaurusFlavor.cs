@@ -5,6 +5,9 @@ using DinoDiner.Menu;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Enum method
+    /// </summary>
     public enum SodasaurusFlavor
     {
         Cola,

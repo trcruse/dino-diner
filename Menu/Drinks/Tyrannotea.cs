@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Menu;
 
 namespace DinoDiner.Menu.Drinks
 {
@@ -29,11 +30,7 @@ namespace DinoDiner.Menu.Drinks
             ingredients.Add("Water");
             ingredients.Add("Tea");
 
-            // If lemon was added???????????????
-            ingredients.Add("Lemon");
-
-            // If sweet ????????????
-            ingredients.Add("Cane Sugar");
+            
         }
 
 
@@ -44,20 +41,30 @@ namespace DinoDiner.Menu.Drinks
         {
             set
             {
+                uint multiply;
                 size = value;
+                if (Sweet == true)
+                {
+                    multiply = 2;
+                  
+                }
+                else
+                {
+                    multiply = 1;
+                }
                 switch (size)
                 {
                     case Size.Small:
                         Price = 0.99;
-                        Calories = 8;
+                        Calories = 8*multiply;
                         break;
                     case Size.Medium:
                         Price = 1.49;
-                        Calories = 16;
+                        Calories = 16 * multiply;
                         break;
                     case Size.Large:
                         Price = 1.99;
-                        Calories = 32;
+                        Calories = 32 * multiply;
                         break;
                 }
             }
@@ -72,12 +79,19 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public void AddLemon()
         {
+            ingredients.Add("Lemon");
             this.Lemon = true;
         }
 
         public void AddSweet()
         {
+            ingredients.Add("Sweet");
             this.Sweet = true;
+        }
+
+        public void RemoveSweet()
+        {
+            this.Sweet = false;
         }
 
     } // End of Tyrannotea class

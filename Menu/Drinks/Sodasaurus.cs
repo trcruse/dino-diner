@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
+using Menu;
 
 
 
@@ -18,10 +19,6 @@ namespace DinoDiner.Menu.Drinks
         ///NEEDS SODASAURUS FLAVOR camel case
         protected SodasaurusFlavor flavor;
 
-        //public bool Ice { get; set; } = true;
-
-
-       
         public SodasaurusFlavor Flavor
         { 
             get

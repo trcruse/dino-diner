@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Menu;
 
 namespace DinoDiner.Menu.Drinks
 {
    
         public abstract class Drink
         {
+
+        /// <summary>
+        /// Property for ice 
+        /// </summary>
+        public virtual bool Ice { get; set; } = true;
 
             /// <summary>
             /// inherited classes have their own access to the variable Price
@@ -77,6 +83,15 @@ namespace DinoDiner.Menu.Drinks
             }
 
 
-        } //end of public abstract
+        /// <summary>
+        /// Implements method HoldIce setting Ice property to false
+        /// </summary>
+        public void HoldIce()
+        {
+            this.Ice = false;
+        }
+
+
+        } //end of public abstract Drink
 
 }
