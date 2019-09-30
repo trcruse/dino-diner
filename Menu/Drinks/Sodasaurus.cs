@@ -5,20 +5,24 @@ using DinoDiner.Menu;
 using Menu;
 
 
-
+/// <summary>
+/// Inherits from base class Drink 
+/// </summary>
 namespace DinoDiner.Menu.Drinks
 {
-    
     /// <summary>
-    /// enum assigns names to integral constants, making easy to read names
+    /// Inherits from base class Drink
     /// </summary>
-    
     public class Sodasaurus : Drink
     {
 
-        ///NEEDS SODASAURUS FLAVOR camel case
+        /// <summary>
+        /// protected backing variable for flavor
+        /// </summary>
         protected SodasaurusFlavor flavor;
-
+        /// <summary>
+        /// Inheritance from SodasaurusFlavor enum allowing for correct drink flavor
+        /// </summary>
         public SodasaurusFlavor Flavor
         { 
             get
@@ -33,7 +37,7 @@ namespace DinoDiner.Menu.Drinks
 
 
         /// <summary>
-        /// constructor for each class that implements Price, Calories, and Ingredients
+        /// constructor for Sodasaurus that implements Price, Calories, and Ingredients at default
         /// </summary>
         public Sodasaurus()
         {
@@ -46,7 +50,7 @@ namespace DinoDiner.Menu.Drinks
 
 
         /// <summary>
-        /// override method leads into abstract to make changes in Price and Calories for called enum Sizes
+        /// override method leads into enum Size class to make changes in Price and Calories for called enum Sizes
         /// </summary>
         public override Size Size
         {

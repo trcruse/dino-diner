@@ -5,23 +5,25 @@ using Menu;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Inherits from the Drink base class
+    /// </summary>
     public class Water : Drink
     {
         /// <summary>
-        /// Property for bool lemon to default as false
+        /// Boolean Lemon property to default as false
         /// </summary>
         public bool Lemon { get; set; } = false;
 
 
         /// <summary>
-        /// constructor for each class that implements Price, Calories, and Ingredients
+        /// constructor for Water that implements Price, Calories, and Ingredients to default value
         /// </summary>
         public Water()
         {
             Price = 0.10;
             Calories = 0;
             ingredients.Add("Water"); 
-            
         }
 
         /// <summary>
@@ -55,11 +57,10 @@ namespace DinoDiner.Menu.Drinks
         }
 
         /// <summary>
-        /// 
+        /// Property to Add Lemon when true, and adds "Lemon" to ingriedent list
         /// </summary>
         public void AddLemon()
         {
-
             ingredients.Add("Lemon");
             this.Lemon = true;
         }

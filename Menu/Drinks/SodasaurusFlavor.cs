@@ -6,7 +6,7 @@ using DinoDiner.Menu;
 namespace DinoDiner.Menu.Drinks
 {
     /// <summary>
-    /// Enum method
+    /// Enum method used in Sodasaurus that allows more efficient source of coding
     /// </summary>
     public enum SodasaurusFlavor
     {
@@ -18,5 +18,5 @@ namespace DinoDiner.Menu.Drinks
         Cherry,
         Lime
 
-    }
+    } // End of enum SodasaurusFlavor class
 }

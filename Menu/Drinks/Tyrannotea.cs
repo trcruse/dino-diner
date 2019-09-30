@@ -5,23 +5,26 @@ using Menu;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Inherits from the Drink base class
+    /// </summary>
     public class Tyrannotea : Drink
     {
 
         /// <summary>
-        /// Lemon property
+        /// boolean Lemon property set default to false
         /// </summary>
         public bool Lemon { get; set; } = false;
 
 
         /// <summary>
-        /// Sweet property
+        /// boolean Sweet property set default to false
         /// </summary>
         public bool Sweet { get; set; } = false;
 
 
         /// <summary>
-        /// constructor for each class that implements Price, Calories, and Ingredients
+        /// constructor for Tyrannotea that implements Price, Calories, and Ingredients by default
         /// </summary>
         public Tyrannotea()
         {
@@ -29,18 +32,17 @@ namespace DinoDiner.Menu.Drinks
             Calories = 8;
             ingredients.Add("Water");
             ingredients.Add("Tea");
-
-            
         }
 
 
         /// <summary>
-        /// override method leads into abstract to make changes in Price and Calories for called enum Sizes
+        /// override method leads into enum abstract to make changes in Price and Calories for called enum Sizes
         /// </summary>
         public override Size Size
         {
             set
             {
+                //uint variable to adjust calorie intake for each drink size with sweetner
                 uint multiply;
                 size = value;
                 if (Sweet == true)
@@ -75,7 +77,7 @@ namespace DinoDiner.Menu.Drinks
         }
 
         /// <summary>
-        /// Sets lemon to true
+        /// Sets lemon to true when Lemon is added, as well as adds ingredient "Lemon" to the list
         /// </summary>
         public void AddLemon()
         {
@@ -83,12 +85,18 @@ namespace DinoDiner.Menu.Drinks
             this.Lemon = true;
         }
 
+        /// <summary>
+        /// Sets Sweet to true when Sweetner is added, as well as adds ingredient "Cane Sugar" to the list
+        /// </summary>
         public void AddSweet()
         {
-            ingredients.Add("Sweet");
+            ingredients.Add("Cane Sugar");
             this.Sweet = true;
         }
 
+        /// <summary>
+        /// Implements Sweet to remove sweet from calorie list
+        /// </summary>
         public void RemoveSweet()
         {
             this.Sweet = false;

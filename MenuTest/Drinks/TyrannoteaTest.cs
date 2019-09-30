@@ -226,9 +226,5 @@ namespace MenuTest.Drinks
             Assert.Equal<int>(2, ingredients.Count);
         }
 
-
-
-
-
     }
 }

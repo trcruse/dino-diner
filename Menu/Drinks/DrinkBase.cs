@@ -6,16 +6,20 @@ using Menu;
 namespace DinoDiner.Menu.Drinks
 {
    
-        public abstract class Drink
-        {
+            /// <summary>
+            /// Hides background details and implementation, only providing essential information
+            /// </summary>
+            public abstract class Drink
+            {
 
-        /// <summary>
-        /// Property for ice 
-        /// </summary>
-        public virtual bool Ice { get; set; } = true;
+            /// <summary>
+            /// A virtual function for property Ice to be inherited and redefined in subclasses 
+            /// </summary>
+            public virtual bool Ice { get; set; } = true;
 
             /// <summary>
             /// inherited classes have their own access to the variable Price
+            /// - available only to the class that defines it and subclasses of the Drink base class
             /// </summary>
             protected double price;
             public double Price
@@ -49,11 +53,14 @@ namespace DinoDiner.Menu.Drinks
 
 
 
-        /// <summary>
-        ///  inherited classes have their own access to the variable Ingredients
-        /// </summary>
 
+            /// <summary>
+            ///  inherited classes have their own access to the variable Ingredients
+            /// </summary>
             protected List<string> ingredients = new List<string>();
+            /// <summary>
+            /// virtual allows multiple implementations in different classes
+            /// </summary>
             public virtual List<string> Ingredients
             {
                 get
@@ -83,13 +90,13 @@ namespace DinoDiner.Menu.Drinks
             }
 
 
-        /// <summary>
-        /// Implements method HoldIce setting Ice property to false
-        /// </summary>
-        public void HoldIce()
-        {
-            this.Ice = false;
-        }
+            /// <summary>
+            /// Implements method HoldIce setting Ice property to false
+            /// </summary>
+            public void HoldIce()
+            {
+                this.Ice = false;
+            }
 
 
         } //end of public abstract Drink
