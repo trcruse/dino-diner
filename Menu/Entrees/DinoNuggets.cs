@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu.Entrees;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class DinoNuggets : Entree
     {
@@ -11,8 +10,6 @@ namespace DinoDiner.Menu.Entrees
         ///  Private field for use in Add Method
         /// </summary>
         private uint chickenNug = 6;
-
-        
 
         /// <summary>
         /// This method lists ingredients to the Entree and increments # of Nuggets
@@ -44,6 +41,15 @@ namespace DinoDiner.Menu.Entrees
             chickenNug = chickenNug + 1;
             this.Price = 4.25 + 0.25;
             
+        }
+
+        /// <summary>
+        /// ToString Implementation to refactor all Menu items
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Dino-Nuggets";
         }
 
 

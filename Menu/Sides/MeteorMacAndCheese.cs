@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Menu;
 
-namespace DinoDiner.Menu.Sides
+
+namespace DinoDiner.Menu
 {
     public class MeteorMacAndCheese : Side
     {
@@ -49,6 +49,15 @@ namespace DinoDiner.Menu.Sides
             {
                 return size;
             }
+        }
+
+        /// <summary>
+        /// ToString Implementation to refactor all Menu items
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "MeteorMacAndCheese";
         }
 
     } // End of MeteorMacAndCheese class

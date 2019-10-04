@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Menu;
 
-namespace DinoDiner.Menu.Sides
+
+namespace DinoDiner.Menu
 {
 
     /// <summary>
     /// abstract method is intended to be a base class for Sides
     /// </summary>
-    public abstract class Side
+    public abstract class Side : IMenuItem
     {
         /// <summary>
         /// inherited classes have their own access to the variable Price

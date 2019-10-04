@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 
 
-namespace DinoDiner.Menu.Drinks
+
+namespace DinoDiner.Menu
 {
 
     /// <summary>
@@ -53,6 +54,23 @@ namespace DinoDiner.Menu.Drinks
         public void AddIce()
         {
             this.Ice = true;
+        }
+
+
+        /// <summary>
+        /// ToString Implementation to refactor all Menu items
+        /// </summary>
+        public override string ToString()
+        {
+            if (Decaf)
+            {
+                return $"{size} Decaf Jurrasic Java";
+            }
+            else
+            {
+                return $"{size} Jurrasic Java";
+            }
+            //size.ToString() + "Decaf"
         }
 
     } // End of JurrasicJava class

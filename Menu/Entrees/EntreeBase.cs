@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// A base class representing entrees
     /// </summary>
-    public abstract class Entree
+    public abstract class Entree : IMenuItem
     {
 
         /// <summary>

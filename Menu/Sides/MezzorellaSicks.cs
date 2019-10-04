@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Menu;
 
-namespace DinoDiner.Menu.Sides
+
+namespace DinoDiner.Menu
 {
-    public class MezzorellaSicks : Side
+    public class MezzorellaSicks : Side 
     {
 
         /// <summary>
@@ -50,5 +50,15 @@ namespace DinoDiner.Menu.Sides
                 return size;
             }
         }
+
+        /// <summary>
+        /// ToString Implementation to refactor all Menu items
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Mezzorella Sicks";
+        }
+
     } // End of MezzorellaSicks class
 }

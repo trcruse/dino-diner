@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Menu;
 
-namespace DinoDiner.Menu.Drinks
+
+namespace DinoDiner.Menu
 {
    
             /// <summary>
             /// Hides background details and implementation, only providing essential information
             /// </summary>
-            public abstract class Drink
+            public abstract class Drink : IMenuItem
             {
 
             /// <summary>

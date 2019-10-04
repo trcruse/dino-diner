@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Menu;
 
-namespace DinoDiner.Menu.Drinks
+
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Inherits from the Drink base class
@@ -101,6 +101,22 @@ namespace DinoDiner.Menu.Drinks
         {
             this.Sweet = false;
         }
+
+        /// <summary>
+        /// ToString Implementation to refactor all Menu items
+        /// </summary>
+        public override string ToString()
+        {
+            if (Sweet)
+            {
+                return $"{size} Sweet Tyrannotea";
+            }
+            else
+            {
+                return $"{size} Tyrannotea";
+            }
+        }
+
 
     } // End of Tyrannotea class
 }

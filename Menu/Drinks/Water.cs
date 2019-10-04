@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Menu;
 
-namespace DinoDiner.Menu.Drinks
+
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Inherits from the Drink base class
@@ -63,6 +63,15 @@ namespace DinoDiner.Menu.Drinks
         {
             ingredients.Add("Lemon");
             this.Lemon = true;
+        }
+
+        /// <summary>
+        /// ToString Implementation to refactor all Menu items
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"{size} Water";
         }
 
     } // End of Water class

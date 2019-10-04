@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu;
-using Menu;
+
 
 
 /// <summary>
 /// Inherits from base class Drink 
 /// </summary>
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Inherits from base class Drink
@@ -78,6 +77,16 @@ namespace DinoDiner.Menu.Drinks
                 return size;
             }
         }
+
+
+        /// <summary>
+        /// ToString Implementation to refactor all Menu items
+        /// </summary>
+        public override string ToString()
+        {
+            return $"{size} {flavor} Sodasaurus";    
+        }
+
 
     } // End of Sodasaurus class
 }
