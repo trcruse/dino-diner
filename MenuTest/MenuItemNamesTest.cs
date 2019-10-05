@@ -92,11 +92,11 @@ namespace MenuTest
         [InlineData(Size.Small)]
         [InlineData(Size.Medium)]
         [InlineData(Size.Large)]
-        public void MezzorellaSicksToStringShouldGiveNameForSize(Size size)
+        public void MezzorellaSticksToStringShouldGiveNameForSize(Size size)
         {
-            MezzorellaSicks ms = new MezzorellaSicks();
+            MezzorellaSticks ms = new MezzorellaSticks();
             ms.Size = size;
-            Assert.Equal($"{size} Mezzorella Sicks", ms.ToString());
+            Assert.Equal($"{size} Mezzorella Sticks", ms.ToString());
         }
 
         [Theory]
@@ -123,11 +123,11 @@ namespace MenuTest
         [InlineData(Size.Large, true)]
         public void JurrasicJavaToStringShouldGiveNameForSizeAndDecaf(Size size, bool decaf)
         {
-            JurrasicJava java = new JurrasicJava();
+            JurassicJava java = new JurassicJava();
             java.Size = size;
             java.Decaf = decaf;
-            if (decaf) Assert.Equal($"{size} Decaf Jurrasic Java", java.ToString());
-            else Assert.Equal($"{size} Jurrasic Java", java.ToString());
+            if (decaf) Assert.Equal($"{size} Decaf Jurassic Java", java.ToString());
+            else Assert.Equal($"{size} Jurassic Java", java.ToString());
         }
 
 
@@ -153,7 +153,8 @@ namespace MenuTest
         [InlineData(Size.Large, SodasaurusFlavor.Orange)]
         [InlineData(Size.Large, SodasaurusFlavor.RootBeer)]
         [InlineData(Size.Large, SodasaurusFlavor.Vanilla)]
-        public void SodasaurusToStringShouldGiveNameForSizeAndFlavor(Size size, SodasaurusFlavor flavor)
+
+        public void SodaSaurusToStringShouldGiveNameForSizeAndFlavor(Size size, SodasaurusFlavor flavor)
         {
             Sodasaurus soda = new Sodasaurus();
             soda.Size = size;
@@ -168,7 +169,8 @@ namespace MenuTest
         [InlineData(Size.Small, true)]
         [InlineData(Size.Medium, true)]
         [InlineData(Size.Large, true)]
-        public void TyrannoteaToStringShouldGiveNameForSizeAndSweetness(Size size, bool sweet)
+
+        public void TyrannoTeaToStringShouldGiveNameForSizeAndSweetness(Size size, bool sweet)
         {
             Tyrannotea tea = new Tyrannotea();
             tea.Size = size;
@@ -210,3 +212,4 @@ namespace MenuTest
         #endregion
     }
 }
+
