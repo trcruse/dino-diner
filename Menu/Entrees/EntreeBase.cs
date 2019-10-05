@@ -48,9 +48,14 @@ namespace DinoDiner.Menu
         /// inherited classes have their own access to the variable Ingredients
         /// </summary>
         protected List<string> ingredients;
-        public abstract List<string> Ingredients
+        public virtual List<string> Ingredients
         {
-            get;
+            get
+            {
+                return new List<string>(ingredients);
+            }
         }
+
+
     } // End of EntreeBase class
 }

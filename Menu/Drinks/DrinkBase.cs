@@ -54,10 +54,10 @@ namespace DinoDiner.Menu
 
 
 
-            /// <summary>
-            ///  inherited classes have their own access to the variable Ingredients
-            /// </summary>
-            protected List<string> ingredients = new List<string>();
+        /// <summary>
+        ///  inherited classes have their own access to the variable Ingredients
+        /// </summary>
+             protected List<string> ingredients = new List<string>();
             /// <summary>
             /// virtual allows multiple implementations in different classes
             /// </summary>
@@ -65,7 +65,7 @@ namespace DinoDiner.Menu
             {
                 get
                 {
-                    return ingredients;
+                 return new List<string>(ingredients);
                 }
    
             }

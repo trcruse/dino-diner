@@ -12,8 +12,7 @@ namespace DinoDiner.Menu
 
        List<string> Ingredients { get; }
 
-        
-
+       
 
     }
 }

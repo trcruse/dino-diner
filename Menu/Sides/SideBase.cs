@@ -15,39 +15,24 @@ namespace DinoDiner.Menu
         /// inherited classes have their own access to the variable Price
         /// </summary>
         protected double price;
-        public double Price {
-           get
-           {
-                return price;
-           }
-            set
-            {
-                price = value;
-            }
-        }
+        public double Price { get; set;}
 
         /// <summary>
         ///  inherited classes have their own access to the variable Calories
         /// </summary>
-        protected uint calories;
-        public uint Calories {
-            get
-            {
-                return calories;
-            }
-            set
-            {
-                calories = value;
-            }
-        }
+        private uint calories;
+        public uint Calories { get;set; }
 
         /// <summary>
         ///  inherited classes have their own access to the variable Ingredients
         /// </summary>
-        protected List<string> ingredients;
+        protected List<string> ingredients = new List<string>();
         public virtual List<string> Ingredients
         {
-            get;
+            get
+            {
+                return new List<string> (ingredients);
+            }
         }
 
         /// <summary>

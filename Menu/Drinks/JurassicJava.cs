@@ -10,7 +10,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Inherits from base class Drink 
     /// </summary>
-    public class JurrasicJava : Drink
+    public class JurassicJava : Drink
     {
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Constructor that defaults the Price, Calories, and Ingredients for JurrasicJava
         /// </summary>
-        public JurrasicJava()
+        public JurassicJava()
         {
             Price = 0.99;
             Calories = 8;
@@ -64,11 +64,11 @@ namespace DinoDiner.Menu
         {
             if (Decaf)
             {
-                return $"{size} Decaf Jurrasic Java";
+                return $"{size} Decaf Jurassic Java";
             }
             else
             {
-                return $"{size} Jurrasic Java";
+                return $"{size} Jurassic Java";
             }
             //size.ToString() + "Decaf"
         }

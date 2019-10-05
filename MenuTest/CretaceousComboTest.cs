@@ -7,7 +7,7 @@ namespace MenuTest
 {
     public class CretaceousComboTest
     {
-        CretaceousCombo combo = new CretaceousCombo();
+       
 
     }
 }

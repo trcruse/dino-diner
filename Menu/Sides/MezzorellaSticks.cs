@@ -5,19 +5,19 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public class MezzorellaSicks : Side 
+    public class MezzorellaSticks : Side 
     {
 
         /// <summary>
         /// constructor for MezzorellaSicks to implement Price, Calories, and Ingredients
         /// </summary>
-        public MezzorellaSicks()
+        public MezzorellaSticks()
         {
             Price = 0.99;
             Calories = 540;
-            Ingredients.Add("Cheese Product");
-            Ingredients.Add("Breading");
-            Ingredients.Add("Vegetable Oil");
+            ingredients.Add("Cheese Product");
+            ingredients.Add("Breading");
+            ingredients.Add("Vegetable Oil");
         }
 
         /// <summary>
@@ -57,8 +57,8 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return "Mezzorella Sicks";
+            return $"{size} Mezzorella Sticks";
         }
 
-    } // End of MezzorellaSicks class
+    } // End of MezzorellaSticks class
 }

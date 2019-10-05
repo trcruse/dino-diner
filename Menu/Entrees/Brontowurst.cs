@@ -23,7 +23,7 @@ namespace DinoDiner.Menu
         {
             get
             {
-                List<string> ingredients = new List<string>() { "Brautwurst"};
+                List<string> ingredients = new List<string>() {"Brautwurst"};
                 if (bun) ingredients.Add("Whole Wheat Bun");
                 if (peppers) ingredients.Add("Peppers");
                 if (onion) ingredients.Add("Onion");

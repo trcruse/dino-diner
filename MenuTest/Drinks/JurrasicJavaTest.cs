@@ -15,7 +15,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()
         {
-            JurrasicJava java = new JurrasicJava();
+            JurassicJava java = new JurassicJava();
             Assert.Equal<double>(0.99, java.Price);
         }
 
@@ -25,7 +25,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectDefaultCalories()
         {
-            JurrasicJava java = new JurrasicJava();
+            JurassicJava java = new JurassicJava();
             Assert.Equal<uint>(8, java.Calories);
         }
 
@@ -35,7 +35,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveDefalutIce()
         {
-            JurrasicJava java = new JurrasicJava();
+            JurassicJava java = new JurassicJava();
             Assert.False(java.Ice);
         }
 
@@ -47,7 +47,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectDefaultSize()
         {
-            JurrasicJava java = new JurrasicJava();
+            JurassicJava java = new JurassicJava();
             Assert.Equal<Size>(Size.Small, java.Size);
         }
 
@@ -59,7 +59,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectDefaultSpaceForCream()
         {
-            JurrasicJava java = new JurrasicJava();
+            JurassicJava java = new JurassicJava();
             Assert.False(java.RoomForCream);
         }
 
@@ -69,7 +69,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void AddIceShouldAddIce()
         {
-            JurrasicJava java = new JurrasicJava();
+            JurassicJava java = new JurassicJava();
             java.AddIce();
             Assert.DoesNotContain("Ice", java.Ingredients);
             Assert.True(java.Ice);
@@ -81,7 +81,7 @@ namespace MenuTest.Drinks
         [Fact]
         public void LeaveSpaceForCreamInvokesSpaceForCreamTrue()
         {
-            JurrasicJava java = new JurrasicJava();
+            JurassicJava java = new JurassicJava();
             java.LeaveRoomForCream();
             Assert.DoesNotContain("Ice", java.Ingredients);
             Assert.False(java.Ice);

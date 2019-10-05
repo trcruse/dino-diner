@@ -21,13 +21,13 @@ namespace DinoDiner.Menu
             new SteakosaurusBurger(),
             new TRexKingBurger(),
             new VelociWrap(),
-            new JurrasicJava(),
+            new JurassicJava(),
             new Sodasaurus(),
             new Tyrannotea(),
             new Water(),
             new Fryceritops(),
             new MeteorMacAndCheese(),
-            new MezzorellaSicks(),
+            new MezzorellaSticks(),
             new Triceritots()
 
         };
@@ -58,7 +58,7 @@ namespace DinoDiner.Menu
         {
             new Fryceritops(),
             new MeteorMacAndCheese(),
-            new MezzorellaSicks(),
+            new MezzorellaSticks(),
             new Triceritots()
         };
 
@@ -69,7 +69,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public List<IMenuItem> AvailableDrinks { get; } = new List<IMenuItem>()
         {
-            new JurrasicJava(),
+            new JurassicJava(),
             new Sodasaurus(),
             new Tyrannotea(),
             new Water()
@@ -98,7 +98,7 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            string output = "";
+            string output = " ";
 
             foreach (IMenuItem i in AvailableMenuItems)
             {
