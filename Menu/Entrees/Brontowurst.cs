@@ -5,6 +5,10 @@ using System.Text;
 
 namespace DinoDiner.Menu 
 {
+
+    /// <summary>
+    /// Inherits from base class Entree
+    /// </summary>
     public class Brontowurst : Entree
     {
         /// <summary>
@@ -31,20 +35,26 @@ namespace DinoDiner.Menu
             }
         }
 
-        // Price and Calories
+        /// <summary>
+        /// Constructor for price and calories
+        /// </summary>
         public Brontowurst()
         {
             this.Price = 5.36;
             this.Calories = 498;
         }
 
-        // Method to Hold Bun
+        /// <summary>
+        /// method to implement removing bun
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
         }
 
-        // Method to Hold Peppers
+        /// <summary>
+        /// method to implement holding peppers
+        /// </summary>
         public void HoldPeppers()
         {
             this.peppers = false;

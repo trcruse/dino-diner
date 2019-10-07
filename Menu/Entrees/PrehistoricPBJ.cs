@@ -3,6 +3,9 @@
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Inherits from the Entree base class
+    /// </summary>
     public class PrehistoricPBJ : Entree
     {
         /// <summary>

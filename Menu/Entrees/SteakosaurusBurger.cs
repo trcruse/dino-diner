@@ -5,6 +5,9 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Inherits from the Entree base class
+    /// </summary>
     public class SteakosaurusBurger : Entree
     {
 

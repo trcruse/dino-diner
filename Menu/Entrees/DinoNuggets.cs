@@ -4,6 +4,9 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Inherits from the Entree base class
+    /// </summary>
     public class DinoNuggets : Entree
     {
         /// <summary>

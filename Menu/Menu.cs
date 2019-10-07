@@ -111,5 +111,5 @@ namespace DinoDiner.Menu
         
             
 
-    } // End 
+    } // End of Menu class
 }
