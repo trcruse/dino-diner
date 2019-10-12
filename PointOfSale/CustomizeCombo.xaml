@@ -1,0 +1,53 @@
+﻿<Page x:Class="PointOfSale.CustomizeCombo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CustomizeCombo">
+
+    
+    <Grid>
+        <WrapPanel>
+        <WrapPanel.Resources>
+            <Style TargetType="Button">
+                <Setter Property="MinWidth" Value="140"/>
+                <Setter Property="MinHeight" Value="140"/>
+                    <Setter Property="BorderThickness" Value="2.5" />
+                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="BorderBrush" >
+                        <Setter.Value>
+                            <LinearGradientBrush StartPoint="2.5,0" EndPoint="2.5,1">
+                                <GradientStop Color="Yellow" Offset="0.0" />
+                                <GradientStop Color="Red" Offset="0.25" />
+                                <GradientStop Color="Blue" Offset="0.75" />
+                                <GradientStop Color="LimeGreen" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+        </WrapPanel.Resources>
+      
+        
+        
+        
+        <StackPanel>
+            <Button Click="SelectSide" FontSize="19" MinWidth="800" MinHeight="60">Side Combo</Button>
+        <TextBlock Text="Side Combo Sizes:" Margin="5" Height="19"/>
+            <RadioButton x:Name="SideOne" Margin="5" GroupName="Side Combo Sizes" Content="Small" Height="19"/>
+            <RadioButton x:Name="SideTwo" Margin="5" GroupName="Side Combo Sizes" Content="Medium" Height="19"/>
+            <RadioButton x:Name="SideThree" Margin="5" GroupName="Side Combo Sizes" Content="Large" Height="19"/>
+        </StackPanel>
+
+        <StackPanel>
+           <Button Click="SelectDrink" FontSize="19" MinWidth="800" MinHeight="60">Drink Combo</Button>
+             <TextBlock Text="Drink Combo Sizes:" Margin="5" Height="19"/>
+                 <RadioButton x:Name="DrinkOne" Margin="5" GroupName="Drink Combo Sizes" Content="Small" Height="19"/>
+                 <RadioButton x:Name="DrinkTwo" Margin="5" GroupName="Drink Combo Sizes" Content="Medium" Height="19"/>
+                 <RadioButton x:Name="DrinkThree" Margin="5" GroupName="Drink Combo Sizes" Content="Large" Height="19"/>
+        </StackPanel>
+        </WrapPanel>
+    </Grid>
+</Page>

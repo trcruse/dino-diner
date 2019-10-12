@@ -1,0 +1,126 @@
+﻿<Page x:Class="PointOfSale.DrinkSelection"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DrinkSelection">
+
+    <Grid>
+
+        <WrapPanel>
+            <WrapPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="MinWidth" Value="130"/>
+                    <Setter Property="MinHeight" Value="130"/>
+                    <Setter Property="BorderThickness" Value="2.5" />
+                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="BorderBrush" >
+                        <Setter.Value>
+                            <LinearGradientBrush StartPoint="2.5,0" EndPoint="2.5,1">
+                                <GradientStop Color="Yellow" Offset="0.0" />
+                                <GradientStop Color="Red" Offset="0.25" />
+                                <GradientStop Color="Blue" Offset="0.75" />
+                                <GradientStop Color="LimeGreen" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </WrapPanel.Resources>
+            
+            <TextBox TextAlignment="Center" FontSize="20" Width="800" Height="50">Drink Selection</TextBox>
+            
+             <Button Name="Flavor" Click="SelectFlavor" FontSize="19" MinWidth="800" MinHeight="30">Flavor</Button>
+            <Button Name="Sweet" FontSize="19"  MinWidth="800" MinHeight="30">Sweet</Button>
+            <Button Name="Decaf" FontSize="19" MinWidth="800" MinHeight="30">Decaf</Button>
+           
+
+
+            <StackPanel>
+                <Button VerticalContentAlignment="Top" Click="SelectSodasaurus">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Assets/DinoDiner-14.png"></ImageBrush>
+                    </Button.Background>
+                <TextBlock>Sodasaurus</TextBlock>
+            </Button>
+            <TextBlock Text="Sodasaurus Sizes:" Margin="5" Height="19"/>
+                <RadioButton x:Name="SodaOne" Margin="5" GroupName="Sodasaurus Sizes" Content="Small"  Height="19"/>
+                <RadioButton x:Name="SodaTwo" Margin="5" GroupName="Sodasaurus Sizes" Content="Medium" Height="19"/>
+                <RadioButton x:Name="SodaThree" Margin="5" GroupName="Sodasaurus Sizes" Content="Large" Height="19"/>
+            </StackPanel>
+
+            <StackPanel>
+                <Button VerticalContentAlignment="Top" Click="SelectTryannotea">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Assets/DinoDiner-13.png"></ImageBrush>
+                    </Button.Background>
+                <TextBlock>Tryrannotea</TextBlock>
+            </Button>
+            <TextBlock Text="Tyrannotea Sizes:" Margin="5" Height="19"/>
+                <RadioButton x:Name="TeaOne" Margin="5" GroupName="Tyrannotea Sizes" Content="Small" Height="19"/>
+                <RadioButton x:Name="TeaTwo" Margin="5" GroupName="Tyrannotea Sizes" Content="Medium" Height="19"/>
+                <RadioButton x:Name="TeaThree" Margin="5" GroupName="Tyrannotea Sizes" Content="Large" Height="19"/>
+            </StackPanel>
+
+
+            <StackPanel>
+                <Button VerticalContentAlignment="Top" Click="SelectJava">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Assets/DinoDiner-12.png"></ImageBrush>
+                    </Button.Background>
+                <TextBlock>Jurassic Java</TextBlock>
+            </Button>
+            <TextBlock Text="Jurassic Java Sizes:" Margin="5" Height="19"/>
+                <RadioButton x:Name="JavaOne" Margin="5" GroupName="Jurassic Java Sizes" Content="Small" Height="19"/>
+                <RadioButton x:Name="JavaTwo" Margin="5" GroupName="Jurassic Java Sizes" Content="Medium" Height="19"/>
+                <RadioButton x:Name="JavaThree" Margin="5" GroupName="Jurassic Java Sizes" Content="Large" Height="19"/>
+            </StackPanel>
+
+
+            <StackPanel>
+                <Button VerticalContentAlignment="Top" Click="SelectWater">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Assets/DinoDiner-15.png"></ImageBrush>
+                    </Button.Background>
+                <TextBlock>Water</TextBlock>
+            </Button>
+            <TextBlock Text="Water Sizes:" Margin="5" Height="19"/>
+                <RadioButton x:Name="WaterOne" Margin="5" GroupName="Water Sizes" Content="Small" Height="19"/>
+                <RadioButton x:Name="WaterTwo" Margin="5" GroupName="Water Sizes" Content="Medium" Height="19"/>
+                <RadioButton x:Name="WaterThree" Margin="5" GroupName="Water Sizes" Content="Large" Height="19"/>
+            </StackPanel>
+
+
+            <StackPanel>
+                <Button VerticalContentAlignment="Top" Click="SelectLemon">
+                    <Button.Background>
+                        <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-23.jpg"></ImageBrush>
+                    </Button.Background>
+                    <TextBlock>Lemon</TextBlock>
+                </Button>
+                <TextBlock Text="Add Lemon?:" Margin="5" Height="19"/>
+                <RadioButton x:Name="YesLemon" Margin="5" GroupName="Lemon" Content="Yes"  Height="19"/>
+                <RadioButton x:Name="NoLemon" Margin="5" GroupName="Lemon" Content="No" Height="19"/>
+            </StackPanel>
+
+
+            <StackPanel>
+                <Button VerticalContentAlignment="Top" Click="SelectIce">
+                    <Button.Background>
+                        <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-24.png"></ImageBrush>
+                    </Button.Background>
+                    <TextBlock>Ice</TextBlock>
+                </Button>
+                <TextBlock Text="Hold Ice?:" Margin="5" Height="19"/>
+                <RadioButton x:Name="YesIce" Margin="5" GroupName="Ice" Content="Yes"  Height="19"/>
+                <RadioButton x:Name="NoIce" Margin="5" GroupName="Ice" Content="No" Height="19"/>
+            </StackPanel>
+
+
+            
+
+        </WrapPanel>
+    </Grid>
+</Page>

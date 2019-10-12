@@ -1,0 +1,96 @@
+﻿<Page x:Class="PointOfSale.SideSelection"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SideSelection">
+
+    <Grid>
+
+        <WrapPanel>
+            <WrapPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="MinWidth" Value="140"/>
+                    <Setter Property="MinHeight" Value="140"/>
+                    <Setter Property="BorderThickness" Value="2.5" />
+                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="BorderBrush" >
+                        <Setter.Value>
+                            <LinearGradientBrush StartPoint="2.5,0" EndPoint="2.5,1">
+                                <GradientStop Color="Yellow" Offset="0.0" />
+                                <GradientStop Color="Red" Offset="0.25" />
+                                <GradientStop Color="Blue" Offset="0.75" />
+                                <GradientStop Color="LimeGreen" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </WrapPanel.Resources>
+            <TextBox TextAlignment="Center" FontSize="20" Width="800" Height="50">Side Selection</TextBox>
+           
+            
+            <StackPanel>
+                <Button VerticalContentAlignment="Top">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Assets/DinoDiner-08.png"></ImageBrush>
+                    </Button.Background>
+                    <TextBlock>Fryceritops</TextBlock>
+                </Button>
+                <TextBlock Text="Fryceritops Sizes:" Margin="5" Height="19"/>
+                <RadioButton x:Name="TopButton" Margin="5" GroupName="Fryceritops Sizes" Content="Small" Height="19"/>
+                <RadioButton x:Name="MiddleButton" Margin="5" GroupName="Fryceritops Sizes" Content="Medium" Height="19"/>
+                <RadioButton x:Name="BottomButton" Margin="5" GroupName="Fryceritops Sizes" Content="Large" Height="19"/>
+            </StackPanel>
+            
+            
+            <StackPanel>
+                <Button VerticalContentAlignment="Top">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Assets/DinoDiner-11.png"></ImageBrush>
+                    </Button.Background>
+                    <TextBlock>Triceritots</TextBlock>
+                </Button>
+                <TextBlock Text="Triceritots Sizes:" Margin="5" Height="19"/>
+                <RadioButton x:Name="First" Margin="5" GroupName="Triceritots Sizes" Content="Small" Height="19"/>
+                <RadioButton x:Name="Second" Margin="5" GroupName="Triceritots Sizes" Content="Medium" Height="19"/>
+                <RadioButton x:Name="Third" Margin="5" GroupName="Triceritots Sizes" Content="Large" Height="19"/>
+            </StackPanel>
+            
+            
+            <StackPanel>
+                <Button VerticalContentAlignment="Top">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Assets/DinoDiner-09.png"></ImageBrush>
+                    </Button.Background>
+                    <TextBlock>Meteor Mac &amp; Cheese</TextBlock>
+                </Button>
+                <TextBlock Text="Meteor Mac &amp; Cheese Sizes:" Margin="5" Height="19"/>
+                <RadioButton x:Name="one" Margin="5" GroupName="Meteor Mac &amp; Cheese Sizes" Content="Small" Height="19"/>
+                <RadioButton x:Name="two" Margin="5" GroupName="Meteor Mac &amp; Cheese Sizes" Content="Medium" Height="19"/>
+                <RadioButton x:Name="three" Margin="5" GroupName="Meteor Mac &amp; Cheese Sizes" Content="Large" Height="19"/>
+            </StackPanel>
+            
+
+            <StackPanel>
+                <Button VerticalContentAlignment="Top">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Assets/DinoDiner-10.png"></ImageBrush>
+                    </Button.Background>
+                    <TextBlock>Mozzerella Sticks</TextBlock>
+                </Button>
+                <TextBlock Text="Mozzerella Sticks Sizes:" Margin="5" Height="19"/>
+                <RadioButton x:Name="uno" Margin="5" GroupName="Mozzerella Sticks Sizes" Content="Small" Height="19"/>
+                <RadioButton x:Name="dos" Margin="5" GroupName="Mozzerella Sticks Sizes" Content="Medium" Height="19"/>
+                <RadioButton x:Name="tres" Margin="5" GroupName="Mozzerella Sticks Sizes" Content="Large" Height="19"/>
+            </StackPanel>
+
+
+
+
+
+        </WrapPanel>
+    </Grid>
+</Page>

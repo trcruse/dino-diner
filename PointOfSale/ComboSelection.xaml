@@ -16,16 +16,73 @@
                 <Style TargetType="Button">
                     <Setter Property="MinWidth" Value="140"/>
                     <Setter Property="MinHeight" Value="140"/>
+                    <Setter Property="BorderThickness" Value="2.5" />
+                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="BorderBrush" >
+                        <Setter.Value>
+                            <LinearGradientBrush StartPoint="2.5,0" EndPoint="2.5,1">
+                                <GradientStop Color="Yellow" Offset="0.0" />
+                                <GradientStop Color="Red" Offset="0.25" />
+                                <GradientStop Color="Blue" Offset="0.75" />
+                                <GradientStop Color="LimeGreen" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
                 </Style>
             </WrapPanel.Resources>
-            <TextBox Width="800">ComboSelection</TextBox>
-            <Button>Brontowurst Combo</Button>
-            <Button>Dino-Nuggets Combo</Button>
-            <Button>Steakosaurus Combo</Button>
-            <Button>T-Rex King Burger Combo</Button>
-            <Button>Prehistoric PB&amp;J Combo</Button>
-            <Button>Pterodactyl Wings Combo</Button>
-            <Button>Veloci-Wrap Combo</Button>
+           
+            <TextBox TextAlignment="Center" FontSize="20" Width="800" Height="50">Combo Selection</TextBox>
+
+            <Button VerticalContentAlignment="Top" Click="SelectCustomizeCombo">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-01.png"></ImageBrush>
+                </Button.Background>
+                <TextBlock>Brontowurst Combo</TextBlock>
+            </Button>
+
+            <Button VerticalContentAlignment="Top" Click="SelectCustomizeCombo">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-02.png"></ImageBrush>
+                </Button.Background>
+                <TextBlock>Dino-Nuggets Combo</TextBlock>
+            </Button>
+
+            <Button VerticalContentAlignment="Top" Click="SelectCustomizeCombo">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-05.png"></ImageBrush>
+                </Button.Background>
+                <TextBlock>Steakosarus Burger Combo</TextBlock>
+            </Button>
+
+
+            <Button VerticalContentAlignment="Top" Click="SelectCustomizeCombo">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-06.png"></ImageBrush>
+                </Button.Background>
+                    <TextBlock>T-Rex King Burger Combo</TextBlock>
+            </Button>
+
+            <Button VerticalContentAlignment="Bottom" Click="SelectCustomizeCombo">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-03.png"></ImageBrush>
+                </Button.Background>
+                <TextBlock>Prehistoric PB&amp;J Combo</TextBlock>
+            </Button>
+
+
+            <Button VerticalContentAlignment="Bottom" Click="SelectCustomizeCombo">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-04.png"></ImageBrush>
+                </Button.Background>
+                <TextBlock>Pterodactyl Wings Combo</TextBlock>
+            </Button>
+
+            <Button VerticalContentAlignment="Bottom" Click="SelectCustomizeCombo">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-07.png"></ImageBrush>
+                </Button.Background>
+                <TextBlock>Veloci-Wrap Combo</TextBlock>
+            </Button>
             
         </WrapPanel>
     </Grid>
