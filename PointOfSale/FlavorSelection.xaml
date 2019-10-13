@@ -11,7 +11,7 @@
 
 
     <Grid>
-        <WrapPanel>
+        <WrapPanel Background="WhiteSmoke">
             <WrapPanel.Resources>
                 <Style TargetType="Button">
                     <Setter Property="MinWidth" Value="140"/>
@@ -30,7 +30,7 @@
                     </Setter>
                 </Style>
             </WrapPanel.Resources>
-            <TextBox TextAlignment="Center" FontSize="20" Width="800" Height="50">Sodasaurus Flavor Selection</TextBox>
+            <TextBox TextAlignment="Center" Background="WhiteSmoke" FontSize="23" Width="800" Height="50">Sodasaurus Flavor Selection</TextBox>
             
 
             <Button VerticalContentAlignment="Top">
@@ -62,7 +62,7 @@
                 <TextBlock FontSize="15">Lime</TextBlock>
             </Button>
 
-            <Button VerticalContentAlignment="Top">
+            <Button VerticalContentAlignment="Bottom">
                 <Button.Background>
                     <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-20.jpg"></ImageBrush>
                 </Button.Background>

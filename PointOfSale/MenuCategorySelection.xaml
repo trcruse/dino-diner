@@ -38,10 +38,10 @@
             </Grid.Resources>
 
 
-        <Button Click="SelectCombo"  Grid.Row="0" Grid.Column="0" FontSize="20">Combos</Button>
-        <Button Click="SelectEntree"  Grid.Row="0" Grid.Column="1" FontSize="20">Entrees</Button>
-        <Button Click="SelectSide" Grid.Row="1" Grid.Column="0" FontSize="20">Sides</Button>
-        <Button Click="SelectDrink"  Grid.Row="1" Grid.Column="1" FontSize="20">Drinks</Button>
+        <Button Click="SelectCombo"  Background="MistyRose" Grid.Row="0" Grid.Column="0" FontSize="23">Combos</Button>
+        <Button Click="SelectEntree"  Background="MistyRose" Grid.Row="0" Grid.Column="1" FontSize="23">Entrees</Button>
+        <Button Click="SelectSide" Background="MistyRose" Grid.Row="1" Grid.Column="0" FontSize="23">Sides</Button>
+        <Button Click="SelectDrink"  Background="MistyRose" Grid.Row="1" Grid.Column="1" FontSize="23">Drinks</Button>
             
     </Grid>
 </Page>

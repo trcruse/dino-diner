@@ -25,15 +25,22 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        void SelectEntree(object sender, RoutedEventArgs args)
-        {
-            NavigationService.Navigate(new EntreeSelection());
-        }
 
+        /// <summary>
+        /// Allows XAML to click into the Drink Selection page from the Drinks button
+        /// </summary>
+        /// <param name="sender">Control button the action is for</param>
+        /// <param name="args">Data needed to pass to the event handlers</param>
         void SelectDrink(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new DrinkSelection());
         }
+
+        /// <summary>
+        /// Allows XAML to click into the Side Selection page from the Sides button
+        /// </summary>
+        /// <param name="sender">Control button the action is for</param>
+        /// <param name="args">Data needed to pass to the event handlers</param>
         void SelectSide(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new SideSelection());
