@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -56,6 +57,6 @@ namespace DinoDiner.Menu
             }
         }
 
-
+        public (object sender, PropertyChangedEventArgs args) PropertyChanged { get; internal set; }
     } // End of EntreeBase class
 }
