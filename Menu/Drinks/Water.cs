@@ -34,6 +34,8 @@ namespace DinoDiner.Menu
             set
             {
                 size = value;
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
                 switch (size)
                 {
                     case Size.Small:
@@ -63,6 +65,8 @@ namespace DinoDiner.Menu
         {
             ingredients.Add("Lemon");
             this.Lemon = true;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -72,6 +76,36 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return $"{size} Water";
+        }
+
+        /// <summary>
+        /// Gets a description of the order item
+        /// Sweet and Decaf, and Size are integrated
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Specials for Drinks should use “Hold Ice”,Water have “Add Lemon” as an option.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+
+                //if Lemon is true
+                if (Lemon) special.Add("Add Lemon");
+
+                //If Ice is false
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+            }
         }
 
     } // End of Water class

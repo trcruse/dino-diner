@@ -1,21 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 
-namespace DinoDiner.Menu
+namespace DinoDiner.Menu 
 {
    
             /// <summary>
             /// Hides background details and implementation, only providing essential information
             /// </summary>
-            public abstract class Drink : IMenuItem
+            public abstract class Drink : IMenuItem, IOrderItem, INotifyPropertyChanged
             {
+
+
+            public event PropertyChangedEventHandler PropertyChanged;
+
+            protected void NotifyOfPropertyChanged(string propertyName)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
 
             /// <summary>
             /// A virtual function for property Ice to be inherited and redefined in subclasses 
             /// </summary>
-            public virtual bool Ice { get; set; } = true;
+             public virtual bool Ice { get; set; } = true;
 
             /// <summary>
             /// inherited classes have their own access to the variable Price
@@ -54,9 +63,9 @@ namespace DinoDiner.Menu
 
 
 
-        /// <summary>
-        ///  inherited classes have their own access to the variable Ingredients
-        /// </summary>
+            /// <summary>
+            ///  inherited classes have their own access to the variable Ingredients
+            /// </summary>
              protected List<string> ingredients = new List<string>();
             /// <summary>
             /// virtual allows multiple implementations in different classes
@@ -96,9 +105,35 @@ namespace DinoDiner.Menu
             public void HoldIce()
             {
                 this.Ice = false;
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Special");
+
+        }
+
+            /// <summary>
+            /// Gets a description of the order item
+            /// Sweet and Decaf, and Size are integrated
+            /// </summary>
+            public virtual string Description
+            {
+                get
+                {
+                    return this.ToString();
+                }
+            }
+
+            public virtual string[] Special
+            {
+                get
+                {
+                    List<string> special = new List<string>();
+                    //If Ice is false
+                    if (!Ice) special.Add("Hold Ice");
+                    return special.ToArray();
+                }
             }
 
 
-        } //end of public abstract Drink
+    } //end of public abstract Drink
 
 }

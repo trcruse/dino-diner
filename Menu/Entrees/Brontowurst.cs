@@ -50,6 +50,8 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.bun = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -58,12 +60,16 @@ namespace DinoDiner.Menu
         public void HoldPeppers()
         {
             this.peppers = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         // Method to Hold Onion
         public void HoldOnion()
         {
             this.onion = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -73,6 +79,35 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "Brontowurst";
+        }
+
+        /// <summary>
+        /// Gets a description of the order item
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Integrates strings for specifications in each class
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                //If onion, peppers, and bun are false
+                if (!bun) special.Add("Hold Bun");
+                if (!peppers) special.Add("Hold Peppers");
+                if (!onion) special.Add("Hold Onion");
+                
+                
+                return special.ToArray();
+            }
         }
 
 

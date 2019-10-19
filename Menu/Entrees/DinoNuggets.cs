@@ -44,7 +44,10 @@ namespace DinoDiner.Menu
             chickenNug = chickenNug + 1;
             this.Price += 0.25;
             this.Calories += 59;
-            
+
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
+
         }
 
         /// <summary>
@@ -56,6 +59,36 @@ namespace DinoDiner.Menu
             return "Dino-Nuggets";
         }
 
+        /// <summary>
+        /// Gets a description of the order item
+        /// Sweet and Decaf, and Size are integrated
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
 
-    }
-} // End of DinoNuggets class
+        /// <summary>
+        /// Dino-Nuggets, use a single string “# Extra Nuggets” where # is the number of 
+        /// nuggets above 6 for the special case of extra nuggets.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+               
+                if (chickenNug > 6)
+                {
+                    special.Add($"{chickenNug - 6} Extra Nuggets");
+                }
+                return special.ToArray();
+            }
+        }
+
+
+    }// End of DinoNuggets class
+} 

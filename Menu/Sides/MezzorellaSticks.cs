@@ -8,7 +8,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Inherits from the Side base class
     /// </summary>
-    public class MezzorellaSticks : Side 
+    public class MezzorellaSticks : Side
     {
 
         /// <summary>
@@ -31,6 +31,8 @@ namespace DinoDiner.Menu
             set
             {
                 size = value;
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
                 switch (size)
                 {
                     case Size.Small:
@@ -61,6 +63,29 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return $"{size} Mezzorella Sticks";
+        }
+
+        /// <summary>
+        /// Gets a description of the order item
+        /// Sweet and Decaf, and Size are integrated
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                return new string[0];
+            }
         }
 
     } // End of MezzorellaSticks class

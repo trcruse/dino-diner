@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 
@@ -9,8 +10,18 @@ namespace DinoDiner.Menu
     /// <summary>
     /// abstract method is intended to be a base class for Sides
     /// </summary>
-    public abstract class Side : IMenuItem
+    public abstract class Side : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+
         /// <summary>
         /// inherited classes have their own access to the variable Price
         /// </summary>
@@ -54,6 +65,30 @@ namespace DinoDiner.Menu
             }
         }
 
-        
+
+        /// <summary>
+        /// Gets a description of the order item
+        /// Sweet and Decaf, and Size are integrated
+        /// </summary>
+        public virtual string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual string[] Special
+        {
+            get
+            {
+               
+                return new string[0];
+            }
+        }
+
     } // End of SideBase class
 }

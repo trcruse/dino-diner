@@ -8,8 +8,15 @@ namespace DinoDiner.Menu
     /// <summary>
     /// A base class representing entrees
     /// </summary>
-    public abstract class Entree : IMenuItem
+    public abstract class Entree : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         /// <summary>
         /// inherited classes have their own access to the variable Price
@@ -57,6 +64,29 @@ namespace DinoDiner.Menu
             }
         }
 
-        public (object sender, PropertyChangedEventArgs args) PropertyChanged { get; internal set; }
+        
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// No needed special in Entree Base class
+        /// </summary>
+        public virtual string[] Special
+        {
+            get
+            {
+                return new string[0];
+            }
+        }
+
     } // End of EntreeBase class
 }

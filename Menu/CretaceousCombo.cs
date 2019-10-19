@@ -7,17 +7,10 @@ namespace DinoDiner.Menu
     /// <summary>
     /// A class representing a combo meal
     /// </summary>
-    public class CretaceousCombo : IMenuItem, INotifyPropertyChanged
+    public class CretaceousCombo : IMenuItem, INotifyPropertyChanged, IOrderItem
     {
         // Backing Variables
         private Size size;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
 
         private Entree entree;
@@ -33,11 +26,15 @@ namespace DinoDiner.Menu
             protected set
             {
                 entree = value;
-                entree.PropertyChanged += (object sender, PropertyChangedEventArgs args =>
-                    {
-                        NotifyOfPropertyChanged(args.PropertyName);
-                    };
             }
+        }
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         /// <summary>
@@ -120,6 +117,10 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string Description
         {
             get
@@ -128,6 +129,11 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Inlude special instructions for the Entree, desrpction of the side, 
+        /// special instructions for the side, description of the drink
+        /// special instructions for the drink
+        /// </summary>
         public string[] Special
         {
             get
@@ -137,7 +143,7 @@ namespace DinoDiner.Menu
                 special.Add(Side.Description);
                 special.AddRange(Side.Special);
 
-                special.Add(Drink.Descrition);
+                special.Add(Drink.Description);
                 special.AddRange(Drink.Special);
 
                 return special.ToArray();
@@ -164,5 +170,7 @@ namespace DinoDiner.Menu
             this.Side = new Fryceritops();
             this.Drink = new Sodasaurus();
         }
-    }
+
+
+    } // End of Cretaceous combo class
 }

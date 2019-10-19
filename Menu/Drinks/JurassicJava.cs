@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 
@@ -29,6 +30,8 @@ namespace DinoDiner.Menu
         public bool Decaf { get; set; } = false;
 
 
+
+
         /// <summary>
         /// Constructor that defaults the Price, Calories, and Ingredients for JurrasicJava
         /// </summary>
@@ -41,12 +44,48 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// override method leads into enum Size class to make changes in Price and Calories for called enum Sizes
+        /// </summary>
+        public override Size Size
+        {
+            set
+            {
+                size = value;
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                switch (size)
+                {
+                    case Size.Small:
+                        Price = 0.59;
+                        Calories = 2;
+                        break;
+                    case Size.Medium:
+                        Price = 0.99;
+                        Calories = 4;
+                        break;
+                    case Size.Large:
+                        Price = 1.49;
+                        Calories = 8;
+                        break;
+                }
+            }
+            get
+            {
+               
+                return size;
+            }
+        }
+
+
+        /// <summary>
         /// Implementing method for RoomForCream set to true
         /// </summary>
-       public void LeaveRoomForCream()
+        public void LeaveRoomForCream()
        {
-           this.RoomForCream = true;
-       }
+            this.RoomForCream = true;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
+        }
 
         /// <summary>
         /// Implementing method for Ice set to true
@@ -54,6 +93,8 @@ namespace DinoDiner.Menu
         public void AddIce()
         {
             this.Ice = true;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
 
@@ -71,6 +112,31 @@ namespace DinoDiner.Menu
                 return $"{size} Jurassic Java";
             }
             //size.ToString() + "Decaf"
+        }
+
+        /// <summary>
+        /// Gets a description of the order item
+        /// Sweet and Decaf, and Size are integrated
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                
+                if (Ice) special.Add("Add Ice");
+                //if RoomForCream is true
+                if (RoomForCream) special.Add("Leave Room For Cream");
+                return special.ToArray();
+            }
         }
 
     } // End of JurrasicJava class

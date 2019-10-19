@@ -56,6 +56,8 @@ namespace DinoDiner.Menu
             set
             {
                 size = value;
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
                 switch (size)
                 {
                     case Size.Small:
@@ -74,6 +76,7 @@ namespace DinoDiner.Menu
             }
             get
             {
+                
                 return size;
             }
         }
@@ -87,6 +90,31 @@ namespace DinoDiner.Menu
             return $"{size} {flavor} Sodasaurus";    
         }
 
+        /// <summary>
+        /// Gets a description of the order item
+        /// Sweet and Decaf, and Size are integrated
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+       
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                //If Ice is false
+                if (!Ice) special.Add("Hold Ice");
+
+                return special.ToArray();
+            }
+        }
 
     } // End of Sodasaurus class
 }

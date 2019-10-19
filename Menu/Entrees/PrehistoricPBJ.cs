@@ -6,7 +6,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Inherits from the Entree base class
     /// </summary>
-    public class PrehistoricPBJ : Entree, INotifyPropertyChanged
+    public class PrehistoricPBJ : Entree
     {
         /// <summary>
         ///  Private fields for use in Hold Methods
@@ -18,15 +18,7 @@ namespace DinoDiner.Menu
         /// </summary>
         private bool jelly = true;
 
-        /// <summary>
-        /// An Event handler for PropertyChanged events
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        
 
         /// <summary>
         /// This method lists ingredients to the Entree if not hold off
@@ -77,7 +69,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets a description of the order item
         /// </summary>
-        public string Description
+        public override string Description
         {
             get
             {
@@ -85,12 +77,14 @@ namespace DinoDiner.Menu
             }
         }
 
-        public string[] Special
+        public override string[] Special
         {
             get
             {
                 List<string> special = new List<string>();
+                //If peanut butter is false
                 if (!peanutButter) special.Add("Hold Peanut Butter");
+                //If jelly is false
                 if (!jelly) special.Add("Hold Jelly");
                 return special.ToArray();
             }

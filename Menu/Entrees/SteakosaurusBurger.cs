@@ -47,21 +47,29 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.bun = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         public void HoldPickle()
         {
             this.pickle = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         public void HoldKetchup()
         {
             this.ketchup = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         public void HoldMustard()
         {
             this.mustard = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -73,6 +81,41 @@ namespace DinoDiner.Menu
             return "Steakosaurus Burger";
         }
 
+        /// <summary>
+        /// Gets a description of the order item
+        /// Sweet and Decaf, and Size are integrated
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
 
+        /// <summary>
+        /// Specials for Drinks should use “Hold Ice”,Water have “Add Lemon” as an option.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+
+                //if bun is false
+                if (!bun) special.Add("Hold Bun");
+
+                //if pickle is false
+                if (!pickle) special.Add("Hold Pickle");
+
+                //if ketchup is false
+                if (!ketchup) special.Add("Hold Ketchup");
+
+                //if mustard is false
+                if (!mustard) special.Add("Hold Mustard");
+
+                return special.ToArray();
+            }
+        }
     }
 } // End of SteakosaurusBurger class

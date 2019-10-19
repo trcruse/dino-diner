@@ -83,5 +83,90 @@ namespace MenuTest.Sides
             ft.Size = Size.Large;
             Assert.Equal<Size>(Size.Large, ft.Size);
         }
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void FryceritopsDescriptionShouldGiveNameForSize(Size size)
+        {
+            Fryceritops fry = new Fryceritops();
+            fry.Size = size;
+            Assert.Equal($"{size} Fryceritops", fry.Description);
+        }
+
+        [Fact]
+        public void SpecialShouldBeEmptyByDefault()
+        {
+            Fryceritops fry = new Fryceritops();
+            Assert.Empty(fry.Special);
+        }
+
+        [Fact]
+        public void ChangingSmallSizeShouldNotifyPriceChange()
+        {
+            Fryceritops fry = new Fryceritops();
+            Assert.PropertyChanged(fry, "Price",
+                () =>
+                {
+                    fry.Size = Size.Small;
+                });
+        }
+
+        [Fact]
+        public void ChangingSmallSizeShouldNotifyCalorieChange()
+        {
+            Fryceritops fry = new Fryceritops();
+            Assert.PropertyChanged(fry, "Calories",
+                () =>
+                {
+                    fry.Size = Size.Small;
+                });
+        }
+        [Fact]
+        public void ChangingMediumSizeShouldNotifyPriceChange()
+        {
+            Fryceritops fry = new Fryceritops();
+            Assert.PropertyChanged(fry, "Price",
+                () =>
+                {
+                    fry.Size = Size.Medium;
+                });
+        }
+        [Fact]
+        public void ChangingMediumSizeShouldNotifyCalorieChange()
+        {
+            Fryceritops fry = new Fryceritops();
+            Assert.PropertyChanged(fry, "Calories",
+                () =>
+                {
+                    fry.Size = Size.Medium;
+                });
+        }
+
+        [Fact]
+        public void ChangingLargeSizeShouldNotifyPriceChange()
+        {
+            Fryceritops fry = new Fryceritops();
+            Assert.PropertyChanged(fry, "Price",
+                () =>
+                {
+                    fry.Size = Size.Large;
+                });
+        }
+        [Fact]
+        public void ChangingLargeSizeShouldNotifyCalorieChange()
+        {
+            Fryceritops fry = new Fryceritops();
+            Assert.PropertyChanged(fry, "Calories",
+                () =>
+                {
+                    fry.Size = Size.Large;
+                });
+        }
+
+
     }
 }

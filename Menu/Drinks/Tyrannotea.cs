@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 
@@ -22,6 +23,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public bool Sweet { get; set; } = false;
 
+        
 
         /// <summary>
         /// constructor for Tyrannotea that implements Price, Calories, and Ingredients by default
@@ -42,9 +44,10 @@ namespace DinoDiner.Menu
         {
             set
             {
-                //uint variable to adjust calorie intake for each drink size with sweetner
                 uint multiply;
                 size = value;
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
                 if (Sweet == true)
                 {
                     multiply = 2;
@@ -83,6 +86,8 @@ namespace DinoDiner.Menu
         {
             ingredients.Add("Lemon");
             this.Lemon = true;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -92,6 +97,7 @@ namespace DinoDiner.Menu
         {
             ingredients.Add("Cane Sugar");
             this.Sweet = true;
+            
         }
 
         /// <summary>
@@ -114,6 +120,32 @@ namespace DinoDiner.Menu
             else
             {
                 return $"{size} Tyrannotea";
+            }
+        }
+
+        /// <summary>
+        /// Gets a description of the order item
+        /// Sweet and Decaf, and Size are integrated
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                // If Lemon is true
+                if (Lemon) special.Add("Add Lemon");
+
+                if (!Ice) special.Add("Hold Ice");
+                
+                return special.ToArray();
             }
         }
 

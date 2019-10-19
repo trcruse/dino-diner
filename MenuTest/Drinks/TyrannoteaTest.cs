@@ -171,7 +171,7 @@ namespace MenuTest.Drinks
         }
 
 
-        
+
         /// <summary>
         /// That setting the sweet property to false (after it has been set to true) results in the right calories for each size.
         /// </summary>
@@ -224,6 +224,99 @@ namespace MenuTest.Drinks
             Assert.Contains<string>("Water", ingredients);
             Assert.Equal<int>(2, ingredients.Count);
         }
+
+
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        [Theory]
+        [InlineData(Size.Small, false)]
+        [InlineData(Size.Medium, false)]
+        [InlineData(Size.Large, false)]
+        [InlineData(Size.Small, true)]
+        [InlineData(Size.Medium, true)]
+        [InlineData(Size.Large, true)]
+
+        public void TyrannoTeaDescriptionShouldGiveNameForSizeAndSweetness(Size size, bool sweet)
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.Size = size;
+            tea.Sweet = sweet;
+            if (sweet) Assert.Equal($"{size} Sweet Tyrannotea", tea.Description);
+            else Assert.Equal($"{size} Tyrannotea", tea.Description);
+        }
+
+        [Fact]
+        public void SpecialShouldBeEmptyByDefault()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.Empty(tea.Special);
+        }
+
+
+        [Fact]
+        public void AddLemonShouldAddSpecial()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.AddLemon();
+            Assert.Collection<string>(tea.Special,
+                item =>
+                {
+                    Assert.Equal("Add Lemon", item);
+                });
+        }
+
+        [Fact]
+        public void HoldingIceShouldAddSpecial()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.HoldIce();
+            Assert.Collection<string>(tea.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Ice", item);
+                });
+        }
+
+        [Fact]
+        public void AddLemonAndHoldIceToSpecial()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.AddLemon();
+            tea.HoldIce();
+            
+            Assert.Collection<string>(tea.Special,
+                item =>
+                {
+                    Assert.Equal("Add Lemon", item);
+                },
+                item =>
+                {
+                    Assert.Equal("Hold Ice", item);
+                });
+        }
+
+        [Fact]
+        public void AddingLemonShouldNotifySpecialChange()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Special",
+                () =>
+                {
+                    tea.AddLemon();
+                });
+        }
+
+        [Fact]
+        public void HoldingIceShouldNotifySpecialChange()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Special",
+                () =>
+                {
+                    tea.HoldIce();
+                });
+        }
+
 
     }
 }

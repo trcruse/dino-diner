@@ -56,41 +56,57 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.bun = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         public void HoldLettuce()
         {
             this.lettuce = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         public void HoldTomato()
         {
             this.tomato = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         public void HoldOnion()
         {
             this.onion = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         public void HoldPickle()
         {
             this.pickle = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         public void HoldKetchup()
         {
             this.ketchup = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         public void HoldMustard()
         {
             this.mustard = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         public void HoldMayo()
         {
             this.mayo = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -102,6 +118,52 @@ namespace DinoDiner.Menu
             return "T-Rex King Burger";
         }
 
+        
 
-    }
-} // End of TRexKingBurger class
+        /// <summary>
+        /// Gets a description of the order item
+        /// Sweet and Decaf, and Size are integrated
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Specials for Drinks should use “Hold Ice”,Water have “Add Lemon” as an option.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+
+                //if bun is false
+                if (!bun) special.Add("Hold Bun");
+                //if lettuce is false
+                if (!lettuce) special.Add("Hold Lettuce");
+                //if tomato is false
+                if (!tomato) special.Add("Hold Tomato"); 
+                //if onion is false
+                if (!onion) special.Add("Hold Onion");
+
+                //if pickle is false
+                if (!pickle) special.Add("Hold Pickle");
+
+                //if ketchup is false
+                if (!ketchup) special.Add("Hold Ketchup");
+
+                //if mustard is false
+                if (!mustard) special.Add("Hold Mustard");
+                //if mayo is false
+                if (!mayo) special.Add("Hold Mayo");
+
+                return special.ToArray();
+            }
+        }
+
+    }// End of TRexKingBurger class
+} 

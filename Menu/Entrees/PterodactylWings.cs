@@ -40,5 +40,27 @@ namespace DinoDiner.Menu
             return "Pterodactyl Wings";
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                return new string[0];
+            }
+        }
+
     }
 } // End of PterodactylWings class

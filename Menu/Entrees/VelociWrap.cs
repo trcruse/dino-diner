@@ -55,16 +55,22 @@ namespace DinoDiner.Menu
         public void HoldDressing()
         {
             this.dressing = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         public void HoldLettuce()
         {
             this.lettuce = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         public void HoldCheese()
         {
             this.cheese = false;
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -76,6 +82,38 @@ namespace DinoDiner.Menu
             return "Veloci-Wrap";
         }
 
+        /// <summary>
+        /// Gets a description of the order item
+        /// Sweet and Decaf, and Size are integrated
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+
+                //if dressing is false
+                if (!dressing) special.Add("Hold Ceasar Dressing");
+
+                //if lettuce is false
+                if (!lettuce) special.Add("Hold Romaine Lettuce");
+
+                //if cheese is false
+                if (!cheese) special.Add("Hold Parmesan Cheese");
+
+                return special.ToArray();
+            }
+        }
     }
 } // End of VelociWrap class
