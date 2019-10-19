@@ -7,13 +7,16 @@ using System.Text;
 namespace DinoDiner.Menu 
 {
    
+        /// <summary>
+        /// Hides background details and implementation, only providing essential information
+        /// calls IOrderItem interface, IMenuItem, and INotifyPropertyChanged
+        /// </summary>
+        public abstract class Drink : IMenuItem, IOrderItem, INotifyPropertyChanged
+        {
+
             /// <summary>
-            /// Hides background details and implementation, only providing essential information
+            /// Event handler for property change notifications
             /// </summary>
-            public abstract class Drink : IMenuItem, IOrderItem, INotifyPropertyChanged
-            {
-
-
             public event PropertyChangedEventHandler PropertyChanged;
 
             protected void NotifyOfPropertyChanged(string propertyName)
@@ -61,8 +64,6 @@ namespace DinoDiner.Menu
             }
 
 
-
-
             /// <summary>
             ///  inherited classes have their own access to the variable Ingredients
             /// </summary>
@@ -99,20 +100,20 @@ namespace DinoDiner.Menu
             }
 
 
-            /// <summary>
-            /// Implements method HoldIce setting Ice property to false
-            /// </summary>
-            public void HoldIce()
+        /// <summary>
+        /// Implements method HoldIce setting Ice property to false
+        /// Notifys property change in Ingredients and Special per each food implementation in
+        /// each class requirements
+        /// </summary>
+        public void HoldIce()
             {
                 this.Ice = false;
                 NotifyOfPropertyChanged("Ingredients");
                 NotifyOfPropertyChanged("Special");
-
-        }
+            }
 
             /// <summary>
             /// Gets a description of the order item
-            /// Sweet and Decaf, and Size are integrated
             /// </summary>
             public virtual string Description
             {
@@ -121,7 +122,11 @@ namespace DinoDiner.Menu
                     return this.ToString();
                 }
             }
-
+            
+            /// <summary>
+            /// Special instructions for food requirements
+            /// All Drinks inherit Hold Ice method except for JurrasicJava
+            /// </summary>
             public virtual string[] Special
             {
                 get
@@ -134,6 +139,5 @@ namespace DinoDiner.Menu
             }
 
 
-    } //end of public abstract Drink
-
+    } //end of abstract Drink base class
 }

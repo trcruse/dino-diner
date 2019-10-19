@@ -45,14 +45,19 @@ namespace DinoDiner.Menu
             }
         }
 
-        //Sets calories and price 
+        /// <summary>
+        /// Constructor that sets Price and Calories at initial value
+        /// </summary>        
         public TRexKingBurger()
         {
             this.Price = 8.45;
             this.Calories = 728;
         }
 
-        //Implement methods for holding Bun, Lettuce, Tomato, Onion, Pickle, Ketchup, Mustard, Mayo
+        /// <summary>
+        /// Holding Bun method implementation
+        /// Notifys property change for the ingredients and special functions
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
@@ -60,6 +65,10 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChanged("Special");
         }
 
+        /// <summary>
+        /// Holding Lettuce method implementation
+        /// Notifys property change for the ingredients and special functions
+        /// </summary>
         public void HoldLettuce()
         {
             this.lettuce = false;
@@ -67,6 +76,10 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChanged("Special");
         }
 
+        /// <summary>
+        /// Holding Tomato method implementation
+        /// Notifys property change for the ingredients and special functions
+        /// </summary>
         public void HoldTomato()
         {
             this.tomato = false;
@@ -74,6 +87,10 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChanged("Special");
         }
 
+        /// <summary>
+        /// Holding Onion method implementation
+        /// Notifys property change for the ingredients and special functions
+        /// </summary>
         public void HoldOnion()
         {
             this.onion = false;
@@ -81,6 +98,10 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChanged("Special");
         }
 
+        /// <summary>
+        /// Holding Pickle method implementation
+        /// Notifys property change for the ingredients and special functions
+        /// </summary>
         public void HoldPickle()
         {
             this.pickle = false;
@@ -88,6 +109,10 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChanged("Special");
         }
 
+        /// <summary>
+        /// Holding Ketchup method implementation
+        /// Notifys property change for the ingredients and special functions
+        /// </summary>
         public void HoldKetchup()
         {
             this.ketchup = false;
@@ -95,6 +120,10 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChanged("Special");
         }
 
+        /// <summary>
+        /// Holding Mustard method implementation
+        /// Notifys property change for the ingredients and special functions
+        /// </summary>
         public void HoldMustard()
         {
             this.mustard = false;
@@ -102,6 +131,10 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChanged("Special");
         }
 
+        /// <summary>
+        /// Holding Mayo method implementation
+        /// Notifys property change for the ingredients and special functions
+        /// </summary>
         public void HoldMayo()
         {
             this.mayo = false;
@@ -122,7 +155,6 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// Gets a description of the order item
-        /// Sweet and Decaf, and Size are integrated
         /// </summary>
         public override string Description
         {
@@ -133,7 +165,7 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Specials for Drinks should use “Hold Ice”,Water have “Add Lemon” as an option.
+        /// Specials food instructions for class requirements
         /// </summary>
         public override string[] Special
         {
@@ -149,13 +181,10 @@ namespace DinoDiner.Menu
                 if (!tomato) special.Add("Hold Tomato"); 
                 //if onion is false
                 if (!onion) special.Add("Hold Onion");
-
                 //if pickle is false
                 if (!pickle) special.Add("Hold Pickle");
-
                 //if ketchup is false
                 if (!ketchup) special.Add("Hold Ketchup");
-
                 //if mustard is false
                 if (!mustard) special.Add("Hold Mustard");
                 //if mayo is false

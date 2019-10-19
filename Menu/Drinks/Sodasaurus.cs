@@ -50,6 +50,8 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// override method leads into enum Size class to make changes in Price and Calories for called enum Sizes
+        /// Notifys property change in Price and Calories per each Size implementation in
+        /// each class requirements
         /// </summary>
         public override Size Size
         {
@@ -92,7 +94,7 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// Gets a description of the order item
-        /// Sweet and Decaf, and Size are integrated
+        /// Size is integrated
         /// </summary>
         public override string Description
         {
@@ -102,8 +104,11 @@ namespace DinoDiner.Menu
             }
         }
 
-       
 
+        /// <summary>
+        /// contains any special instructions for the food preparation
+        /// All drinks require Hold Ice except Jurassic Java
+        /// </summary>
         public override string[] Special
         {
             get

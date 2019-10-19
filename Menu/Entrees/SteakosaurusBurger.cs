@@ -36,14 +36,20 @@ namespace DinoDiner.Menu
             }
         }
 
-        //Sets price and calories
+       /// <summary>
+       /// Constructor that sets Price and Calories to intial value
+       /// </summary>
         public SteakosaurusBurger()
         {
             this.Price = 5.15;
             this.Calories = 621;
         }
 
-        //Implement methods for holding Bun, Pickle, Ketchup, Mustard
+        /// <summary>
+        /// Holding bun method
+        /// Notifys property change in Ingredients and Special per each food implementation in
+        /// each class requirements
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
@@ -51,6 +57,10 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChanged("Special");
         }
 
+        /// <summary>
+        /// Holding pickle method implementation
+        /// Notifys property change for the ingredients and special functions
+        /// </summary>
         public void HoldPickle()
         {
             this.pickle = false;
@@ -58,6 +68,10 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChanged("Special");
         }
 
+        /// <summary>
+        /// Holding Ketchup method implementation
+        /// Notifys property change for the ingredients and special functions
+        /// </summary>
         public void HoldKetchup()
         {
             this.ketchup = false;
@@ -65,6 +79,10 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChanged("Special");
         }
 
+        /// <summary>
+        /// Holding Mustard method implementation
+        /// Notifys property change for the ingredients and special functions
+        /// </summary>
         public void HoldMustard()
         {
             this.mustard = false;
@@ -83,7 +101,6 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// Gets a description of the order item
-        /// Sweet and Decaf, and Size are integrated
         /// </summary>
         public override string Description
         {
@@ -94,7 +111,7 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Specials for Drinks should use “Hold Ice”,Water have “Add Lemon” as an option.
+        /// Specials implements food instructions per class requirements
         /// </summary>
         public override string[] Special
         {
@@ -104,18 +121,16 @@ namespace DinoDiner.Menu
 
                 //if bun is false
                 if (!bun) special.Add("Hold Bun");
-
                 //if pickle is false
                 if (!pickle) special.Add("Hold Pickle");
-
                 //if ketchup is false
                 if (!ketchup) special.Add("Hold Ketchup");
-
                 //if mustard is false
                 if (!mustard) special.Add("Hold Mustard");
 
                 return special.ToArray();
             }
         }
-    }
-} // End of SteakosaurusBurger class
+
+    } // End of SteakosaurusBurger class
+}

@@ -29,7 +29,6 @@ namespace DinoDiner.Menu
         private bool cheese = true;
 
         
-
         /// <summary>
         /// This method lists ingredients to the Entree if not hold off
         /// </summary>
@@ -45,13 +44,19 @@ namespace DinoDiner.Menu
             }
         }
 
-        //Sets price and calories
+        /// <summary>
+        /// Constructor to set all properties at initial value
+        /// </summary>
         public VelociWrap()
         {
             this.Price = 6.86;
             this.Calories = 356;
         }
 
+        /// <summary>
+        /// Holding Dressing method implementation
+        /// Notifys property change for the ingredients and special functions
+        /// </summary>
         public void HoldDressing()
         {
             this.dressing = false;
@@ -59,6 +64,10 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChanged("Special");
         }
 
+        /// <summary>
+        /// Holding Lettuce method implementation
+        /// Notifys property change for the ingredients and special functions
+        /// </summary>
         public void HoldLettuce()
         {
             this.lettuce = false;
@@ -66,6 +75,10 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChanged("Special");
         }
 
+        /// <summary>
+        /// Holding Cheese method implementation
+        /// Notifys property change for the ingredients and special functions
+        /// </summary>
         public void HoldCheese()
         {
             this.cheese = false;
@@ -76,7 +89,6 @@ namespace DinoDiner.Menu
         /// <summary>
         /// ToString Implementation to refactor all Menu items
         /// </summary>
-        /// <returns></returns>
         public override string ToString()
         {
             return "Veloci-Wrap";
@@ -84,7 +96,6 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// Gets a description of the order item
-        /// Sweet and Decaf, and Size are integrated
         /// </summary>
         public override string Description
         {
@@ -95,7 +106,7 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// 
+        /// Special gathers all food instructions per each class requirements
         /// </summary>
         public override string[] Special
         {
@@ -105,15 +116,14 @@ namespace DinoDiner.Menu
 
                 //if dressing is false
                 if (!dressing) special.Add("Hold Ceasar Dressing");
-
                 //if lettuce is false
                 if (!lettuce) special.Add("Hold Romaine Lettuce");
-
                 //if cheese is false
                 if (!cheese) special.Add("Hold Parmesan Cheese");
 
                 return special.ToArray();
             }
         }
-    }
-} // End of VelociWrap class
+
+    }// End of VelociWrap class
+} 

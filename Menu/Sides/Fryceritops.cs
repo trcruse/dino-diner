@@ -25,6 +25,7 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// override method leads into abstract to make changes in Price and Calories for called enum Sizes
+        /// Also notify's property change in Price and Calories per size implementation
         /// </summary>
         public override Size Size
         {
@@ -66,7 +67,6 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// Gets a description of the order item
-        /// Sweet and Decaf, and Size are integrated
         /// </summary>
         public override string Description
         {
@@ -77,7 +77,8 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// 
+        /// Sides do not currently have special instructions,
+        /// returns an empty string array for their Special property
         /// </summary>
         public override string[] Special
         {

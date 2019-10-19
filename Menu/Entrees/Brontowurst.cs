@@ -46,6 +46,8 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// method to implement removing bun
+        /// Notifys property change in Ingredients and Special per each food implementation in
+        /// each class requirements
         /// </summary>
         public void HoldBun()
         {
@@ -56,6 +58,8 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// method to implement holding peppers
+        /// Notifys property change in Ingredients and Special per each food implementation in
+        /// each class requirements
         /// </summary>
         public void HoldPeppers()
         {
@@ -64,7 +68,11 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChanged("Special");
         }
 
-        // Method to Hold Onion
+        /// <summary>
+        /// Method for Holding Onion
+        /// Notifys property change in Ingredients and Special per each food implementation in
+        /// each class requirements
+        /// </summary>
         public void HoldOnion()
         {
             this.onion = false;
@@ -93,7 +101,7 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Integrates strings for specifications in each class
+        /// Integrates strings for food specifications in each class
         /// </summary>
         public override string[] Special
         {
@@ -105,11 +113,10 @@ namespace DinoDiner.Menu
                 if (!peppers) special.Add("Hold Peppers");
                 if (!onion) special.Add("Hold Onion");
                 
-                
                 return special.ToArray();
             }
         }
 
 
-    }
-} // End of Brontowurst class
+    }// End of Brontowurst class
+} 

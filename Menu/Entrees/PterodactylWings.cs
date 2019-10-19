@@ -24,7 +24,9 @@ namespace DinoDiner.Menu
             }
         }
 
-        //Sets price and calories
+        /// <summary>
+        /// Constructor to set Price and Calories at initial value
+        /// </summary>
         public PterodactylWings()
         {
             this.Price = 7.21;
@@ -41,7 +43,7 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// 
+        /// Gets description of the order item from the ToString method
         /// </summary>
         public override string Description
         {
@@ -52,7 +54,8 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// 
+        /// contains any special instructions for the food preparation
+        /// Entrees return an empty string when there's no specifications
         /// </summary>
         public override string[] Special
         {
@@ -62,5 +65,5 @@ namespace DinoDiner.Menu
             }
         }
 
-    }
-} // End of PterodactylWings class
+    }// End of PterodactylWings class
+} 

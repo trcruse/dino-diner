@@ -317,6 +317,67 @@ namespace MenuTest.Drinks
                 });
         }
 
+        [Fact]
+        public void ChangingSmallSizeShouldNotifyPriceChange()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Price",
+                () =>
+                {
+                    tea.Size = Size.Small;
+                });
+        }
 
+        [Fact]
+        public void ChangingSmallSizeShouldNotifyCalorieChange()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Calories",
+                () =>
+                {
+                    tea.Size = Size.Small;
+                });
+        }
+        [Fact]
+        public void ChangingMediumSizeShouldNotifyPriceChange()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Price",
+                () =>
+                {
+                    tea.Size = Size.Medium;
+                });
+        }
+        [Fact]
+        public void ChangingMediumSizeShouldNotifyCalorieChange()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Calories",
+                () =>
+                {
+                    tea.Size = Size.Medium;
+                });
+        }
+
+        [Fact]
+        public void ChangingLargeSizeShouldNotifyPriceChange()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Price",
+                () =>
+                {
+                    tea.Size = Size.Large;
+                });
+        }
+        [Fact]
+        public void ChangingLargeSizeShouldNotifyCalorieChange()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Calories",
+                () =>
+                {
+                    tea.Size = Size.Large;
+                });
+        }
     }
 }

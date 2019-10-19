@@ -6,11 +6,14 @@ using System.Text;
 namespace DinoDiner.Menu
 {
     /// <summary>
-    /// A base class representing entrees
+    /// Hides background details and implementation, only providing essential information
+    /// calls IOrderItem interface, IMenuItem, and INotifyPropertyChanged
     /// </summary>
     public abstract class Entree : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
-
+        /// <summary>
+        /// Event handler for property change notifications
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void NotifyOfPropertyChanged(string propertyName)
@@ -64,10 +67,8 @@ namespace DinoDiner.Menu
             }
         }
 
-        
-
         /// <summary>
-        /// 
+        /// Gets description of the order item
         /// </summary>
         public virtual string Description
         {
@@ -78,7 +79,7 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// No needed special in Entree Base class
+        /// No needed special in Entree Base class, returns empty array string of zero
         /// </summary>
         public virtual string[] Special
         {

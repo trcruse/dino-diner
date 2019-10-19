@@ -245,6 +245,69 @@ namespace MenuTest.Drinks
                 });
         }
 
-        
+        [Fact]
+        public void ChangingSmallSizeShouldNotifyPriceChange()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            Assert.PropertyChanged(soda, "Price",
+                () =>
+                {
+                    soda.Size = Size.Small;
+                });
+        }
+
+        [Fact]
+        public void ChangingSmallSizeShouldNotifyCalorieChange()
+        {
+            Fryceritops fry = new Fryceritops();
+            Assert.PropertyChanged(fry, "Calories",
+                () =>
+                {
+                    fry.Size = Size.Small;
+                });
+        }
+        [Fact]
+        public void ChangingMediumSizeShouldNotifyPriceChange()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            Assert.PropertyChanged(soda, "Price",
+                () =>
+                {
+                    soda.Size = Size.Medium;
+                });
+        }
+        [Fact]
+        public void ChangingMediumSizeShouldNotifyCalorieChange()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            Assert.PropertyChanged(soda, "Calories",
+                () =>
+                {
+                    soda.Size = Size.Medium;
+                });
+        }
+
+        [Fact]
+        public void ChangingLargeSizeShouldNotifyPriceChange()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            Assert.PropertyChanged(soda, "Price",
+                () =>
+                {
+                    soda.Size = Size.Large;
+                });
+        }
+        [Fact]
+        public void ChangingLargeSizeShouldNotifyCalorieChange()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            Assert.PropertyChanged(soda, "Calories",
+                () =>
+                {
+                    soda.Size = Size.Large;
+                });
+        }
+
+
     }
 }

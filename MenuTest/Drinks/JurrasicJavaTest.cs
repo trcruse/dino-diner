@@ -176,5 +176,68 @@ namespace MenuTest.Drinks
                     java.LeaveRoomForCream();
                 });
         }
+
+        [Fact]
+        public void ChangingSmallSizeShouldNotifyPriceChange()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Price",
+                () =>
+                {
+                    java.Size = Size.Small;
+                });
+        }
+
+        [Fact]
+        public void ChangingSmallSizeShouldNotifyCalorieChange()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Calories",
+                () =>
+                {
+                    java.Size = Size.Small;
+                });
+        }
+        [Fact]
+        public void ChangingMediumSizeShouldNotifyPriceChange()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Price",
+                () =>
+                {
+                    java.Size = Size.Medium;
+                });
+        }
+        [Fact]
+        public void ChangingMediumSizeShouldNotifyCalorieChange()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Calories",
+                () =>
+                {
+                    java.Size = Size.Medium;
+                });
+        }
+
+        [Fact]
+        public void ChangingLargeSizeShouldNotifyPriceChange()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Price",
+                () =>
+                {
+                    java.Size = Size.Large;
+                });
+        }
+        [Fact]
+        public void ChangingLargeSizeShouldNotifyCalorieChange()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Calories",
+                () =>
+                {
+                    java.Size = Size.Large;
+                });
+        }
     }
 }

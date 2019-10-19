@@ -28,6 +28,8 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// override method leads into abstract to make changes in Price and Calories for called enum Sizes
+        /// Notifys property change in Calories and Price per each Size implementation in
+        /// each Drink and Side requirements
         /// </summary>
         public override Size Size
         {
@@ -60,6 +62,8 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// Property to Add Lemon when true, and adds "Lemon" to ingriedent list
+        /// Notifys property change in Ingredients and Special per each food implementation in
+        /// each class requirements
         /// </summary>
         public void AddLemon()
         {
@@ -80,7 +84,7 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// Gets a description of the order item
-        /// Sweet and Decaf, and Size are integrated
+        /// Size is integrated
         /// </summary>
         public override string Description
         {
@@ -91,17 +95,16 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Specials for Drinks should use “Hold Ice”,Water have “Add Lemon” as an option.
+        /// Specials for Drinks should use “Hold Ice”,
+        /// Water have “Add Lemon” as an option.
         /// </summary>
         public override string[] Special
         {
             get
             {
                 List<string> special = new List<string>();
-
                 //if Lemon is true
                 if (Lemon) special.Add("Add Lemon");
-
                 //If Ice is false
                 if (!Ice) special.Add("Hold Ice");
                 return special.ToArray();

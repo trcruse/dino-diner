@@ -223,5 +223,68 @@ namespace MenuTest.Drinks
                 });
         }
 
+        [Fact]
+        public void ChangingSmallSizeShouldNotifyPriceChange()
+        {
+            Water water = new Water();
+            Assert.PropertyChanged(water, "Price",
+                () =>
+                {
+                    water.Size = Size.Small;
+                });
+        }
+
+        [Fact]
+        public void ChangingSmallSizeShouldNotifyCalorieChange()
+        {
+            Water water = new Water();
+            Assert.PropertyChanged(water, "Calories",
+                () =>
+                {
+                    water.Size = Size.Small;
+                });
+        }
+        [Fact]
+        public void ChangingMediumSizeShouldNotifyPriceChange()
+        {
+            Water water = new Water();
+            Assert.PropertyChanged(water, "Price",
+                () =>
+                {
+                    water.Size = Size.Medium;
+                });
+        }
+        [Fact]
+        public void ChangingMediumSizeShouldNotifyCalorieChange()
+        {
+            Water water = new Water();
+            Assert.PropertyChanged(water, "Calories",
+                () =>
+                {
+                    water.Size = Size.Medium;
+                });
+        }
+
+        [Fact]
+        public void ChangingLargeSizeShouldNotifyPriceChange()
+        {
+            Water water = new Water();
+            Assert.PropertyChanged(water, "Price",
+                () =>
+                {
+                    water.Size = Size.Large;
+                });
+        }
+        [Fact]
+        public void ChangingLargeSizeShouldNotifyCalorieChange()
+        {
+            Water water = new Water();
+            Assert.PropertyChanged(water, "Calories",
+                () =>
+                {
+                    water.Size = Size.Large;
+                });
+        }
+
     }
 }

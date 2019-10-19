@@ -29,7 +29,9 @@ namespace DinoDiner.Menu
             }
         }
 
-
+        /// <summary>
+        /// Event handler to notify property changes
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void NotifyOfPropertyChanged(string propertyName)
@@ -42,10 +44,15 @@ namespace DinoDiner.Menu
         /// </summary>
         public Side Side { get; set; } = new Fryceritops();
 
+        /// <summary>
+        /// Assigns drink class to sodasaurus
+        /// </summary>
         private Drink drink = new Sodasaurus();
 
         /// <summary>
         /// Gets and sets the drink
+        /// Notifys property change in Ingredients, Price, Calories, and Special per each food implementation in
+        /// each class requirements
         /// </summary>
         public Drink Drink
         {
@@ -87,6 +94,8 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// Gets or sets the size of the combo
+        /// Notifys property change in Ingredients, price, calories, and Special per each food implementation in
+        /// each class requirements
         /// </summary>
         public Size Size
         {
@@ -119,7 +128,7 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// 
+        /// Gets description of food through tostring method
         /// </summary>
         public string Description
         {
@@ -161,6 +170,7 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// Constructor
         /// Constructs a new combo with the specified entree
         /// </summary>
         /// <param name="entree">The entree to use</param>

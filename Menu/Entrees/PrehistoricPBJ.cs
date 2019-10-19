@@ -19,7 +19,6 @@ namespace DinoDiner.Menu
         private bool jelly = true;
 
         
-
         /// <summary>
         /// This method lists ingredients to the Entree if not hold off
         /// </summary>
@@ -34,14 +33,20 @@ namespace DinoDiner.Menu
             }
         }
 
-        // Sets prices and calories
+        /// <summary>
+        /// Constructor to set Price and Calories properties
+        /// </summary>
         public PrehistoricPBJ()
         {
             this.Price = 6.52;
             this.Calories = 483;
         }
 
-        //Method to hold peanut butter
+        /// <summary>
+        /// Hold peanut butter method
+        /// Notifys property change in Ingredients and Special per each food implementation in
+        /// each class requirements
+        /// </summary>
         public void HoldPeanutButter()
         {
             this.peanutButter = false;
@@ -49,7 +54,11 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChanged("Special");
         }
 
-        //Method to hold jelly
+        /// <summary>
+        /// Method to hold Jelly
+        /// Notifys property change in Ingredients and Special per each food implementation in
+        /// each class requirements
+        /// </summary>
         public void HoldJelly()
         {
             this.jelly = false;
@@ -77,6 +86,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// contains any special instructions for the food preparation
+        /// </summary>
         public override string[] Special
         {
             get
@@ -91,5 +103,5 @@ namespace DinoDiner.Menu
         }
 
 
-    }
-} // end of PrehistoricPBJ class
+    }// end of PrehistoricPBJ class
+} 

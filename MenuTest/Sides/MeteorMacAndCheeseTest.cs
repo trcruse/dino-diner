@@ -85,7 +85,17 @@ namespace MenuTest.Sides
         }
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-       
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void MeteorMacAndCheeseDescriptionShouldGiveNameForSize(Size size)
+        {
+            MeteorMacAndCheese mac = new MeteorMacAndCheese();
+            mac.Size = size;
+            Assert.Equal($"{size} Meteor Mac and Cheese", mac.Description);
+        }
 
         [Fact]
         public void SpecialShouldBeEmptyByDefault()

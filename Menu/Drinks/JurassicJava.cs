@@ -29,9 +29,6 @@ namespace DinoDiner.Menu
         /// </summary>
         public bool Decaf { get; set; } = false;
 
-
-
-
         /// <summary>
         /// Constructor that defaults the Price, Calories, and Ingredients for JurrasicJava
         /// </summary>
@@ -45,6 +42,8 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// override method leads into enum Size class to make changes in Price and Calories for called enum Sizes
+        /// Notifys property change in Price and Calories per each food implementation in
+        /// each class requirements
         /// </summary>
         public override Size Size
         {
@@ -79,6 +78,8 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// Implementing method for RoomForCream set to true
+        /// Notifys property change in Ingredients and Special per each food implementation in
+        /// each class requirements
         /// </summary>
         public void LeaveRoomForCream()
        {
@@ -89,6 +90,8 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// Implementing method for Ice set to true
+        /// Notifys property change in Ingredients and Special per each food implementation in
+        /// each class requirements
         /// </summary>
         public void AddIce()
         {
@@ -126,6 +129,10 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// contains any special instructions for the food preparation
+        /// Jurassic Java requires Add Ice implementation
+        /// </summary>
         public override string[] Special
         {
             get

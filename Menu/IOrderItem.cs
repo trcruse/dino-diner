@@ -5,6 +5,9 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// Interface for all menu items to implement and inherit
+    /// </summary>
     public interface IOrderItem
     {
         /// <summary>
@@ -14,15 +17,15 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// Description string property
+        /// matches the ToString() implementation from prior milestones
         /// </summary>
-         string Description { get; }
+        string Description { get; }
 
         /// <summary>
         /// Special string array property
+        /// contains any special instructions for the food preparation
         /// </summary>
-         string[] Special { get; }
-
-
+        string[] Special { get; }
 
 
 

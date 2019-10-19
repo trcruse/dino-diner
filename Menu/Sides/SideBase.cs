@@ -9,11 +9,14 @@ namespace DinoDiner.Menu
 
     /// <summary>
     /// abstract method is intended to be a base class for Sides
+    /// also calls for IOrderItem, and INotifyPropertyChanged
     /// </summary>
     public abstract class Side : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
 
-
+        /// <summary>
+        /// Event handler for property change notifications
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void NotifyOfPropertyChanged(string propertyName)
@@ -25,14 +28,14 @@ namespace DinoDiner.Menu
         /// <summary>
         /// inherited classes have their own access to the variable Price
         /// </summary>
-        protected double price;
+        private double price;
         public double Price { get; set;}
 
         /// <summary>
         ///  inherited classes have their own access to the variable Calories
         /// </summary>
         private uint calories;
-        public uint Calories { get;set; }
+        public uint Calories { get; set; }
 
         /// <summary>
         ///  inherited classes have their own access to the variable Ingredients
@@ -68,7 +71,6 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// Gets a description of the order item
-        /// Sweet and Decaf, and Size are integrated
         /// </summary>
         public virtual string Description
         {
@@ -79,7 +81,8 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// 
+        /// Sides do not currently have special instructions,
+        /// returns an empty string array for their Special property
         /// </summary>
         public virtual string[] Special
         {

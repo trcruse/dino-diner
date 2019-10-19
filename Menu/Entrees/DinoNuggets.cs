@@ -22,7 +22,6 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> ingredients = new List<string>() {};
-                //if (chickenNug) 
                 for (int i = 0; i < chickenNug; i++)
                 {
                     ingredients.Add("Chicken Nugget");
@@ -31,14 +30,20 @@ namespace DinoDiner.Menu
             }
         }
 
-        // Sets price and calories for each nugget
+        /// <summary>
+        /// Constructor that initializes each property per nugget value
+        /// </summary>
         public DinoNuggets()
         {
             this.Price = 4.25;
             this.Calories = 59*chickenNug;
         }
 
-        //Implement method for adding a nugget at additional 0.25
+        /// <summary>
+        /// Implement method for adding a nugget at additional 0.25
+        /// Notifys property change in Ingredients and Special per each food implementation in
+        /// each class requirements
+        /// </summary>
         public void AddNugget()
         {
             chickenNug = chickenNug + 1;
@@ -47,7 +52,6 @@ namespace DinoDiner.Menu
 
             NotifyOfPropertyChanged("Ingredients");
             NotifyOfPropertyChanged("Special");
-
         }
 
         /// <summary>
@@ -61,7 +65,6 @@ namespace DinoDiner.Menu
 
         /// <summary>
         /// Gets a description of the order item
-        /// Sweet and Decaf, and Size are integrated
         /// </summary>
         public override string Description
         {
