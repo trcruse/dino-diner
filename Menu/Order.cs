@@ -13,8 +13,6 @@ namespace DinoDiner.Menu
         public ObservableCollection<IOrderItem> Items { get; set; } = new ObservableCollection<IOrderItem>();
 
         
-
-        private double subtotalCost;
         /// <summary>
         /// calculates the total price from the prices of all order items
         /// NEVER allowed to be negative
@@ -23,6 +21,7 @@ namespace DinoDiner.Menu
         {
             get
             {
+                double subtotalCost = 0;
                 foreach(IOrderItem i in Items)
                 {
                     subtotalCost += i.Price;
@@ -34,8 +33,7 @@ namespace DinoDiner.Menu
                 else
                 {
                     return 0;
-                }
-                
+                }  
             }
         }
 
@@ -57,7 +55,6 @@ namespace DinoDiner.Menu
         }
 
 
-
         private double totalCost;
         /// <summary>
         /// calculates the total cost as the sum of the SubtotalCost and the SalesTaxCost
@@ -74,6 +71,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public Order()
         {
+            
 
         }
 
