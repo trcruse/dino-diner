@@ -32,35 +32,35 @@
            
             
             <StackPanel>
-                <Button VerticalContentAlignment="Top">
+                <Button VerticalContentAlignment="Top" Name="SelectFryeritops" Click="OnSelectFryceritops">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-08.png"></ImageBrush>
                     </Button.Background>
                     <TextBlock FontSize="15">Fryceritops</TextBlock>
                 </Button>
                 <TextBlock Text="Fryceritops Sizes:" FontSize="14" Margin="5" Height="19"/>
-                <RadioButton x:Name="TopButton" Margin="5" GroupName="Fryceritops Sizes" Content="Small" Height="19"/>
-                <RadioButton x:Name="MiddleButton" Margin="5" GroupName="Fryceritops Sizes" Content="Medium" Height="19"/>
-                <RadioButton x:Name="BottomButton" Margin="5" GroupName="Fryceritops Sizes" Content="Large" Height="19"/>
+                <RadioButton x:Name="FrySmall" Margin="5" GroupName="FryceritopsSizes" Content="Small" Height="19"/>
+                <RadioButton x:Name="FryMed" Margin="5" GroupName="FryceritopsSizes" Content="Medium" Height="19"/>
+                <RadioButton x:Name="FryLarge" Margin="5" GroupName="FryceritopsSizes" Content="Large" Height="19"/>
             </StackPanel>
             
             
             <StackPanel>
-                <Button VerticalContentAlignment="Top">
+                <Button VerticalContentAlignment="Top"  Name="SelectTriceritots" Click="OnSelectTriceritots">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-11.png"></ImageBrush>
                     </Button.Background>
                     <TextBlock FontSize="15">Triceritots</TextBlock>
                 </Button>
                 <TextBlock Text="Triceritots Sizes:" FontSize="14" Margin="5" Height="19"/>
-                <RadioButton x:Name="First" Margin="5" GroupName="Triceritots Sizes" Content="Small" Height="19"/>
-                <RadioButton x:Name="Second" Margin="5" GroupName="Triceritots Sizes" Content="Medium" Height="19"/>
-                <RadioButton x:Name="Third" Margin="5" GroupName="Triceritots Sizes" Content="Large" Height="19"/>
+                <RadioButton x:Name="MakeSmall" Tag="Small" Click="OnChangeSize" Margin="5" GroupName="Triceritots Sizes" Content="Small" Height="19"/>
+                <RadioButton x:Name="MakeMedium" Tag="Medium" Margin="5" Click="OnChangeSize" GroupName="Triceritots Sizes" Content="Medium" Height="19"/>
+                <RadioButton x:Name="MakeLarge" Tag="Large" Margin="5" Click="OnChangeSize" GroupName="Triceritots Sizes" Content="Large" Height="19"/>
             </StackPanel>
             
             
             <StackPanel>
-                <Button VerticalContentAlignment="Top">
+                <Button VerticalContentAlignment="Top"  Name="SelectMeteorMacCheese" Click="OnSelectMeteorMacCheese">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-09.png"></ImageBrush>
                     </Button.Background>
@@ -74,13 +74,13 @@
             
 
             <StackPanel>
-                <Button VerticalContentAlignment="Top">
+                <Button VerticalContentAlignment="Top"  Name="SelectMezzorella" Click="OnSelectMezzorella">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-10.png"></ImageBrush>
                     </Button.Background>
-                    <TextBlock FontSize="15">Mozzerella Sticks</TextBlock>
+                    <TextBlock FontSize="15">Mezzorella Sticks</TextBlock>
                 </Button>
-                <TextBlock Text="Mozzerella Sticks Sizes:" FontSize="14" Margin="5" Height="19"/>
+                <TextBlock Text="Mozzorella Sticks Sizes:" FontSize="14" Margin="5" Height="19"/>
                 <RadioButton x:Name="uno" Margin="5" GroupName="Mozzerella Sticks Sizes" Content="Small" Height="19"/>
                 <RadioButton x:Name="dos" Margin="5" GroupName="Mozzerella Sticks Sizes" Content="Medium" Height="19"/>
                 <RadioButton x:Name="tres" Margin="5" GroupName="Mozzerella Sticks Sizes" Content="Large" Height="19"/>

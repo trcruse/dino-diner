@@ -10,6 +10,6 @@
         <local:OrderList DockPanel.Dock="Right" Width="200">
             
         </local:OrderList>
-        <Frame />
+        <Frame Name="OrderUI" Source="MenuCategorySelection.xaml" LoadCompleted="OnLoadCompleted" DataContextChanged="OnDataContextChanged" />
     </DockPanel>
 </Window>

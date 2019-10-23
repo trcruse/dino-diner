@@ -20,9 +20,17 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderList : UserControl
     {
+        public NavigationService NavigationService { get; set; }
         public OrderList()
         {
             InitializeComponent();
         }
+
+        private void OnSelectionChanged(object sender, EventArgs args)
+        {
+            
+        }
+
+
     }
 }

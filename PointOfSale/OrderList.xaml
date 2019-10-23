@@ -13,6 +13,7 @@
             <RowDefinition Height="20"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -20,12 +21,12 @@
         <TextBlock Text="Order" FontWeight="Bold" TextAlignment="Right"/>
         <TextBlock Text="#" FontWeight="Bold" Grid.Column="1" Margin="5,0,0,0"/>
 
-        <ListBox Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Items}">
+        <ListBox Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Items, UpdateSourceTrigger=PropertyChanged}" IsSynchronizedWithCurrentItem="True">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock Text="{Binding Path=Description}"/>
-                        <ListBox ItemsSource="{Binding Path=Special}"/>
+                        <ListBox ItemsSource="{Binding Path=Special}" BorderBrush="White"/>
                         
                     </StackPanel>
                 </DataTemplate>
