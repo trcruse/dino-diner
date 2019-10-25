@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 
 namespace DinoDiner.Menu
@@ -8,12 +9,17 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Interface for all menu items to implement and inherit
     /// </summary>
-    public interface IOrderItem
-    {
+    public interface IOrderItem : INotifyPropertyChanged
+    { 
+        /// <summary>
+        /// Event handler that calls when a property has changed
+        /// </summary>
+        //public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Price Property
         /// </summary>
-         double Price { get; }
+        double Price { get; }
 
         /// <summary>
         /// Description string property

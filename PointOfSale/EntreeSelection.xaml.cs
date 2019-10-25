@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -20,9 +21,22 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
+       
+
+        private Entree entree;
+
+        
+        public EntreeSelection(Entree entree)
+        {
+            InitializeComponent();
+            this.entree = entree;
+        }
+
         public EntreeSelection()
         {
             InitializeComponent();
         }
+
+
     }
 }

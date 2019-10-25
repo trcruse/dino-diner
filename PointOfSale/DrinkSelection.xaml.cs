@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
+using DDSize = DinoDiner.Menu.Size;
 
 namespace PointOfSale
 {
@@ -20,9 +22,18 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
+
+
+        private Drink drink;
+
         public DrinkSelection()
         {
             InitializeComponent();
+        }
+        public DrinkSelection(Drink drink)
+        {
+            InitializeComponent();
+            this.drink = drink;
         }
 
         /// <summary>
@@ -40,10 +51,10 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">Control button the action is for</param>
         /// <param name="args">Data needed to pass to the event handlers</param>
-        void SelectSodasaurus(object sender, RoutedEventArgs args)
-        {
-            Flavor.IsEnabled = true;
-        }
+        //void SelectSodasaurus(object sender, RoutedEventArgs args)
+        //{
+        //    Flavor.IsEnabled = true;
+        //}
 
         /// <summary>
         /// Allows XAML to click into the Flavor Selection page from the Tyrannotea button, 
@@ -51,10 +62,10 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">Control button the action is for</param>
         /// <param name="args">Data needed to pass to the event handlers</param>
-        void SelectTryannotea(object sender, RoutedEventArgs args)
-        {
-            Flavor.IsEnabled = true;
-        }
+        //void SelectTryannotea(object sender, RoutedEventArgs args)
+        //{
+        //    Flavor.IsEnabled = true;
+        //}
 
         /// <summary>
         /// Allows XAML to click into the Flavor Selection page from the Jurassic Java button, 
@@ -62,10 +73,10 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">Control button the action is for</param>
         /// <param name="args">Data needed to pass to the event handlers</param>
-        void SelectJava(object sender, RoutedEventArgs args)
-        {
-            Flavor.IsEnabled = true;
-        }
+        //void SelectJava(object sender, RoutedEventArgs args)
+        //{
+        //    Flavor.IsEnabled = true;
+        //}
 
         /// <summary>
         /// Allows XAML to click into the Flavor Selection page from the Water button, 
@@ -73,10 +84,10 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">Control button the action is for</param>
         /// <param name="args">Data needed to pass to the event handlers</param>
-        void SelectWater(object sender, RoutedEventArgs args)
-        {
-            Flavor.IsEnabled = true;
-        }
+        //void SelectWater(object sender, RoutedEventArgs args)
+        //{
+        //    Flavor.IsEnabled = true;
+        //}
 
         /// <summary>
         /// This method will make lemon true if Yes is selected, and disabled if No is selected
@@ -97,5 +108,60 @@ namespace PointOfSale
         {
             
         }
-    }
+
+
+        private void OnSelectSodasaurus(object sender, RoutedEventArgs args)
+        {
+            Flavor.IsEnabled = true;
+            if (DataContext is Order order)
+            {
+                drink = new Sodasaurus();
+                if (SodaSmall.IsChecked ?? false) drink.Size = DDSize.Small;
+                if (SodaMedium.IsChecked ?? false) drink.Size = DDSize.Medium;
+                if (SodaLarge.IsChecked ?? false) drink.Size = DDSize.Large;
+                order.Add(drink);
+            }
+        }
+
+        private void OnSelectTyrannotea(object sender, RoutedEventArgs args)
+        {
+            Flavor.IsEnabled = true;
+            if (DataContext is Order order)
+            {
+                drink = new Tyrannotea();
+                if (TySmall.IsChecked ?? false) drink.Size = DDSize.Small;
+                if (TyMedium.IsChecked ?? false) drink.Size = DDSize.Medium;
+                if (TyLarge.IsChecked ?? false) drink.Size = DDSize.Large;
+                order.Add(drink);
+            }
+        }
+
+        private void OnSelectJurassicJava(object sender, RoutedEventArgs args)
+        {
+            Flavor.IsEnabled = true;
+            if (DataContext is Order order)
+            {
+                drink = new JurassicJava();
+                if (JavaSmall.IsChecked ?? false) drink.Size = DDSize.Small;
+                if (JavaMedium.IsChecked ?? false) drink.Size = DDSize.Medium;
+                if (JavaLarge.IsChecked ?? false) drink.Size = DDSize.Large;
+                order.Add(drink);
+            }
+        }
+
+        private void OnSelectWater(object sender, RoutedEventArgs args)
+        {
+            Flavor.IsEnabled = true;
+            if (DataContext is Order order)
+            {
+                drink = new Water();
+                if (WatSmall.IsChecked ?? false) drink.Size = DDSize.Small;
+                if (WatMedium.IsChecked ?? false) drink.Size = DDSize.Medium;
+                if (WatLarge.IsChecked ?? false) drink.Size = DDSize.Large;
+                order.Add(drink);
+            }
+        }
+
+
+    } // end of DrinkSelection class
 }

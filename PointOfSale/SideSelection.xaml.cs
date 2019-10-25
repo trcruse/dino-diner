@@ -28,10 +28,15 @@ namespace PointOfSale
         /// </summary>
         private Side side;
 
-
         public SideSelection()
         {
             InitializeComponent();
+        }
+
+        public SideSelection(Side side)
+        {
+            InitializeComponent();
+            this.side = side;
         }
 
         /// <summary>
@@ -42,12 +47,13 @@ namespace PointOfSale
         private void OnSelectFryceritops(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
-            {
+            { 
                 side = new Fryceritops();
-                if (FrySmall.IsChecked ?? false) side.Size = DinoDiner.Menu.Size.Small;
-                if (FryMed.IsChecked ?? false) side.Size = DinoDiner.Menu.Size.Medium;
-                if (FryLarge.IsChecked ?? false) side.Size = DinoDiner.Menu.Size.Large;
-                order.Items.Add(side);
+                if (FrySmall.IsChecked ?? false) side.Size = DDSize.Small;
+                if (FryMed.IsChecked ?? false) side.Size = DDSize.Medium;
+                if (FryLarge.IsChecked ?? false) side.Size = DDSize.Large;
+                order.Add(side);
+               
             }
         }
 
@@ -56,7 +62,10 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 side = new MeteorMacAndCheese();
-                order.Items.Add(side);
+                if (MetSmall.IsChecked ?? false) side.Size = DDSize.Small;
+                if (MetMedium.IsChecked ?? false) side.Size = DDSize.Medium;
+                if (MetLarge.IsChecked ?? false) side.Size = DDSize.Large;
+                order.Add(side);
             }
         }
 
@@ -65,7 +74,10 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 side = new MezzorellaSticks();
-                order.Items.Add(side);
+                if (MezSmall.IsChecked ?? false) side.Size = DDSize.Small;
+                if (MezMedium.IsChecked ?? false) side.Size = DDSize.Medium;
+                if (MezLarge.IsChecked ?? false) side.Size = DDSize.Large;
+                order.Add(side);
             }
         }
 
@@ -74,43 +86,61 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 side = new Triceritots();
-                order.Items.Add(side);
+                if (TriSmall.IsChecked ?? false) side.Size = DDSize.Small;
+                if (TriMedium.IsChecked ?? false) side.Size = DDSize.Medium;
+                if (TriLarge.IsChecked ?? false) side.Size = DDSize.Large;
+                order.Add(side);
             }
         }
 
-        /// <summary>
-        /// Event handler for all buttons 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        private void OnChangeSize(object sender, RoutedEventArgs args)
-        {
-
-            //using radio button
-            if (sender is FrameworkElement element)
-            {
-               side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
-                //side.Size = Size.Small;
-            }
-
-        }
 
         private void OnChangeFryceritopsSize(object sender, RoutedEventArgs args)
         {
-
-            //using radio button
-            if (sender is FrameworkElement element)
+            if (side is Fryceritops)
             {
-                if (side is Fryceritops)
+                if (sender is RadioButton element)
                 {
-                    side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
-
+                    side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Content.ToString());
                 }
-                //side.Size = Size.Small;
             }
-
         }
 
+
+        private void OnChangeMeteorMacCheeseSize(object sender, RoutedEventArgs args)
+        {
+            //using radio button
+            if (side is MeteorMacAndCheese)
+            {
+                if (sender is RadioButton element)
+                {
+                     side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Content.ToString());
+                }
+            }
+        }
+
+        private void OnChangeMezzorellaSticksSize(object sender, RoutedEventArgs args)
+        {
+            //using radio button
+            if (side is MezzorellaSticks)
+            {
+                if (sender is RadioButton element)
+                {
+                    side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Content.ToString());
+                }
+            }
+        }
+
+        private void OnChangeTriceritotsSize(object sender, RoutedEventArgs args)
+        {
+            //using radio button
+            if (side is Triceritots)
+            {
+                if (sender is RadioButton element)
+                {
+                    side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Content.ToString());
+                }
+            }
+        }
 
 
 

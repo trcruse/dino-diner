@@ -34,6 +34,8 @@ namespace PointOfSale
         {
             NavigationService.Navigate(new CustomizeCombo());
         }
+
+
         
     }
 }

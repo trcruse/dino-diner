@@ -39,57 +39,57 @@
 
 
             <StackPanel>
-                <Button VerticalContentAlignment="Top" Click="SelectSodasaurus">
+                <Button VerticalContentAlignment="Top"  Name="SelectSodasaurus" Click="OnSelectSodasaurus">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-14.png"></ImageBrush>
                     </Button.Background>
                 <TextBlock FontSize="14">Sodasaurus</TextBlock>
             </Button>
             <TextBlock Text="Sodasaurus Sizes:" FontSize="14" Margin="5" Height="19"/>
-                <RadioButton x:Name="SodaOne" Margin="5" GroupName="Sodasaurus Sizes" Content="Small"  Height="19"/>
-                <RadioButton x:Name="SodaTwo" Margin="5" GroupName="Sodasaurus Sizes" Content="Medium" Height="19"/>
-                <RadioButton x:Name="SodaThree" Margin="5" GroupName="Sodasaurus Sizes" Content="Large" Height="19"/>
+                <RadioButton x:Name="SodaSmall" Margin="5" GroupName="SodasaurusSizes" Content="Small"  Height="19"/>
+                <RadioButton x:Name="SodaMedium" Margin="5" GroupName="SodasaurusSizes" Content="Medium" Height="19"/>
+                <RadioButton x:Name="SodaLarge" Margin="5" GroupName="SodasaurusSizes" Content="Large" Height="19"/>
             </StackPanel>
 
             <StackPanel>
-                <Button VerticalContentAlignment="Top" Click="SelectTryannotea">
+                <Button VerticalContentAlignment="Top" Name="SelectTyrannotea" Click="OnSelectTyrannotea">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-13.png"></ImageBrush>
                     </Button.Background>
                 <TextBlock FontSize="14">Tryrannotea</TextBlock>
             </Button>
                 <TextBlock Text="Tyrannotea Sizes:" FontSize="14" Margin="5" Height="19"/>
-                <RadioButton x:Name="TeaOne" Margin="5" GroupName="Tyrannotea Sizes" Content="Small" Height="19"/>
-                <RadioButton x:Name="TeaTwo" Margin="5" GroupName="Tyrannotea Sizes" Content="Medium" Height="19"/>
-                <RadioButton x:Name="TeaThree" Margin="5" GroupName="Tyrannotea Sizes" Content="Large" Height="19"/>
+                <RadioButton x:Name="TySmall" Margin="5" GroupName="TyrannoteaSizes" Content="Small" Height="19"/>
+                <RadioButton x:Name="TyMedium" Margin="5" GroupName="TyrannoteaSizes" Content="Medium" Height="19"/>
+                <RadioButton x:Name="TyLarge" Margin="5" GroupName="TyrannoteaSizes" Content="Large" Height="19"/>
             </StackPanel>
 
 
             <StackPanel>
-                <Button VerticalContentAlignment="Top" Click="SelectJava">
+                <Button VerticalContentAlignment="Top" Name="SelectJurassicJava" Click="OnSelectJurassicJava">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-12.png"></ImageBrush>
                     </Button.Background>
                 <TextBlock FontSize="14">Jurassic Java</TextBlock>
             </Button>
                 <TextBlock Text="Jurassic Java Sizes:" FontSize="14" Margin="5" Height="19"/>
-                <RadioButton x:Name="JavaOne" Margin="5" GroupName="Jurassic Java Sizes" Content="Small" Height="19"/>
-                <RadioButton x:Name="JavaTwo" Margin="5" GroupName="Jurassic Java Sizes" Content="Medium" Height="19"/>
-                <RadioButton x:Name="JavaThree" Margin="5" GroupName="Jurassic Java Sizes" Content="Large" Height="19"/>
+                <RadioButton x:Name="JavaSmall" Margin="5" GroupName="JurassicJavaSizes" Content="Small" Height="19"/>
+                <RadioButton x:Name="JavaMedium" Margin="5" GroupName="JurassicJavaSizes" Content="Medium" Height="19"/>
+                <RadioButton x:Name="JavaLarge" Margin="5" GroupName="JurassicJavaSizes" Content="Large" Height="19"/>
             </StackPanel>
 
 
             <StackPanel>
-                <Button VerticalContentAlignment="Top" Click="SelectWater">
+                <Button VerticalContentAlignment="Top" Name="SelectWater" Click="OnSelectWater">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-15.png"></ImageBrush>
                     </Button.Background>
                 <TextBlock FontSize="14">Water</TextBlock>
             </Button>
                 <TextBlock Text="Water Sizes:" FontSize="14" Margin="5" Height="19"/>
-                <RadioButton x:Name="WaterOne" Margin="5" GroupName="Water Sizes" Content="Small" Height="19"/>
-                <RadioButton x:Name="WaterTwo" Margin="5" GroupName="Water Sizes" Content="Medium" Height="19"/>
-                <RadioButton x:Name="WaterThree" Margin="5" GroupName="Water Sizes" Content="Large" Height="19"/>
+                <RadioButton x:Name="WatSmall" Margin="5" GroupName="WaterSizes" Content="Small" Height="19"/>
+                <RadioButton x:Name="WatMedium" Margin="5" GroupName="WaterSizes" Content="Medium" Height="19"/>
+                <RadioButton x:Name="WatLarge" Margin="5" GroupName="WaterSizes" Content="Large" Height="19"/>
             </StackPanel>
 
 
