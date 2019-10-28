@@ -33,7 +33,7 @@
                             </Grid.ColumnDefinitions>
                         
                             <TextBlock Text="{Binding Path=Description}"/>
-                            <Button Click="RemoveItem" Background="Red" Foreground="White" Grid.Column="1">Remove</Button>
+                            <Button Click="RemoveItem" Background="Red" Foreground="White" Grid.Column="1">X</Button>
                          </Grid>
                         <ListBox ItemsSource="{Binding Path=Special}" BorderBrush="White"/>
                     </StackPanel>
@@ -43,7 +43,7 @@
         
         <TextBlock Text="Subtotal $" FontWeight="Bold" TextAlignment="Right" Grid.Row="2"/>
         <TextBlock Text="{Binding Path=SubtotalCost}" Grid.Row="2" FontWeight="Bold" Grid.Column="1"/>
-        <Button Grid.Row="3">Cancel</Button>
-        <Button Grid.Row="3" Grid.Column="1">Pay</Button>
+        <Button Click="OnCancel" Grid.Row="3">Cancel</Button>
+        <Button Click="OnPay" Grid.Row="3" Grid.Column="1">Pay</Button>
     </Grid>
 </UserControl>

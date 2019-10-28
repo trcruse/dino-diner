@@ -33,21 +33,21 @@
             <TextBox TextAlignment="Center" Background="WhiteSmoke" FontSize="23" Width="800" Height="50">Sodasaurus Flavor Selection</TextBox>
             
 
-            <Button VerticalContentAlignment="Top">
+            <Button Name="Cherry" Click="OnSelectCherryFlavor" VerticalContentAlignment="Top">
                 <Button.Background>
                     <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-16.jpg"></ImageBrush>
                 </Button.Background>
                 <TextBlock FontSize="15">Cherry</TextBlock>
             </Button>
 
-            <Button VerticalContentAlignment="Top">
+            <Button Name="Chocolate" Click="OnSelectChocolateFlavor" VerticalContentAlignment="Top">
                 <Button.Background>
                     <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-17.jpg"></ImageBrush>
                 </Button.Background>
                 <TextBlock FontSize="15">Chocolate</TextBlock>
             </Button>
 
-            <Button VerticalContentAlignment="Top">
+            <Button Name="Cola" Click="OnSelectColaFlavor" VerticalContentAlignment="Top">
                 <Button.Background>
                     <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-18.jpg"></ImageBrush>
                 </Button.Background>
@@ -55,14 +55,14 @@
             </Button>
 
 
-            <Button VerticalContentAlignment="Top">
+            <Button Name="Lime" Click="OnSelectLime" VerticalContentAlignment="Top">
                 <Button.Background>
                     <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-19.jpg"></ImageBrush>
                 </Button.Background>
                 <TextBlock FontSize="15">Lime</TextBlock>
             </Button>
 
-            <Button VerticalContentAlignment="Bottom">
+            <Button Name="Orange" Click="OnSelectOrangeFlavor" VerticalContentAlignment="Bottom">
                 <Button.Background>
                     <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-20.jpg"></ImageBrush>
                 </Button.Background>
@@ -70,19 +70,21 @@
             </Button>
 
 
-            <Button VerticalContentAlignment="Bottom">
+            <Button Name="RootBeer" Click="OnSelectRootBeerFlavor" VerticalContentAlignment="Bottom">
                 <Button.Background>
                     <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-21.png"></ImageBrush>
                 </Button.Background>
                 <TextBlock FontSize="15">Root Beer</TextBlock>
             </Button>
 
-            <Button VerticalContentAlignment="Bottom">
+            <Button Name="Vanilla" Click="OnSelectVanillaFlavor" VerticalContentAlignment="Bottom">
                 <Button.Background>
                     <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-22.jpg"></ImageBrush>
                 </Button.Background>
                 <TextBlock FontSize="15">Vanilla</TextBlock>
             </Button>
+
+            <Button Click="OnReturnToDrinkSelection" FontSize="15" MinWidth="800" MinHeight="30" Background="MistyRose">Done</Button>
 
         </WrapPanel>
     </Grid>

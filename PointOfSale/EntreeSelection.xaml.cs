@@ -21,10 +21,7 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
-       
-
         private Entree entree;
-
         
         public EntreeSelection(Entree entree)
         {
@@ -36,6 +33,18 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        private void OnAddPrehistoricPBJ(object sender, RoutedEventArgs args)
+        {
+            if(DataContext is Order order)
+            {
+                PrehistoricPBJ pbj = new PrehistoricPBJ();
+                order.Add(pbj);
+                NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
+            }
+        }
+
+
 
 
     }

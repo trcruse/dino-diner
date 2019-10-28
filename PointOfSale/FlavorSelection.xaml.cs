@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
+using DDFlavor = DinoDiner.Menu.SodasaurusFlavor;
 
 namespace PointOfSale
 {
@@ -20,9 +22,56 @@ namespace PointOfSale
     /// </summary>
     public partial class FlavorSelection : Page
     {
-        public FlavorSelection()
+
+        private Sodasaurus soda;
+
+        public FlavorSelection(Sodasaurus soda)
         {
             InitializeComponent();
+            this.soda = soda;
         }
+
+        /// <summary>
+        /// Clicking on of the flavor buttons applies the flavor to the current drink
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectCherryFlavor(object sender, RoutedEventArgs args)
+        {
+            soda.Flavor = SodasaurusFlavor.Cherry;
+            NavigationService.Navigate(new DrinkSelection());
+        }
+
+        private void OnSelectChocolateFlavor(object sender, RoutedEventArgs args)
+        {
+            soda.Flavor = SodasaurusFlavor.Chocolate;
+            NavigationService.Navigate(new DrinkSelection());
+        }
+
+        private void OnSelectColaFlavor(object sender, RoutedEventArgs args)
+        {
+            soda.Flavor = SodasaurusFlavor.Cola;
+            NavigationService.Navigate(new DrinkSelection());
+        }
+
+        private void OnSelectOrangeFlavor(object sender, RoutedEventArgs args)
+        {
+            soda.Flavor = SodasaurusFlavor.Orange;
+            NavigationService.Navigate(new DrinkSelection());
+        }
+
+        private void OnSelectVanillaFlavor(object sender, RoutedEventArgs args)
+        {
+            soda.Flavor = SodasaurusFlavor.Vanilla;
+            NavigationService.Navigate(new DrinkSelection());
+        }
+
+        private void OnSelectRootBeerFlavor(object sender, RoutedEventArgs args)
+        {
+            soda.Flavor = SodasaurusFlavor.RootBeer;
+            NavigationService.Navigate(new DrinkSelection());
+        }
+
+
     }
 }

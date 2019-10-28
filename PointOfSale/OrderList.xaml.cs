@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DinoDiner.Menu;
+using DDFlavor = DinoDiner.Menu.SodasaurusFlavor;
 
 namespace PointOfSale
 {
@@ -64,6 +65,20 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Should Remove add item from the Order list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnCancel(object sender, RoutedEventArgs args)
+        {
+           
+        }
+
+        private void OnPay(object sender, RoutedEventArgs args)
+        {
+
+        }
 
 
 

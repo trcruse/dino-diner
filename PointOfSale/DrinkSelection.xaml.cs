@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DinoDiner.Menu;
 using DDSize = DinoDiner.Menu.Size;
+using DDFlavor = DinoDiner.Menu.SodasaurusFlavor;
 
 namespace PointOfSale
 {
@@ -41,9 +42,14 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">Control button the action is for</param>
         /// <param name="args">Data needed to pass to the event handlers</param>
-        void SelectFlavor(object sender, RoutedEventArgs args)
+        private void SelectFlavor(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new FlavorSelection());
+            if (DataContext is Order order)
+            {
+                SodasaurusFlavor flavor = new SodasaurusFlavor();
+                order.Add(flavor);
+                NavigationService.Navigate(new FlavorSelection(flavor));
+            }
         }
 
         /// <summary>
@@ -112,7 +118,10 @@ namespace PointOfSale
 
         private void OnSelectSodasaurus(object sender, RoutedEventArgs args)
         {
-            Flavor.IsEnabled = true;
+            if (drink is Sodasaurus)
+            {
+                Flavor.IsEnabled = true;
+            }
             if (DataContext is Order order)
             {
                 drink = new Sodasaurus();
@@ -159,6 +168,50 @@ namespace PointOfSale
                 if (WatMedium.IsChecked ?? false) drink.Size = DDSize.Medium;
                 if (WatLarge.IsChecked ?? false) drink.Size = DDSize.Large;
                 order.Add(drink);
+            }
+        }
+
+        private void OnChangeSodasaurusSize(object sender, RoutedEventArgs args)
+        {
+            if (drink is Sodasaurus)
+            {
+                if (sender is RadioButton element)
+                {
+                    drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Content.ToString());
+                }
+            }
+        }
+
+        private void OnChangeTyrannoteaSize(object sender, RoutedEventArgs args)
+        {
+            if (drink is Tyrannotea)
+            {
+                if (sender is RadioButton element)
+                {
+                    drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Content.ToString());
+                }
+            }
+        }
+
+        private void OnChangeJurassicJavaSize(object sender, RoutedEventArgs args)
+        {
+            if (drink is JurassicJava)
+            {
+                if (sender is RadioButton element)
+                {
+                    drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Content.ToString());
+                }
+            }
+        }
+
+        private void OnChangeWaterSize(object sender, RoutedEventArgs args)
+        {
+            if (drink is Water)
+            {
+                if (sender is RadioButton element)
+                {
+                    drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Content.ToString());
+                }
             }
         }
 

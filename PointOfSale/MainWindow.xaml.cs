@@ -54,8 +54,14 @@ namespace PointOfSale
         private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
         {
             PassDataContentToPage();
+          
         }
 
-       
+        public void OnReturnToCategorySelection(object sender, RoutedEventArgs args)
+        {
+            OrderUI.NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        
     }
 }

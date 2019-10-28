@@ -46,9 +46,9 @@
                 <TextBlock FontSize="14">Sodasaurus</TextBlock>
             </Button>
             <TextBlock Text="Sodasaurus Sizes:" FontSize="14" Margin="5" Height="19"/>
-                <RadioButton x:Name="SodaSmall" Margin="5" GroupName="SodasaurusSizes" Content="Small"  Height="19"/>
-                <RadioButton x:Name="SodaMedium" Margin="5" GroupName="SodasaurusSizes" Content="Medium" Height="19"/>
-                <RadioButton x:Name="SodaLarge" Margin="5" GroupName="SodasaurusSizes" Content="Large" Height="19"/>
+                <RadioButton Click="OnChangeSodasaurusSize" x:Name="SodaSmall" Margin="5" GroupName="SodasaurusSizes" Content="Small"  Height="19"/>
+                <RadioButton Click="OnChangeSodasaurusSize" x:Name="SodaMedium" Margin="5" GroupName="SodasaurusSizes" Content="Medium" Height="19"/>
+                <RadioButton Click="OnChangeSodasaurusSize" x:Name="SodaLarge" Margin="5" GroupName="SodasaurusSizes" Content="Large" Height="19"/>
             </StackPanel>
 
             <StackPanel>
@@ -59,9 +59,9 @@
                 <TextBlock FontSize="14">Tryrannotea</TextBlock>
             </Button>
                 <TextBlock Text="Tyrannotea Sizes:" FontSize="14" Margin="5" Height="19"/>
-                <RadioButton x:Name="TySmall" Margin="5" GroupName="TyrannoteaSizes" Content="Small" Height="19"/>
-                <RadioButton x:Name="TyMedium" Margin="5" GroupName="TyrannoteaSizes" Content="Medium" Height="19"/>
-                <RadioButton x:Name="TyLarge" Margin="5" GroupName="TyrannoteaSizes" Content="Large" Height="19"/>
+                <RadioButton Click="OnChangeTyrannoteaSize" x:Name="TySmall" Margin="5" GroupName="TyrannoteaSizes" Content="Small" Height="19"/>
+                <RadioButton Click="OnChangeTyrannoteaSize" x:Name="TyMedium" Margin="5" GroupName="TyrannoteaSizes" Content="Medium" Height="19"/>
+                <RadioButton Click="OnChangeTyrannoteaSize" x:Name="TyLarge" Margin="5" GroupName="TyrannoteaSizes" Content="Large" Height="19"/>
             </StackPanel>
 
 
@@ -73,9 +73,9 @@
                 <TextBlock FontSize="14">Jurassic Java</TextBlock>
             </Button>
                 <TextBlock Text="Jurassic Java Sizes:" FontSize="14" Margin="5" Height="19"/>
-                <RadioButton x:Name="JavaSmall" Margin="5" GroupName="JurassicJavaSizes" Content="Small" Height="19"/>
-                <RadioButton x:Name="JavaMedium" Margin="5" GroupName="JurassicJavaSizes" Content="Medium" Height="19"/>
-                <RadioButton x:Name="JavaLarge" Margin="5" GroupName="JurassicJavaSizes" Content="Large" Height="19"/>
+                <RadioButton Click="OnChangeJurassicJavaSize" x:Name="JavaSmall" Margin="5" GroupName="JurassicJavaSizes" Content="Small" Height="19"/>
+                <RadioButton Click="OnChangeJurassicJavaSize" x:Name="JavaMedium" Margin="5" GroupName="JurassicJavaSizes" Content="Medium" Height="19"/>
+                <RadioButton Click="OnChangeJurassicJavaSize" x:Name="JavaLarge" Margin="5" GroupName="JurassicJavaSizes" Content="Large" Height="19"/>
             </StackPanel>
 
 
@@ -87,9 +87,9 @@
                 <TextBlock FontSize="14">Water</TextBlock>
             </Button>
                 <TextBlock Text="Water Sizes:" FontSize="14" Margin="5" Height="19"/>
-                <RadioButton x:Name="WatSmall" Margin="5" GroupName="WaterSizes" Content="Small" Height="19"/>
-                <RadioButton x:Name="WatMedium" Margin="5" GroupName="WaterSizes" Content="Medium" Height="19"/>
-                <RadioButton x:Name="WatLarge" Margin="5" GroupName="WaterSizes" Content="Large" Height="19"/>
+                <RadioButton Click="OnChangeWaterSize" x:Name="WatSmall" Margin="5" GroupName="WaterSizes" Content="Small" Height="19"/>
+                <RadioButton Click="OnChangeWaterSize" x:Name="WatMedium" Margin="5" GroupName="WaterSizes" Content="Medium" Height="19"/>
+                <RadioButton Click="OnChangeWaterSize" x:Name="WatLarge" Margin="5" GroupName="WaterSizes" Content="Large" Height="19"/>
             </StackPanel>
 
 

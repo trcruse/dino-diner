@@ -6,10 +6,15 @@
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    
     <DockPanel>
-        <local:OrderList  DockPanel.Dock="Right" x:Name="OrderControl" MinWidth="200" Width="200">
+        
+        <local:OrderList DockPanel.Dock="Right" x:Name="OrderControl" MinWidth="200" Width="200">
             
         </local:OrderList>
+            
+        
+        <Button Height="30" DockPanel.Dock="Bottom" Grid.Column="1" Click="OnReturnToCategorySelection">Return to Category Selection</Button>
         <Frame Name="OrderUI" Source="MenuCategorySelection.xaml" LoadCompleted="OnLoadCompleted" DataContextChanged="OnDataContextChanged" />
     </DockPanel>
 </Window>

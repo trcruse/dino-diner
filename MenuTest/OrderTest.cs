@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
 using Xunit;
-
+using System.ComponentModel;
 
 namespace MenuTest
 {
@@ -12,11 +12,16 @@ namespace MenuTest
     {
         public class MockedItem : IOrderItem
         {
+
+
             public string[] Special { get; set; }
 
             public string Description {get;set;}
 
             private double price;
+
+            public event PropertyChangedEventHandler PropertyChanged;
+
             public double Price
             {
                 get
@@ -33,6 +38,9 @@ namespace MenuTest
 
             public string Description { get; set; }
             private double price;
+
+            public event PropertyChangedEventHandler PropertyChanged;
+
             public double Price
             {
                 get
@@ -46,7 +54,7 @@ namespace MenuTest
         public void ShouldHaveCorrectDefaultPrice()
         {
             Order or = new Order();
-            or.Items.Add(new MockedItem());
+            or.Add(new MockedItem());
          
             Assert.Equal<double>(1.58, or.SubtotalCost);
         }
@@ -56,12 +64,11 @@ namespace MenuTest
         {
             Order or = new Order();
 
-            or.Items.Add(new MockedItem());
-            or.Items.Add(new MockedItem2());
+            or.Add(new MockedItem());
+            or.Add(new MockedItem2());
             Assert.Equal<double>(0, or.SubtotalCost);
         }
 
-
-
+        
     }
 }
