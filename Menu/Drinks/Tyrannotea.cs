@@ -18,10 +18,22 @@ namespace DinoDiner.Menu
         public bool Lemon { get; set; } = false;
 
 
+        private bool sweet;
         /// <summary>
         /// boolean Sweet property set default to false
         /// </summary>
-        public bool Sweet { get; set; } = false;
+        public bool Sweet
+        {
+            get
+            {
+                return sweet;
+            }
+            set
+            {
+                sweet = value;
+                NotifyOfPropertyChanged("Description");
+            }
+        }
 
         
 

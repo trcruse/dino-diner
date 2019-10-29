@@ -34,18 +34,111 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        private void OnAddPrehistoricPBJ(object sender, RoutedEventArgs args)
+
+        /// <summary>
+        /// Adds the entree to the order, selects the just added entree in the OrderControl, and returns to the MenuCategorySelection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectBrontowurst(object sender, RoutedEventArgs args)
         {
-            if(DataContext is Order order)
+           if (DataContext is Order order)
             {
-                PrehistoricPBJ pbj = new PrehistoricPBJ();
-                order.Add(pbj);
-                NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
+                Brontowurst bronto = new Brontowurst();
+                order.Add(bronto);
+                NavigationService.Navigate(new MenuCategorySelection());
             }
         }
 
+        /// <summary>
+        /// Adds the entree to the order, selects the just added entree in the OrderControl, and returns to the MenuCategorySelection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectDinoNuggets(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                DinoNuggets nug = new DinoNuggets();
+                order.Add(nug);
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
+        }
 
+        /// <summary>
+        /// Adds the entree to the order, selects the just added entree in the OrderControl, and returns to the MenuCategorySelection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectPrehistoricPBJ(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                PrehistoricPBJ pbj = new PrehistoricPBJ();
+                order.Add(pbj);
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
+        }
 
+        /// <summary>
+        /// Adds the entree to the order, selects the just added entree in the OrderControl, and returns to the MenuCategorySelection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectPterodactylWings(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                PterodactylWings pw = new PterodactylWings();
+                order.Add(pw);
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
+        }
 
-    }
+        /// <summary>
+        /// Adds the entree to the order, selects the just added entree in the OrderControl, and returns to the MenuCategorySelection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectSteakosaurusBurger(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                SteakosaurusBurger sb = new SteakosaurusBurger();
+                order.Add(sb);
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
+        }
+
+        /// <summary>
+        /// Adds the entree to the order, selects the just added entree in the OrderControl, and returns to the MenuCategorySelection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectTRexKing(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                TRexKingBurger tr = new TRexKingBurger();
+                order.Add(tr);
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
+        }
+
+        /// <summary>
+        /// Adds the entree to the order, selects the just added entree in the OrderControl, and returns to the MenuCategorySelection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectVelociWrap(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                VelociWrap vw = new VelociWrap();
+                order.Add(vw);
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
+        }
+
+    } // end of Entree selection xaml.cs
 }

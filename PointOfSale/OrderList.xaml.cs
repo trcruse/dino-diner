@@ -48,7 +48,11 @@ namespace PointOfSale
             }
         }
 
-
+        /// <summary>
+        /// Selection change for side selection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             if(OrderItems.SelectedItem is Side side)

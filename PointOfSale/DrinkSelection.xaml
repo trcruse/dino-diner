@@ -33,8 +33,9 @@
             <TextBox TextAlignment="Center" Background="WhiteSmoke" FontSize="23" Width="800" Height="50">Drink Selection</TextBox>
             
              <Button Name="Flavor" Click="SelectFlavor" Background="MistyRose" FontSize="19" MinWidth="800" MinHeight="30">Flavor</Button>
-            <Button Name="Sweet" FontSize="19"  Background="MistyRose" MinWidth="800" MinHeight="30">Sweet</Button>
-            <Button Name="Decaf" FontSize="19" Background="MistyRose" MinWidth="800" MinHeight="30">Decaf</Button>
+            <Button Name="Sweet" Click="OnSelectSweet" FontSize="19"  Background="MistyRose" MinWidth="800" MinHeight="30">Sweet</Button>
+            <Button Name="Decaf" Click="OnSelectDecaf" FontSize="19" Background="MistyRose" MinWidth="800" MinHeight="30">Decaf</Button>
+            <Button Name="Done" Click="OnSelectDone" FontSize="19" Background="MistyRose" MinWidth="800" MinHeight="30">Done</Button>
            
 
 
@@ -92,7 +93,6 @@
                 <RadioButton Click="OnChangeWaterSize" x:Name="WatLarge" Margin="5" GroupName="WaterSizes" Content="Large" Height="19"/>
             </StackPanel>
 
-
             <StackPanel>
                 <Button VerticalContentAlignment="Top" Click="SelectLemon">
                     <Button.Background>
@@ -100,10 +100,7 @@
                     </Button.Background>
                     <TextBlock FontSize="14">Lemon</TextBlock>
                 </Button>
-                <TextBlock Text="Add Lemon?:" FontSize="14" Margin="5" Height="19"/>
-                <RadioButton x:Name="YesLemon" Margin="5" GroupName="Lemon" Content="Yes"  Height="19"/>
-                <RadioButton x:Name="NoLemon" Margin="5" GroupName="Lemon" Content="No" Height="19"/>
-            </StackPanel>
+           </StackPanel>
 
 
             <StackPanel>
@@ -113,9 +110,6 @@
                     </Button.Background>
                     <TextBlock FontSize="14">Ice</TextBlock>
                 </Button>
-                <TextBlock Text="Hold Ice?:" FontSize="14" Margin="5" Height="19"/>
-                <RadioButton x:Name="YesIce" Margin="5" GroupName="Ice" Content="Yes"  Height="19"/>
-                <RadioButton x:Name="NoIce" Margin="5" GroupName="Ice" Content="No" Height="19"/>
             </StackPanel>
 
 

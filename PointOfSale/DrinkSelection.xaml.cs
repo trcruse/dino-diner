@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DinoDiner.Menu;
 using DDSize = DinoDiner.Menu.Size;
-using DDFlavor = DinoDiner.Menu.SodasaurusFlavor;
+using DDDrink = DinoDiner.Menu.Drink;
 
 namespace PointOfSale
 {
@@ -38,62 +38,30 @@ namespace PointOfSale
         }
 
         /// <summary>
+        /// Add a Done button that will return the Frame to the MenuCategorySelection screen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectDone(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        /// <summary>
         /// Allows XAML to click into the Flavors Selection page from the Flavor button
         /// </summary>
         /// <param name="sender">Control button the action is for</param>
         /// <param name="args">Data needed to pass to the event handlers</param>
         private void SelectFlavor(object sender, RoutedEventArgs args)
         {
-            if (DataContext is Order order)
+            if(DataContext is Order order)
             {
-                SodasaurusFlavor flavor = new SodasaurusFlavor();
-                order.Add(flavor);
-                NavigationService.Navigate(new FlavorSelection(flavor));
-            }
+                Sodasaurus soda = new Sodasaurus();
+                order.Add(soda);
+                NavigationService.Navigate(new FlavorSelection(soda));
+            }     
         }
 
-        /// <summary>
-        /// Allows XAML to click into the Flavor Selection page from the Soda button, enabling it to be true
-        /// </summary>
-        /// <param name="sender">Control button the action is for</param>
-        /// <param name="args">Data needed to pass to the event handlers</param>
-        //void SelectSodasaurus(object sender, RoutedEventArgs args)
-        //{
-        //    Flavor.IsEnabled = true;
-        //}
-
-        /// <summary>
-        /// Allows XAML to click into the Flavor Selection page from the Tyrannotea button, 
-        /// enabling the selectedflavor to be true
-        /// </summary>
-        /// <param name="sender">Control button the action is for</param>
-        /// <param name="args">Data needed to pass to the event handlers</param>
-        //void SelectTryannotea(object sender, RoutedEventArgs args)
-        //{
-        //    Flavor.IsEnabled = true;
-        //}
-
-        /// <summary>
-        /// Allows XAML to click into the Flavor Selection page from the Jurassic Java button, 
-        /// enabling the selected flavor to be true
-        /// </summary>
-        /// <param name="sender">Control button the action is for</param>
-        /// <param name="args">Data needed to pass to the event handlers</param>
-        //void SelectJava(object sender, RoutedEventArgs args)
-        //{
-        //    Flavor.IsEnabled = true;
-        //}
-
-        /// <summary>
-        /// Allows XAML to click into the Flavor Selection page from the Water button, 
-        /// enabling the selected flavor to be true
-        /// </summary>
-        /// <param name="sender">Control button the action is for</param>
-        /// <param name="args">Data needed to pass to the event handlers</param>
-        //void SelectWater(object sender, RoutedEventArgs args)
-        //{
-        //    Flavor.IsEnabled = true;
-        //}
 
         /// <summary>
         /// This method will make lemon true if Yes is selected, and disabled if No is selected
@@ -102,26 +70,76 @@ namespace PointOfSale
         /// <param name="args">Data needed to pass to the event handlers</param>
         void SelectLemon(object sender, RoutedEventArgs args)
         {
-            
+            if (drink is Water w)
+            {
+                w.AddLemon();
+
+            }
+            else if (drink is Tyrannotea tea)
+            {
+                tea.AddLemon();
+            }
         }
 
         /// <summary>
-        /// This method will make lemon true if Yes is selected, and disabled if No is selected
+        /// This method will make Ice true if Yes is selected, and disabled if No is selected
         /// </summary>
         /// <param name="sender">Control button the action is for</param>
         /// <param name="args">Data needed to pass to the event handlers</param>
-        void SelectIce(object sender, RoutedEventArgs args)
+        private void SelectIce(object sender, RoutedEventArgs args)
         {
-            
+            if (drink is Tyrannotea tea)
+            {
+               tea.HoldIce();
+            }
+            else if (drink is Water w)
+            {
+               w.HoldIce();
+            }
+            else if (drink is Sodasaurus soda)
+            {
+                soda.HoldIce();
+            }
+            else if (drink is JurassicJava java)
+            {
+               java.AddIce();
+            }
         }
 
+        /// <summary>
+        /// Adds sweet to Tyrannotea
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectSweet(object sender, RoutedEventArgs args)
+        {
+            if (drink is Tyrannotea tea)
+            {
+                tea.Sweet = true;
+            }
+        }
 
+        /// <summary>
+        /// Adds decaf to Jurassic java
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectDecaf(object sender, RoutedEventArgs args)
+        {
+            if (drink is JurassicJava java)
+            {
+                java.Decaf = true;
+            }
+        }
+
+        /// <summary>
+        /// clicking a drink button adds the drink to the order, and clicking a size button sets its size
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectSodasaurus(object sender, RoutedEventArgs args)
         {
-            if (drink is Sodasaurus)
-            {
-                Flavor.IsEnabled = true;
-            }
+            Flavor.IsEnabled = true;
             if (DataContext is Order order)
             {
                 drink = new Sodasaurus();
@@ -132,6 +150,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// clicking a drink button adds the drink to the order, and clicking a size button sets its size
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectTyrannotea(object sender, RoutedEventArgs args)
         {
             Flavor.IsEnabled = true;
@@ -145,6 +168,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// clicking a drink button adds the drink to the order, and clicking a size button sets its size
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectJurassicJava(object sender, RoutedEventArgs args)
         {
             Flavor.IsEnabled = true;
@@ -158,6 +186,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// clicking a drink button adds the drink to the order, and clicking a size button sets its size
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectWater(object sender, RoutedEventArgs args)
         {
             Flavor.IsEnabled = true;
@@ -170,7 +203,11 @@ namespace PointOfSale
                 order.Add(drink);
             }
         }
-
+        /// <summary>
+        /// clicking a drink button adds the drink to the order, and clicking a size button sets its size
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnChangeSodasaurusSize(object sender, RoutedEventArgs args)
         {
             if (drink is Sodasaurus)
@@ -178,10 +215,15 @@ namespace PointOfSale
                 if (sender is RadioButton element)
                 {
                     drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Content.ToString());
+                    NavigationService.Navigate(new MenuCategorySelection());
                 }
             }
         }
-
+        /// <summary>
+        /// clicking a drink button adds the drink to the order, and clicking a size button sets its size
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnChangeTyrannoteaSize(object sender, RoutedEventArgs args)
         {
             if (drink is Tyrannotea)
@@ -189,10 +231,16 @@ namespace PointOfSale
                 if (sender is RadioButton element)
                 {
                     drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Content.ToString());
+                    NavigationService.Navigate(new MenuCategorySelection());
                 }
             }
         }
 
+        /// <summary>
+        /// clicking a drink button adds the drink to the order, and clicking a size button sets its size
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnChangeJurassicJavaSize(object sender, RoutedEventArgs args)
         {
             if (drink is JurassicJava)
@@ -200,10 +248,16 @@ namespace PointOfSale
                 if (sender is RadioButton element)
                 {
                     drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Content.ToString());
+                    NavigationService.Navigate(new MenuCategorySelection());
                 }
             }
         }
 
+        /// <summary>
+        /// clicking a drink button adds the drink to the order, and clicking a size button sets its size
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnChangeWaterSize(object sender, RoutedEventArgs args)
         {
             if (drink is Water)
@@ -211,6 +265,7 @@ namespace PointOfSale
                 if (sender is RadioButton element)
                 {
                     drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Content.ToString());
+                    NavigationService.Navigate(new MenuCategorySelection());
                 }
             }
         }

@@ -32,7 +32,8 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Clicking on of the flavor buttons applies the flavor to the current drink
+        /// Clicking on of the flavor buttons applies the flavor to the current drink 
+        /// and returns to the drink selection page
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -42,30 +43,72 @@ namespace PointOfSale
             NavigationService.Navigate(new DrinkSelection());
         }
 
+        /// <summary>
+        /// Clicking on of the flavor buttons applies the flavor to the current drink 
+        /// and returns to the drink selection page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSelectLimeFlavor(object sender, RoutedEventArgs args)
+        {
+            soda.Flavor = SodasaurusFlavor.Cherry;
+            NavigationService.Navigate(new DrinkSelection());
+        }
+
+        /// <summary>
+        /// Clicking on of the flavor buttons applies the flavor to the current drink 
+        /// and returns to the drink selection page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectChocolateFlavor(object sender, RoutedEventArgs args)
         {
             soda.Flavor = SodasaurusFlavor.Chocolate;
             NavigationService.Navigate(new DrinkSelection());
         }
 
+        /// <summary>
+        /// Clicking on of the flavor buttons applies the flavor to the current drink 
+        /// and returns to the drink selection page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectColaFlavor(object sender, RoutedEventArgs args)
         {
             soda.Flavor = SodasaurusFlavor.Cola;
             NavigationService.Navigate(new DrinkSelection());
         }
 
+        /// <summary>
+        /// Clicking on of the flavor buttons applies the flavor to the current drink 
+        /// and returns to the drink selection page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectOrangeFlavor(object sender, RoutedEventArgs args)
         {
             soda.Flavor = SodasaurusFlavor.Orange;
             NavigationService.Navigate(new DrinkSelection());
         }
 
+        /// <summary>
+        /// Clicking on of the flavor buttons applies the flavor to the current drink 
+        /// and returns to the drink selection page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectVanillaFlavor(object sender, RoutedEventArgs args)
         {
             soda.Flavor = SodasaurusFlavor.Vanilla;
             NavigationService.Navigate(new DrinkSelection());
         }
 
+        /// <summary>
+        /// Clicking on of the flavor buttons applies the flavor to the current drink 
+        /// and returns to the drink selection page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectRootBeerFlavor(object sender, RoutedEventArgs args)
         {
             soda.Flavor = SodasaurusFlavor.RootBeer;
@@ -73,5 +116,5 @@ namespace PointOfSale
         }
 
 
-    }
+    } //  end of flavorselection xaml.cs
 }

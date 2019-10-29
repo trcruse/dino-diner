@@ -40,23 +40,27 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Event handler that Adds new items to Fryceritops
+        /// Event handler that adds the side to the order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
         private void OnSelectFryceritops(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
-            { 
+            {
                 side = new Fryceritops();
                 if (FrySmall.IsChecked ?? false) side.Size = DDSize.Small;
                 if (FryMed.IsChecked ?? false) side.Size = DDSize.Medium;
                 if (FryLarge.IsChecked ?? false) side.Size = DDSize.Large;
                 order.Add(side);
-               
             }
         }
 
+        /// <summary>
+        /// Event handler that adds the side to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectMeteorMacCheese(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -69,6 +73,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Event handler that adds the side to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectMezzorella(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -81,6 +90,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Event handler that adds the side to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectTriceritots(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -93,7 +107,11 @@ namespace PointOfSale
             }
         }
 
-
+        /// <summary>
+        /// Clicking size button sets size of the side and returns to the MenuCategorySelection screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnChangeFryceritopsSize(object sender, RoutedEventArgs args)
         {
             if (side is Fryceritops)
@@ -101,51 +119,62 @@ namespace PointOfSale
                 if (sender is RadioButton element)
                 {
                     side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Content.ToString());
+                    NavigationService.Navigate(new MenuCategorySelection());
                 }
             }
         }
 
 
+        /// <summary>
+        /// Clicking size button sets size of the side and returns to the MenuCategorySelection screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnChangeMeteorMacCheeseSize(object sender, RoutedEventArgs args)
         {
-            //using radio button
             if (side is MeteorMacAndCheese)
             {
                 if (sender is RadioButton element)
                 {
-                     side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Content.ToString());
+                    side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Content.ToString());
+                    NavigationService.Navigate(new MenuCategorySelection());
                 }
             }
         }
 
+        /// <summary>
+        /// Clicking size button sets size of the side and returns to the MenuCategorySelection screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnChangeMezzorellaSticksSize(object sender, RoutedEventArgs args)
         {
-            //using radio button
             if (side is MezzorellaSticks)
             {
                 if (sender is RadioButton element)
                 {
                     side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Content.ToString());
+                    NavigationService.Navigate(new MenuCategorySelection());
                 }
             }
         }
 
+        /// <summary>
+        /// Clicking size button sets size of the side and returns to the MenuCategorySelection screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnChangeTriceritotsSize(object sender, RoutedEventArgs args)
         {
-            //using radio button
             if (side is Triceritots)
             {
                 if (sender is RadioButton element)
                 {
                     side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Content.ToString());
+                    NavigationService.Navigate(new MenuCategorySelection());
                 }
             }
         }
 
-
-
-
-
-
-    }
+    }// end of SideSelection xaml.cs
 }

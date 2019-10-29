@@ -105,7 +105,7 @@ namespace DinoDiner.Menu
         /// Notifys property change in Ingredients and Special per each food implementation in
         /// each class requirements
         /// </summary>
-        public void HoldIce()
+            public void HoldIce()
             {
                 this.Ice = false;
                 NotifyOfPropertyChanged("Ingredients");

@@ -32,7 +32,7 @@
            
             
             <StackPanel>
-                <Button VerticalContentAlignment="Top" Name="SelectFryeritops" Click="OnSelectFryceritops">
+                <Button VerticalContentAlignment="Top"  Click="OnSelectFryceritops">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/DinoDiner-08.png"></ImageBrush>
                     </Button.Background>

@@ -32,36 +32,36 @@
             <TextBox TextAlignment="Center" Background="WhiteSmoke" FontSize="23" Width="800" Height="50">Entree Selection</TextBox>
             
 
-            <Button VerticalContentAlignment="Top">
+            <Button Name="SelectBrontowurst" Click="OnSelectBrontowurst" VerticalContentAlignment="Top">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/DinoDiner-01.png"></ImageBrush>
                 </Button.Background>
                 <TextBlock FontSize="15">Brontowurst</TextBlock>
             </Button>
 
-            <Button VerticalContentAlignment="Top">
+            <Button Click="OnSelectDinoNuggets" VerticalContentAlignment="Top">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/DinoDiner-02.png"></ImageBrush>
                 </Button.Background>
                 <TextBlock FontSize="15">Dino-Nuggets</TextBlock>
             </Button>
 
-            <Button VerticalContentAlignment="Top">
+            <Button Click="OnSelectSteakosaurusBurger" VerticalContentAlignment="Top">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/DinoDiner-05.png"></ImageBrush>
                 </Button.Background>
-                <TextBlock FontSize="15">Steakosarus Burger</TextBlock>
+                <TextBlock FontSize="15">Steakosaurus Burger</TextBlock>
             </Button>
 
 
-            <Button VerticalContentAlignment="Top">
+            <Button Click="OnSelectTRexKing" VerticalContentAlignment="Top">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/DinoDiner-06.png"></ImageBrush>
                 </Button.Background>
                 <TextBlock FontSize="15">T-Rex King Burger</TextBlock>
             </Button>
 
-            <Button VerticalContentAlignment="Bottom">
+            <Button Click="OnSelectPrehistoricPBJ" VerticalContentAlignment="Bottom">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/DinoDiner-03.png"></ImageBrush>
                 </Button.Background>
@@ -69,14 +69,14 @@
             </Button>
 
 
-            <Button VerticalContentAlignment="Bottom">
+            <Button Click="OnSelectPterodactylWings" VerticalContentAlignment="Bottom">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/DinoDiner-04.png"></ImageBrush>
                 </Button.Background>
                 <TextBlock FontSize="15">Pterodactyl Wings</TextBlock>
             </Button>
 
-            <Button VerticalContentAlignment="Bottom">
+            <Button Click="OnSelectVelociWrap" VerticalContentAlignment="Bottom">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/DinoDiner-07.png"></ImageBrush>
                 </Button.Background>
