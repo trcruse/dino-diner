@@ -18,6 +18,9 @@ namespace DinoDiner.Menu
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// private backing variable to hold IOrderItem collection
+        /// </summary>
         private List<IOrderItem> items;
 
         public IOrderItem[] Items
@@ -100,6 +103,10 @@ namespace DinoDiner.Menu
             items = new List<IOrderItem>();
         }
 
+        /// <summary>
+        /// adds a new order item
+        /// </summary>
+        /// <param name="item"></param>
         public void Add(IOrderItem item)
         {
             item.PropertyChanged += OnCollectionChanged;
@@ -107,6 +114,10 @@ namespace DinoDiner.Menu
             OnCollectionChanged(this, new EventArgs());
         }
 
+        /// <summary>
+        /// removes an order item
+        /// </summary>
+        /// <param name="item"></param>
         public void Remove(IOrderItem item)
         {
             item.PropertyChanged += OnCollectionChanged;

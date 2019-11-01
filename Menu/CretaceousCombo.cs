@@ -42,7 +42,25 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets and sets the side
         /// </summary>
-        public Side Side { get; set; } = new Fryceritops();
+        
+
+        private Side side;
+
+        public Side Side
+        {
+            get
+            {
+                return side;
+            }
+            set
+            {
+                side = value;
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+            }
+        }
 
         /// <summary>
         /// Assigns drink class to sodasaurus

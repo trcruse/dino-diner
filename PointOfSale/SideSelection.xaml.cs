@@ -28,15 +28,27 @@ namespace PointOfSale
         /// </summary>
         private Side side;
 
+        /// <summary>
+        /// Default
+        /// </summary>
         public SideSelection()
         {
             InitializeComponent();
+
         }
 
         public SideSelection(Side side)
         {
             InitializeComponent();
             this.side = side;
+        }
+
+        private CretaceousCombo combo;
+        public SideSelection(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
+            //this.combo.Side = this.side;
         }
 
         /// <summary>
@@ -48,11 +60,25 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                side = new Fryceritops();
-                if (FrySmall.IsChecked ?? false) side.Size = DDSize.Small;
-                if (FryMed.IsChecked ?? false) side.Size = DDSize.Medium;
-                if (FryLarge.IsChecked ?? false) side.Size = DDSize.Large;
-                order.Add(side);
+                if (combo == null)
+                {
+                    side = new Fryceritops();
+                    if (FrySmall.IsChecked ?? false) side.Size = DDSize.Small;
+                    if (FryMed.IsChecked ?? false) side.Size = DDSize.Medium;
+                    if (FryLarge.IsChecked ?? false) side.Size = DDSize.Large;
+                    order.Add(side);
+                    NavigationService.Navigate(new MenuCategorySelection());
+                }
+                else
+                {
+                    side = new Fryceritops();
+                    if (FrySmall.IsChecked ?? false) side.Size = DDSize.Small;
+                    if (FryMed.IsChecked ?? false) side.Size = DDSize.Medium;
+                    if (FryLarge.IsChecked ?? false) side.Size = DDSize.Large;
+                    this.combo.Side = side;
+                    NavigationService.Navigate(new CustomizeCombo());
+                }
+                
             }
         }
 
@@ -65,11 +91,23 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                side = new MeteorMacAndCheese();
-                if (MetSmall.IsChecked ?? false) side.Size = DDSize.Small;
-                if (MetMedium.IsChecked ?? false) side.Size = DDSize.Medium;
-                if (MetLarge.IsChecked ?? false) side.Size = DDSize.Large;
-                order.Add(side);
+                if (combo == null)
+                {
+                    side = new MeteorMacAndCheese();
+                    if (MetSmall.IsChecked ?? false) side.Size = DDSize.Small;
+                    if (MetMedium.IsChecked ?? false) side.Size = DDSize.Medium;
+                    if (MetLarge.IsChecked ?? false) side.Size = DDSize.Large;
+                    order.Add(side);
+                }
+                else
+                {
+                    side = new MeteorMacAndCheese();
+                    if (MetSmall.IsChecked ?? false) side.Size = DDSize.Small;
+                    if (MetMedium.IsChecked ?? false) side.Size = DDSize.Medium;
+                    if (MetLarge.IsChecked ?? false) side.Size = DDSize.Large;
+                    this.combo.Side = side;
+                }
+                NavigationService.Navigate(new CustomizeCombo());
             }
         }
 
@@ -82,11 +120,23 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                side = new MezzorellaSticks();
-                if (MezSmall.IsChecked ?? false) side.Size = DDSize.Small;
-                if (MezMedium.IsChecked ?? false) side.Size = DDSize.Medium;
-                if (MezLarge.IsChecked ?? false) side.Size = DDSize.Large;
-                order.Add(side);
+                if (combo == null)
+                {
+                    side = new MezzorellaSticks();
+                    if (MezSmall.IsChecked ?? false) side.Size = DDSize.Small;
+                    if (MezMedium.IsChecked ?? false) side.Size = DDSize.Medium;
+                    if (MezLarge.IsChecked ?? false) side.Size = DDSize.Large;
+                    order.Add(side);
+                } 
+                else
+                {
+                    side = new MezzorellaSticks();
+                    if (MezSmall.IsChecked ?? false) side.Size = DDSize.Small;
+                    if (MezMedium.IsChecked ?? false) side.Size = DDSize.Medium;
+                    if (MezLarge.IsChecked ?? false) side.Size = DDSize.Large;
+                    this.combo.Side = side;
+                }
+                NavigationService.Navigate(new CustomizeCombo());
             }
         }
 
@@ -99,11 +149,23 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                side = new Triceritots();
-                if (TriSmall.IsChecked ?? false) side.Size = DDSize.Small;
-                if (TriMedium.IsChecked ?? false) side.Size = DDSize.Medium;
-                if (TriLarge.IsChecked ?? false) side.Size = DDSize.Large;
-                order.Add(side);
+                if (combo == null)
+                {
+                    side = new Triceritots();
+                    if (TriSmall.IsChecked ?? false) side.Size = DDSize.Small;
+                    if (TriMedium.IsChecked ?? false) side.Size = DDSize.Medium;
+                    if (TriLarge.IsChecked ?? false) side.Size = DDSize.Large;
+                    order.Add(side);
+                }
+                else
+                {
+                    side = new Triceritots();
+                    if (TriSmall.IsChecked ?? false) side.Size = DDSize.Small;
+                    if (TriMedium.IsChecked ?? false) side.Size = DDSize.Medium;
+                    if (TriLarge.IsChecked ?? false) side.Size = DDSize.Large;
+                    this.combo.Side = side;
+                }
+                NavigationService.Navigate(new CustomizeCombo());
             }
         }
 

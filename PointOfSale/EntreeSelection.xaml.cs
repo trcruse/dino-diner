@@ -46,7 +46,7 @@ namespace PointOfSale
             {
                 Brontowurst bronto = new Brontowurst();
                 order.Add(bronto);
-                NavigationService.Navigate(new MenuCategorySelection());
+                NavigationService.Navigate(new BrontowurstCustomize());
             }
         }
 
@@ -61,7 +61,7 @@ namespace PointOfSale
             {
                 DinoNuggets nug = new DinoNuggets();
                 order.Add(nug);
-                NavigationService.Navigate(new MenuCategorySelection());
+                NavigationService.Navigate(new DinoNuggetsCustomize());
             }
         }
 
@@ -76,7 +76,7 @@ namespace PointOfSale
             {
                 PrehistoricPBJ pbj = new PrehistoricPBJ();
                 order.Add(pbj);
-                NavigationService.Navigate(new MenuCategorySelection());
+                NavigationService.Navigate(new PrehistoricCustomize());
             }
         }
 
@@ -91,7 +91,7 @@ namespace PointOfSale
             {
                 PterodactylWings pw = new PterodactylWings();
                 order.Add(pw);
-                NavigationService.Navigate(new MenuCategorySelection());
+                NavigationService.Navigate(new PterodactylCustomize());
             }
         }
 
@@ -106,7 +106,7 @@ namespace PointOfSale
             {
                 SteakosaurusBurger sb = new SteakosaurusBurger();
                 order.Add(sb);
-                NavigationService.Navigate(new MenuCategorySelection());
+                NavigationService.Navigate(new SteakosaurusBurgerCustomize());
             }
         }
 
@@ -121,7 +121,7 @@ namespace PointOfSale
             {
                 TRexKingBurger tr = new TRexKingBurger();
                 order.Add(tr);
-                NavigationService.Navigate(new MenuCategorySelection());
+                NavigationService.Navigate(new TRexKingCustomize());
             }
         }
 
@@ -136,7 +136,7 @@ namespace PointOfSale
             {
                 VelociWrap vw = new VelociWrap();
                 order.Add(vw);
-                NavigationService.Navigate(new MenuCategorySelection());
+                NavigationService.Navigate(new VelociWrapCustomize());
             }
         }
 

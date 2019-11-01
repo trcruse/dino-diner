@@ -32,21 +32,21 @@
 
             <TextBox Background="WhiteSmoke" TextAlignment="Center" FontSize="23" Width="800" Height="50">Combo Selection</TextBox>
 
-            <Button VerticalContentAlignment="Top" Click="SelectCustomizeCombo">
+            <Button VerticalContentAlignment="Top" Name="Brontowurst" Click="SelectCustomizeCombo">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/DinoDiner-01.png"></ImageBrush>
                 </Button.Background>
                 <TextBlock FontSize="12">Brontowurst Combo</TextBlock>
             </Button>
 
-            <Button VerticalContentAlignment="Top" Click="SelectCustomizeCombo">
+            <Button VerticalContentAlignment="Top" Name="DinoNuggets" Click="SelectCustomizeCombo">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/DinoDiner-02.png"></ImageBrush>
                 </Button.Background>
                 <TextBlock FontSize="12">Dino-Nuggets Combo</TextBlock>
             </Button>
 
-            <Button VerticalContentAlignment="Top" Click="SelectCustomizeCombo">
+            <Button VerticalContentAlignment="Top" Name="Steakosaurus" Click="SelectCustomizeCombo">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/DinoDiner-05.png"></ImageBrush>
                 </Button.Background>
@@ -54,14 +54,14 @@
             </Button>
 
 
-            <Button VerticalContentAlignment="Top" Click="SelectCustomizeCombo">
+            <Button VerticalContentAlignment="Top" Name="TRexKingBurger" Click="SelectCustomizeCombo">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/DinoDiner-06.png"></ImageBrush>
                 </Button.Background>
                 <TextBlock FontSize="12">T-Rex King Burger Combo</TextBlock>
             </Button>
 
-            <Button VerticalContentAlignment="Bottom" Click="SelectCustomizeCombo">
+            <Button VerticalContentAlignment="Bottom" Name="pbj" Click="SelectCustomizeCombo">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/DinoDiner-03.png"></ImageBrush>
                 </Button.Background>
@@ -69,14 +69,14 @@
             </Button>
 
 
-            <Button VerticalContentAlignment="Bottom" Click="SelectCustomizeCombo">
+            <Button VerticalContentAlignment="Bottom" Name="PterodactylWings" Click="SelectCustomizeCombo">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/DinoDiner-04.png"></ImageBrush>
                 </Button.Background>
                 <TextBlock FontSize="12">Pterodactyl Wings Combo</TextBlock>
             </Button>
 
-            <Button VerticalContentAlignment="Bottom" Click="SelectCustomizeCombo">
+            <Button VerticalContentAlignment="Bottom" Name="VelociWrap" Click="SelectCustomizeCombo">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/DinoDiner-07.png"></ImageBrush>
                 </Button.Background>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -32,8 +33,47 @@ namespace PointOfSale
         /// <param name="args">Data needed to pass to the event handlers</param>
         void SelectCustomizeCombo(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new CustomizeCombo());
+            if (DataContext is Order order)
+            {
+                Button b = (Button)sender;
+                if (b.Name.Equals("Brontowurst"))
+                {
+                    CretaceousCombo cc = new CretaceousCombo(new Brontowurst());
+                    order.Add(cc);
+                    NavigationService.Navigate(new CustomizeCombo(cc));
+                }
+                else if (b.Name.Equals("DinoNuggets"))
+                {
+                    order.Add(new CretaceousCombo(new DinoNuggets()));
+                }
+                else if (b.Name.Equals("Steakosaurus"))
+                {
+                    order.Add(new CretaceousCombo(new SteakosaurusBurger()));
+                }
+                else if (b.Name.Equals("TRexKingBurger"))
+                {
+                    order.Add(new CretaceousCombo(new TRexKingBurger()));
+                }
+                else if (b.Name.Equals("pbj"))
+                {
+                    order.Add(new CretaceousCombo(new PrehistoricPBJ()));
+                }
+                else if (b.Name.Equals("PterodactylWings"))
+                {
+                    order.Add(new CretaceousCombo(new PterodactylWings()));
+                }
+                else if (b.Name.Equals("VelociWrap"))
+                {
+                    order.Add(new CretaceousCombo(new VelociWrap()));
+                }
+            }
+            
         }
+
+
+
+
+
 
 
         
