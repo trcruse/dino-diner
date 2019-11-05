@@ -28,13 +28,13 @@
                     </Setter>
                 </Style>
             </WrapPanel.Resources>
-            <TextBox Background="WhiteSmoke" TextAlignment="Center"  FontSize="23" Width="800" Height="50">Side Selection</TextBox>
+            <TextBox Background="WhiteSmoke" TextAlignment="Center"  FontSize="23" Width="700" Height="50">Side Selection</TextBox>
            
             
             <StackPanel>
                 <Button VerticalContentAlignment="Top"  Click="OnSelectFryceritops">
                     <Button.Background>
-                        <ImageBrush ImageSource="Assets/DinoDiner-08.png"></ImageBrush>
+                        <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-08.png"></ImageBrush>
                     </Button.Background>
                     <TextBlock FontSize="15">Fryceritops</TextBlock>
                 </Button>
@@ -48,7 +48,7 @@
             <StackPanel>
                 <Button VerticalContentAlignment="Top"  Name="SelectTriceritots" Click="OnSelectTriceritots">
                     <Button.Background>
-                        <ImageBrush ImageSource="Assets/DinoDiner-11.png"></ImageBrush>
+                        <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-11.png"></ImageBrush>
                     </Button.Background>
                     <TextBlock FontSize="15">Triceritots</TextBlock>
                 </Button>
@@ -62,7 +62,7 @@
             <StackPanel>
                 <Button VerticalContentAlignment="Top"  Name="SelectMeteorMacCheese" Click="OnSelectMeteorMacCheese">
                     <Button.Background>
-                        <ImageBrush ImageSource="Assets/DinoDiner-09.png"></ImageBrush>
+                        <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-09.png"></ImageBrush>
                     </Button.Background>
                     <TextBlock FontSize="15">Meteor Mac &amp; Cheese</TextBlock>
                 </Button>
@@ -76,7 +76,7 @@
             <StackPanel>
                 <Button VerticalContentAlignment="Top"  Name="SelectMezzorella" Click="OnSelectMezzorella">
                     <Button.Background>
-                        <ImageBrush ImageSource="Assets/DinoDiner-10.png"></ImageBrush>
+                        <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-10.png"></ImageBrush>
                     </Button.Background>
                     <TextBlock FontSize="15">Mezzorella Sticks</TextBlock>
                 </Button>

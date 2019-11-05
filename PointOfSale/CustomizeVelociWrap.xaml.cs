@@ -17,18 +17,18 @@ using DinoDiner.Menu;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CustomizePrehistoricPBJ.xaml
+    /// Interaction logic for CustomizeVelociWrap.xaml
     /// </summary>
-    public partial class CustomizePrehistoricPBJ : Page
+    public partial class CustomizeVelociWrap : Page
     {
 
-        private PrehistoricPBJ pbj;
+        private VelociWrap vw;
 
 
-        public CustomizePrehistoricPBJ(PrehistoricPBJ pbj)
+        public CustomizeVelociWrap(VelociWrap vw)
         {
             InitializeComponent();
-            this.pbj = pbj;
+            this.vw = vw;
         }
 
         /// <summary>
@@ -36,10 +36,9 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void OnHoldPeanutButter(object sender, RoutedEventArgs args)
+        private void OnHoldDressing(object sender, RoutedEventArgs args)
         {
-            this.pbj.HoldPeanutButter();
-
+            this.vw.HoldDressing();
         }
 
         /// <summary>
@@ -47,13 +46,23 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void OnHoldJelly(object sender, RoutedEventArgs args)
+        private void OnHoldLettuce(object sender, RoutedEventArgs args)
         {
-            this.pbj.HoldJelly();
+            this.vw.HoldLettuce();
         }
 
         /// <summary>
-        /// Goes back to previously selected page
+        /// Implements selected method from the original class
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnHoldCheese(object sender, RoutedEventArgs args)
+        {
+            this.vw.HoldCheese();
+        }
+
+        /// <summary>
+        /// Navigates back to previous page
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>

@@ -34,7 +34,7 @@
         
         
         <StackPanel>
-                <Button Click="SelectSide" FontSize="19" MinWidth="800" Background="MistyRose" MinHeight="60">Side Combo</Button>
+                <Button Click="SelectSide" FontSize="19" MinWidth="700" Background="MistyRose" MinHeight="60">Side Combo</Button>
                 <TextBlock Text="Side Combo Sizes:" FontSize="15" Margin="5" Height="25"/>
             <RadioButton x:Name="SideOne" Margin="5" GroupName="Side Combo Sizes" Content="Small" Height="19"/>
             <RadioButton x:Name="SideTwo" Margin="5" GroupName="Side Combo Sizes" Content="Medium" Height="19"/>
@@ -42,7 +42,7 @@
         </StackPanel>
 
         <StackPanel>
-                <Button Click="SelectDrink" FontSize="19" MinWidth="800" MinHeight="60" Background="MistyRose">Drink Combo</Button>
+                <Button Click="SelectDrink" FontSize="19" MinWidth="700" MinHeight="60" Background="MistyRose">Drink Combo</Button>
              <TextBlock Text="Drink Combo Sizes:" Margin="5" FontSize="15" Height="25"/>
                  <RadioButton x:Name="DrinkOne" Margin="5" GroupName="Drink Combo Sizes" Content="Small" Height="19"/>
                  <RadioButton x:Name="DrinkTwo" Margin="5" GroupName="Drink Combo Sizes" Content="Medium" Height="19"/>

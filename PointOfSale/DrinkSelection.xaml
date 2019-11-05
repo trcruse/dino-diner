@@ -13,8 +13,8 @@
         <WrapPanel Background="WhiteSmoke">
             <WrapPanel.Resources>
                 <Style TargetType="Button">
-                    <Setter Property="MinWidth" Value="130"/>
-                    <Setter Property="MinHeight" Value="130"/>
+                    <Setter Property="MinWidth" Value="110"/>
+                    <Setter Property="MinHeight" Value="110"/>
                     <Setter Property="BorderThickness" Value="2.5" />
                     <Setter Property="Foreground" Value="Black" />
                     <Setter Property="BorderBrush" >
@@ -29,20 +29,34 @@
                     </Setter>
                 </Style>
             </WrapPanel.Resources>
-            
-            <TextBox TextAlignment="Center" Background="WhiteSmoke" FontSize="23" Width="800" Height="50">Drink Selection</TextBox>
-            
-             <Button Name="Flavor" Click="SelectFlavor" Background="MistyRose" FontSize="19" MinWidth="800" MinHeight="30">Flavor</Button>
-            <Button Name="Sweet" Click="OnSelectSweet" FontSize="19"  Background="MistyRose" MinWidth="800" MinHeight="30">Sweet</Button>
-            <Button Name="Decaf" Click="OnSelectDecaf" FontSize="19" Background="MistyRose" MinWidth="800" MinHeight="30">Decaf</Button>
-            <Button Name="Done" Click="OnSelectDone" FontSize="19" Background="MistyRose" MinWidth="800" MinHeight="30">Done</Button>
-           
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" TextAlignment="Center" Background="WhiteSmoke" FontSize="23" Width="700" Height="50">Drink Selection</TextBox>
+                <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Name="Flavor" Click="SelectFlavor" Background="MistyRose" FontSize="19" MinWidth="700" MinHeight="30">Flavor</Button>
+                <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Name="Sweet" Click="OnSelectSweet" FontSize="19"  Background="MistyRose" MinWidth="700" MinHeight="30">Sweet</Button>
+                <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Name="Decaf" Click="OnSelectDecaf" FontSize="19" Background="MistyRose" MinWidth="700" MinHeight="30">Decaf</Button>
+                
+                <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Name="Done" Click="OnSelectDone" FontSize="19" Background="MistyRose" MinWidth="700" MinHeight="30">Done</Button>
+                
+           </Grid> 
 
 
             <StackPanel>
                 <Button VerticalContentAlignment="Top"  Name="SelectSodasaurus" Click="OnSelectSodasaurus">
                     <Button.Background>
-                        <ImageBrush ImageSource="Assets/DinoDiner-14.png"></ImageBrush>
+                        <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-14.png"></ImageBrush>
                     </Button.Background>
                 <TextBlock FontSize="14">Sodasaurus</TextBlock>
             </Button>
@@ -55,7 +69,7 @@
             <StackPanel>
                 <Button VerticalContentAlignment="Top" Name="SelectTyrannotea" Click="OnSelectTyrannotea">
                     <Button.Background>
-                        <ImageBrush ImageSource="Assets/DinoDiner-13.png"></ImageBrush>
+                        <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-13.png"></ImageBrush>
                     </Button.Background>
                 <TextBlock FontSize="14">Tryrannotea</TextBlock>
             </Button>
@@ -69,7 +83,7 @@
             <StackPanel>
                 <Button VerticalContentAlignment="Top" Name="SelectJurassicJava" Click="OnSelectJurassicJava">
                     <Button.Background>
-                        <ImageBrush ImageSource="Assets/DinoDiner-12.png"></ImageBrush>
+                        <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-12.png"></ImageBrush>
                     </Button.Background>
                 <TextBlock FontSize="14">Jurassic Java</TextBlock>
             </Button>
@@ -83,7 +97,7 @@
             <StackPanel>
                 <Button VerticalContentAlignment="Top" Name="SelectWater" Click="OnSelectWater">
                     <Button.Background>
-                        <ImageBrush ImageSource="Assets/DinoDiner-15.png"></ImageBrush>
+                        <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-15.png"></ImageBrush>
                     </Button.Background>
                 <TextBlock FontSize="14">Water</TextBlock>
             </Button>
@@ -93,18 +107,19 @@
                 <RadioButton Click="OnChangeWaterSize" x:Name="WatLarge" Margin="5" GroupName="WaterSizes" Content="Large" Height="19"/>
             </StackPanel>
 
+
             <StackPanel>
-                <Button VerticalContentAlignment="Top" Click="SelectLemon">
+                <Button VerticalContentAlignment="Top" Click="OnSelectLemon">
                     <Button.Background>
                         <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-23.jpg"></ImageBrush>
                     </Button.Background>
                     <TextBlock FontSize="14">Lemon</TextBlock>
                 </Button>
-           </StackPanel>
+            </StackPanel>
 
 
             <StackPanel>
-                <Button VerticalContentAlignment="Top" Click="SelectIce">
+                <Button VerticalContentAlignment="Top" Click="OnSelectIce">
                     <Button.Background>
                         <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-24.png"></ImageBrush>
                     </Button.Background>
@@ -113,7 +128,6 @@
             </StackPanel>
 
 
-            
 
         </WrapPanel>
     </Grid>

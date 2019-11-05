@@ -98,6 +98,7 @@ namespace PointOfSale
                     if (MetMedium.IsChecked ?? false) side.Size = DDSize.Medium;
                     if (MetLarge.IsChecked ?? false) side.Size = DDSize.Large;
                     order.Add(side);
+                    NavigationService.Navigate(new MenuCategorySelection());
                 }
                 else
                 {
@@ -106,8 +107,8 @@ namespace PointOfSale
                     if (MetMedium.IsChecked ?? false) side.Size = DDSize.Medium;
                     if (MetLarge.IsChecked ?? false) side.Size = DDSize.Large;
                     this.combo.Side = side;
+                    NavigationService.Navigate(new CustomizeCombo());
                 }
-                NavigationService.Navigate(new CustomizeCombo());
             }
         }
 
@@ -127,6 +128,7 @@ namespace PointOfSale
                     if (MezMedium.IsChecked ?? false) side.Size = DDSize.Medium;
                     if (MezLarge.IsChecked ?? false) side.Size = DDSize.Large;
                     order.Add(side);
+                    NavigationService.Navigate(new MenuCategorySelection());
                 } 
                 else
                 {
@@ -135,8 +137,8 @@ namespace PointOfSale
                     if (MezMedium.IsChecked ?? false) side.Size = DDSize.Medium;
                     if (MezLarge.IsChecked ?? false) side.Size = DDSize.Large;
                     this.combo.Side = side;
+                    NavigationService.Navigate(new CustomizeCombo());
                 }
-                NavigationService.Navigate(new CustomizeCombo());
             }
         }
 
@@ -156,6 +158,7 @@ namespace PointOfSale
                     if (TriMedium.IsChecked ?? false) side.Size = DDSize.Medium;
                     if (TriLarge.IsChecked ?? false) side.Size = DDSize.Large;
                     order.Add(side);
+                    NavigationService.Navigate(new MenuCategorySelection());
                 }
                 else
                 {
@@ -164,8 +167,8 @@ namespace PointOfSale
                     if (TriMedium.IsChecked ?? false) side.Size = DDSize.Medium;
                     if (TriLarge.IsChecked ?? false) side.Size = DDSize.Large;
                     this.combo.Side = side;
+                    NavigationService.Navigate(new CustomizeCombo());
                 }
-                NavigationService.Navigate(new CustomizeCombo());
             }
         }
 

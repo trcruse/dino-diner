@@ -51,7 +51,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void OnSelectLimeFlavor(object sender, RoutedEventArgs args)
         {
-            soda.Flavor = SodasaurusFlavor.Cherry;
+            soda.Flavor = SodasaurusFlavor.Lime;
             NavigationService.Navigate(new DrinkSelection());
         }
 
@@ -78,6 +78,7 @@ namespace PointOfSale
             soda.Flavor = SodasaurusFlavor.Cola;
             NavigationService.Navigate(new DrinkSelection());
         }
+
 
         /// <summary>
         /// Clicking on of the flavor buttons applies the flavor to the current drink 

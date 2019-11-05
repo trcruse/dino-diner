@@ -44,27 +44,39 @@ namespace PointOfSale
                 }
                 else if (b.Name.Equals("DinoNuggets"))
                 {
-                    order.Add(new CretaceousCombo(new DinoNuggets()));
+                    CretaceousCombo cc = new CretaceousCombo(new DinoNuggets());
+                    order.Add(cc);
+                    NavigationService.Navigate(new CustomizeCombo(cc));
                 }
                 else if (b.Name.Equals("Steakosaurus"))
                 {
-                    order.Add(new CretaceousCombo(new SteakosaurusBurger()));
+                    CretaceousCombo cc = new CretaceousCombo(new SteakosaurusBurger());
+                    order.Add(cc);
+                    NavigationService.Navigate(new CustomizeCombo(cc));
                 }
                 else if (b.Name.Equals("TRexKingBurger"))
                 {
-                    order.Add(new CretaceousCombo(new TRexKingBurger()));
+                    CretaceousCombo cc = new CretaceousCombo(new TRexKingBurger());
+                    order.Add(cc);
+                    NavigationService.Navigate(new CustomizeCombo(cc));
                 }
                 else if (b.Name.Equals("pbj"))
                 {
-                    order.Add(new CretaceousCombo(new PrehistoricPBJ()));
+                    CretaceousCombo cc = new CretaceousCombo(new PrehistoricPBJ());
+                    order.Add(cc);
+                    NavigationService.Navigate(new CustomizeCombo(cc));
                 }
                 else if (b.Name.Equals("PterodactylWings"))
                 {
-                    order.Add(new CretaceousCombo(new PterodactylWings()));
+                    CretaceousCombo cc = new CretaceousCombo(new PterodactylWings());
+                    order.Add(cc);
+                    NavigationService.Navigate(new CustomizeCombo(cc));
                 }
                 else if (b.Name.Equals("VelociWrap"))
                 {
-                    order.Add(new CretaceousCombo(new VelociWrap()));
+                    CretaceousCombo cc = new CretaceousCombo(new VelociWrap());
+                    order.Add(cc);
+                    NavigationService.Navigate(new CustomizeCombo(cc));
                 }
             }
             

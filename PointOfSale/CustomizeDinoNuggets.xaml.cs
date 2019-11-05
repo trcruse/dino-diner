@@ -17,18 +17,17 @@ using DinoDiner.Menu;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CustomizePrehistoricPBJ.xaml
+    /// Interaction logic for CustomizeDinoNuggets.xaml
     /// </summary>
-    public partial class CustomizePrehistoricPBJ : Page
+    public partial class CustomizeDinoNuggets : Page
     {
 
-        private PrehistoricPBJ pbj;
+        private DinoNuggets dn;
 
-
-        public CustomizePrehistoricPBJ(PrehistoricPBJ pbj)
+        public CustomizeDinoNuggets(DinoNuggets dn)
         {
             InitializeComponent();
-            this.pbj = pbj;
+            this.dn = dn;
         }
 
         /// <summary>
@@ -36,20 +35,9 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void OnHoldPeanutButter(object sender, RoutedEventArgs args)
+        private void OnAddNuggets(object sender, RoutedEventArgs args)
         {
-            this.pbj.HoldPeanutButter();
-
-        }
-
-        /// <summary>
-        /// Implements selected method from the original class
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        private void OnHoldJelly(object sender, RoutedEventArgs args)
-        {
-            this.pbj.HoldJelly();
+            this.dn.AddNugget();
         }
 
         /// <summary>

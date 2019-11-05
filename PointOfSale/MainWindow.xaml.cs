@@ -28,13 +28,6 @@ namespace PointOfSale
             OrderUI.Navigate(new MenuCategorySelection());
             OrderControl.NavigationService = OrderUI.NavigationService;
             Order order = new Order();
-            //order.Add(new PrehistoricPBJ());
-            //order.Add(new Sodasaurus());
-            //order.Add(new Fryceritops());
-            //SteakosaurusBurger sb = new SteakosaurusBurger();
-            //sb.HoldPickle();
-            //sb.HoldBun();
-            //order.Add(sb);
             DataContext = order;
         }
 

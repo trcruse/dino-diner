@@ -41,7 +41,7 @@ namespace PointOfSale
         /// <param name="args">Data needed to pass to the event handlers</param>
         void SelectDrink(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new DrinkSelection());
+            NavigationService.Navigate(new DrinkSelection(combo));
         }
 
         /// <summary>
@@ -54,5 +54,7 @@ namespace PointOfSale
 
             NavigationService.Navigate(new SideSelection(combo));
         }
+
+
     }
 }

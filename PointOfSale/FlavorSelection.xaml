@@ -14,8 +14,8 @@
         <WrapPanel Background="WhiteSmoke">
             <WrapPanel.Resources>
                 <Style TargetType="Button">
-                    <Setter Property="MinWidth" Value="140"/>
-                    <Setter Property="MinHeight" Value="140"/>
+                    <Setter Property="MinWidth" Value="110"/>
+                    <Setter Property="MinHeight" Value="110"/>
                     <Setter Property="BorderThickness" Value="2.5" />
                     <Setter Property="Foreground" Value="Black" />
                     <Setter Property="BorderBrush" >
@@ -30,7 +30,7 @@
                     </Setter>
                 </Style>
             </WrapPanel.Resources>
-            <TextBox TextAlignment="Center" Background="WhiteSmoke" FontSize="23" Width="800" Height="50">Sodasaurus Flavor Selection</TextBox>
+            <TextBox TextAlignment="Center" Background="WhiteSmoke" FontSize="23" Width="700" Height="50">Sodasaurus Flavor Selection</TextBox>
             
 
             <Button Name="Cherry" Click="OnSelectCherryFlavor" VerticalContentAlignment="Top">
@@ -62,7 +62,7 @@
                 <TextBlock FontSize="15">Lime</TextBlock>
             </Button>
 
-            <Button Name="Orange" Click="OnSelectOrangeFlavor" VerticalContentAlignment="Bottom">
+            <Button Name="Orange" Click="OnSelectOrangeFlavor" VerticalContentAlignment="Top">
                 <Button.Background>
                     <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-20.jpg"></ImageBrush>
                 </Button.Background>
@@ -70,7 +70,7 @@
             </Button>
 
 
-            <Button Name="RootBeer" Click="OnSelectRootBeerFlavor" VerticalContentAlignment="Bottom">
+            <Button Name="RootBeer" Click="OnSelectRootBeerFlavor" VerticalContentAlignment="Top">
                 <Button.Background>
                     <ImageBrush Stretch="Uniform" ImageSource="Assets/DinoDiner-21.png"></ImageBrush>
                 </Button.Background>

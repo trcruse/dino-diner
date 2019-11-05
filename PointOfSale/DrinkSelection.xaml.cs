@@ -24,17 +24,31 @@ namespace PointOfSale
     public partial class DrinkSelection : Page
     {
 
-
         private Drink drink;
 
         public DrinkSelection()
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Constructor to carry in selected drink data
+        /// </summary>
+        /// <param name="drink"></param>
         public DrinkSelection(Drink drink)
         {
             InitializeComponent();
             this.drink = drink;
+        }
+
+        private CretaceousCombo combo;
+        /// <summary>
+        /// Constructor to carry in selected Combo Drink data
+        /// </summary>
+        public DrinkSelection(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
         }
 
         /// <summary>
@@ -56,9 +70,10 @@ namespace PointOfSale
         {
             if(DataContext is Order order)
             {
-                Sodasaurus soda = new Sodasaurus();
-                order.Add(soda);
-                NavigationService.Navigate(new FlavorSelection(soda));
+                if (drink is Sodasaurus soda)
+                {
+                    NavigationService.Navigate(new FlavorSelection(soda));
+                }
             }     
         }
 
@@ -68,7 +83,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">Control button the action is for</param>
         /// <param name="args">Data needed to pass to the event handlers</param>
-        void SelectLemon(object sender, RoutedEventArgs args)
+        private void OnSelectLemon(object sender, RoutedEventArgs args)
         {
             if (drink is Water w)
             {
@@ -86,7 +101,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">Control button the action is for</param>
         /// <param name="args">Data needed to pass to the event handlers</param>
-        private void SelectIce(object sender, RoutedEventArgs args)
+        private void OnSelectIce(object sender, RoutedEventArgs args)
         {
             if (drink is Tyrannotea tea)
             {
@@ -142,11 +157,23 @@ namespace PointOfSale
             Flavor.IsEnabled = true;
             if (DataContext is Order order)
             {
-                drink = new Sodasaurus();
-                if (SodaSmall.IsChecked ?? false) drink.Size = DDSize.Small;
-                if (SodaMedium.IsChecked ?? false) drink.Size = DDSize.Medium;
-                if (SodaLarge.IsChecked ?? false) drink.Size = DDSize.Large;
-                order.Add(drink);
+                if (combo == null)
+                {
+                    drink = new Sodasaurus();
+                    if (SodaSmall.IsChecked ?? false) drink.Size = DDSize.Small;
+                    if (SodaMedium.IsChecked ?? false) drink.Size = DDSize.Medium;
+                    if (SodaLarge.IsChecked ?? false) drink.Size = DDSize.Large;
+                    order.Add(drink);
+                }
+                else
+                {
+                    drink = new Sodasaurus();
+                    if (SodaSmall.IsChecked ?? false) drink.Size = DDSize.Small;
+                    if (SodaMedium.IsChecked ?? false) drink.Size = DDSize.Medium;
+                    if (SodaLarge.IsChecked ?? false) drink.Size = DDSize.Large;
+                    this.combo.Drink = drink;
+                }
+
             }
         }
 
@@ -160,11 +187,25 @@ namespace PointOfSale
             Flavor.IsEnabled = true;
             if (DataContext is Order order)
             {
-                drink = new Tyrannotea();
-                if (TySmall.IsChecked ?? false) drink.Size = DDSize.Small;
-                if (TyMedium.IsChecked ?? false) drink.Size = DDSize.Medium;
-                if (TyLarge.IsChecked ?? false) drink.Size = DDSize.Large;
-                order.Add(drink);
+                if (combo == null)
+                {
+                    drink = new Tyrannotea();
+                    if (TySmall.IsChecked ?? false) drink.Size = DDSize.Small;
+                    if (TyMedium.IsChecked ?? false) drink.Size = DDSize.Medium;
+                    if (TyLarge.IsChecked ?? false) drink.Size = DDSize.Large;
+                    order.Add(drink);
+                    NavigationService.Navigate(new MenuCategorySelection());
+                }
+                else
+                {
+                    drink = new Tyrannotea();
+                    if (TySmall.IsChecked ?? false) drink.Size = DDSize.Small;
+                    if (TyMedium.IsChecked ?? false) drink.Size = DDSize.Medium;
+                    if (TyLarge.IsChecked ?? false) drink.Size = DDSize.Large;
+                    this.combo.Drink = drink;
+                    NavigationService.Navigate(new CustomizeCombo());
+                }
+               
             }
         }
 
@@ -178,11 +219,24 @@ namespace PointOfSale
             Flavor.IsEnabled = true;
             if (DataContext is Order order)
             {
-                drink = new JurassicJava();
-                if (JavaSmall.IsChecked ?? false) drink.Size = DDSize.Small;
-                if (JavaMedium.IsChecked ?? false) drink.Size = DDSize.Medium;
-                if (JavaLarge.IsChecked ?? false) drink.Size = DDSize.Large;
-                order.Add(drink);
+                if (combo == null)
+                {
+                    drink = new JurassicJava();
+                    if (JavaSmall.IsChecked ?? false) drink.Size = DDSize.Small;
+                    if (JavaMedium.IsChecked ?? false) drink.Size = DDSize.Medium;
+                    if (JavaLarge.IsChecked ?? false) drink.Size = DDSize.Large;
+                    order.Add(drink);
+                    NavigationService.Navigate(new MenuCategorySelection());
+                }
+                else
+                {
+                    drink = new JurassicJava();
+                    if (JavaSmall.IsChecked ?? false) drink.Size = DDSize.Small;
+                    if (JavaMedium.IsChecked ?? false) drink.Size = DDSize.Medium;
+                    if (JavaLarge.IsChecked ?? false) drink.Size = DDSize.Large;
+                    this.combo.Drink = drink;
+                    NavigationService.Navigate(new CustomizeCombo());
+                }
             }
         }
 
@@ -196,11 +250,24 @@ namespace PointOfSale
             Flavor.IsEnabled = true;
             if (DataContext is Order order)
             {
-                drink = new Water();
-                if (WatSmall.IsChecked ?? false) drink.Size = DDSize.Small;
-                if (WatMedium.IsChecked ?? false) drink.Size = DDSize.Medium;
-                if (WatLarge.IsChecked ?? false) drink.Size = DDSize.Large;
-                order.Add(drink);
+                if (combo == null)
+                {
+                    drink = new Water();
+                    if (WatSmall.IsChecked ?? false) drink.Size = DDSize.Small;
+                    if (WatMedium.IsChecked ?? false) drink.Size = DDSize.Medium;
+                    if (WatLarge.IsChecked ?? false) drink.Size = DDSize.Large;
+                    order.Add(drink);
+                    NavigationService.Navigate(new MenuCategorySelection());
+                }
+                else
+                {
+                    drink = new Water();
+                    if (WatSmall.IsChecked ?? false) drink.Size = DDSize.Small;
+                    if (WatMedium.IsChecked ?? false) drink.Size = DDSize.Medium;
+                    if (WatLarge.IsChecked ?? false) drink.Size = DDSize.Large;
+                    this.combo.Drink = drink;
+                    NavigationService.Navigate(new CustomizeCombo());
+                }
             }
         }
         /// <summary>

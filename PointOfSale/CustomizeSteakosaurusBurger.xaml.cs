@@ -17,18 +17,17 @@ using DinoDiner.Menu;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CustomizePrehistoricPBJ.xaml
+    /// Interaction logic for CustomizeSteakosaurusBurger.xaml
     /// </summary>
-    public partial class CustomizePrehistoricPBJ : Page
+    public partial class CustomizeSteakosaurusBurger : Page
     {
+        private SteakosaurusBurger sb;
 
-        private PrehistoricPBJ pbj;
 
-
-        public CustomizePrehistoricPBJ(PrehistoricPBJ pbj)
+        public CustomizeSteakosaurusBurger(SteakosaurusBurger sb)
         {
             InitializeComponent();
-            this.pbj = pbj;
+            this.sb = sb;
         }
 
         /// <summary>
@@ -36,9 +35,9 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void OnHoldPeanutButter(object sender, RoutedEventArgs args)
+        private void OnHoldBun(object sender, RoutedEventArgs args)
         {
-            this.pbj.HoldPeanutButter();
+            this.sb.HoldBun();
 
         }
 
@@ -47,13 +46,34 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void OnHoldJelly(object sender, RoutedEventArgs args)
+        private void OnHoldPickle(object sender, RoutedEventArgs args)
         {
-            this.pbj.HoldJelly();
+            this.sb.HoldPickle();
+
         }
 
         /// <summary>
-        /// Goes back to previously selected page
+        /// Implements selected method from the original class
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnHoldKetchup(object sender, RoutedEventArgs args)
+        {
+            this.sb.HoldKetchup();
+        }
+
+        /// <summary>
+        /// Implements selected method from the original class
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnHoldMustard(object sender, RoutedEventArgs args)
+        {
+            this.sb.HoldMustard();
+        }
+
+        /// <summary>
+        /// Goes back to previous selected page 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
