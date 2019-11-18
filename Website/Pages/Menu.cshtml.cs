@@ -15,17 +15,14 @@ namespace Website.Pages
         /// <summary>
         /// Instance calling Menu
         /// </summary>
-        public Menu Menu { get; }
+        public Menu menu { get; } = new Menu();
+
+        public List<IMenuItem> AvailableMenuItem;
 
         public void OnGet()
         {
-          
+           
         }
-
-
-
-
-
 
 
 
