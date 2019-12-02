@@ -12,6 +12,17 @@ namespace Website.Pages
     public class MenuModel : PageModel
     {
 
+        public string Search { get; set; }
+
+        public string Entree { get; set; }
+
+        public string Combo { get; set; }
+
+        public string Side { get; set; }
+
+        public string Drink { get; set; }
+
+
         /// <summary>
         /// Instance calling Menu
         /// </summary>
