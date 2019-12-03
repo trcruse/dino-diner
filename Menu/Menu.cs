@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -12,6 +13,21 @@ namespace DinoDiner.Menu
         /// should return a list containing one instance of every menu item 
         /// currently offered by DinoDiner
         /// </summary>
+        /// 
+
+        //public List<IMenuItem> AvailableMenuItems
+        //{
+        //    get
+        //    {
+        //        List<IMenuItem> menuItems = new List<IMenuItem>();
+        //        menuItems.AddRange(AvailableCombos);
+        //        menuItems.AddRange(AvailableEntrees);
+        //        menuItems.AddRange(AvailableSides);
+        //        menuItems.AddRange(AvailableDrinks);
+        //        return menuItems;
+        //    }
+        //}
+
         public List<IMenuItem> AvailableMenuItems { get; } = new List<IMenuItem>()
         {
             new Brontowurst(),
@@ -38,7 +54,7 @@ namespace DinoDiner.Menu
         /// implement a property with a getter to return all available entrees 
         /// (AvailableEntrees)
         /// </summary>
-        public List<IMenuItem> AvailableEntrees { get; } = new List<IMenuItem>()
+        public List<Entree> AvailableEntrees { get; } = new List<Entree>()
         {
             new Brontowurst(),
             new DinoNuggets(),
@@ -54,7 +70,7 @@ namespace DinoDiner.Menu
         /// (AvailableEntrees), sides (AvailableSides), drinks (AvailableDrinks), 
         /// and combos (AvailableCombos).
         /// </summary>
-        public List<IMenuItem> AvailableSides { get; } = new List<IMenuItem>()
+        public List<Side> AvailableSides { get; } = new List<Side>()
         {
             new Fryceritops(),
             new MeteorMacAndCheese(),
@@ -67,7 +83,7 @@ namespace DinoDiner.Menu
         /// (AvailableEntrees), sides (AvailableSides), drinks (AvailableDrinks), 
         /// and combos (AvailableCombos).
         /// </summary>
-        public List<IMenuItem> AvailableDrinks { get; } = new List<IMenuItem>()
+        public List<Drink> AvailableDrinks { get; } = new List<Drink>()
         {
             new JurassicJava(),
             new Sodasaurus(),
@@ -79,7 +95,7 @@ namespace DinoDiner.Menu
         /// implement a property with a getter to return all available entrees 
         /// combos (AvailableCombos).
         /// </summary>
-        public List<IMenuItem> AvailableCombos { get; } = new List<IMenuItem>()
+        public List<CretaceousCombo> AvailableCombos { get; } = new List<CretaceousCombo>()
         {
             new CretaceousCombo(new Brontowurst()),
              new CretaceousCombo(new DinoNuggets()),
@@ -92,6 +108,47 @@ namespace DinoDiner.Menu
 
 
         /// <summary>
+        /// 
+        /// </summary>
+        public List<string> IngredientsNotDuplicated
+        {
+            get
+            {
+                HashSet<string> ingredientsNotDuplicated = new HashSet<string>();
+            
+                foreach (IMenuItem item in AvailableMenuItems) 
+                { 
+                    ingredientsNotDuplicated.UnionWith(item.Ingredients);
+                }
+                List<string> returning = ingredientsNotDuplicated.OrderBy(ingredient => ingredient).ToList();
+                return returning;
+            }
+        } 
+
+
+        public static List<T> Search<T>(List<T> menuItems, string searchT) where T: IMenuItem
+        {
+            List<T> results = new List<T>();
+            foreach(T item in menuItems)
+            {
+                if (item.Description.ToLower().Contains(searchT.ToLower()))
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
+
+
+
+
+
+
+
+
+
+        /// <summary>
         /// should also override the ToString() method to display the full menu contents,
         /// separated by new line characters (\n).
         /// </summary>
@@ -99,13 +156,11 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             string output = " ";
-
             foreach (IMenuItem i in AvailableMenuItems)
             {
                 output += i.ToString();
                 output += "\n";
             }
-
             return output;
         }
         

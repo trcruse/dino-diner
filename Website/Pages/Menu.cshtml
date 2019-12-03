@@ -9,6 +9,8 @@
 <h1>Menu</h1>
 
 
+
+
 <h2>Combos</h2>
 @foreach (IMenuItem item in Model.menu.AvailableCombos)
 {
@@ -63,4 +65,17 @@
         }
     </div>
 }
+
+
+<form method="post">
+    <h2>Search</h2>
+    <input type="text" id="search" name="search" value="@Model.search"/>
+
+
+
+
+
+</form>
+
+
 

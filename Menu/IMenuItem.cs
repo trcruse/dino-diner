@@ -7,22 +7,31 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Interface class that that inferace can respond to
     /// </summary>
-    public interface IMenuItem
+    public interface IMenuItem : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// double Price property with a getter
         /// </summary>
-       double Price { get; }
+       public virtual double Price { get; set; }
         /// <summary>
         /// uint Calorie property with a getter
         /// </summary>
-        uint Calories { get; }
+        public virtual uint Calories { get; set; }
         /// <summary>
         /// Ingreidents of a list string for Ingredients
         /// </summary>
-       List<string> Ingredients { get; }
+       public abstract List<string> Ingredients { get; }
 
-       
+        public virtual string Description => ToString();
+
+        public virtual string[] Special => Special.ToArray();
+
+        public virtual void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
     } // End of IMenuItem interface
 }
