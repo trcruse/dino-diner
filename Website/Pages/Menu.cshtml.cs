@@ -76,6 +76,51 @@ namespace Website.Pages
                 AvailableSides = Menu.Search(AvailableSides, search);
                 AvailableDrinks = Menu.Search(AvailableDrinks, search);
             }
+            if (menuCategory.Count > 0 )
+            {
+                if(!menuCategory.Contains("Combos"))
+                {
+                    AvailableCombos = new List<CretaceousCombo>();
+                }
+                if (!menuCategory.Contains("Entree"))
+                {
+                    AvailableEntrees = new List<Entree>();
+                }
+                if (!menuCategory.Contains("Side"))
+                {
+                    AvailableSides = new List<Side>();
+                }
+                if (!menuCategory.Contains("Drink"))
+                {
+                    AvailableDrinks = new List<Drink>();
+                }
+            }
+
+
+            if(minPrice is float min)
+            {
+                AvailableCombos = Menu.FilterByMinPrice(AvailableCombos, min);
+                AvailableEntrees = Menu.FilterByMinPrice(AvailableEntrees, min);
+                AvailableSides = Menu.FilterByMinPrice(AvailableSides, min);
+                AvailableDrinks = Menu.FilterByMinPrice(AvailableDrinks, min);
+            }
+
+            if (maxPrice is float max)
+            {
+                AvailableCombos = Menu.FilterByMaxPrice(AvailableCombos, max);
+                AvailableEntrees = Menu.FilterByMaxPrice(AvailableEntrees, max);
+                AvailableSides = Menu.FilterByMaxPrice(AvailableSides, max);
+                AvailableDrinks = Menu.FilterByMaxPrice(AvailableDrinks, max);
+            }
+
+            if (excludedIngredients.Count > 0)
+            {
+                AvailableCombos = Menu.FilterByExcludedIngriedents(AvailableCombos, excludedIngredients);
+                AvailableEntrees = Menu.FilterByExcludedIngriedents(AvailableEntrees, excludedIngredients);
+                AvailableSides = Menu.FilterByExcludedIngriedents(AvailableSides, excludedIngredients);
+                AvailableDrinks = Menu.FilterByExcludedIngriedents(AvailableDrinks, excludedIngredients);
+            }
+
 
 
 

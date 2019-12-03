@@ -8,74 +8,160 @@
 
 <h1>Menu</h1>
 
-
-
-
-<h2>Combos</h2>
-@foreach (IMenuItem item in Model.menu.AvailableCombos)
-{
-    <div class="menu-item">
-        @item.ToString();
-        <div>Price: @item.Price Calories: @item.Calories</div>
-        @foreach (string ingredients in item.Ingredients)
+<div class="form-container">
+    <div class="menu-container">
+        @if ((Model.AvailableCombos == null || Model.AvailableCombos.Count == 0) && (Model.AvailableEntrees == null ||
+            Model.AvailableEntrees.Count == 0) && (Model.AvailableSides == null || Model.AvailableSides.Count == 0) && 
+            (Model.AvailableDrinks == null || Model.AvailableDrinks.Count == 0)) 
         {
-            <div>@ingredients</div>
+            <p>
+                No Menu items available.
+            </p>
         }
-    </div>
-}
-
-
-<h2>Entrees</h2>
-@foreach (IMenuItem item in Model.menu.AvailableEntrees)
-{
-    <div class="menu-item">
-        @item.ToString();
-        <div>Price: @item.Price Calories: @item.Calories</div>
-        @foreach (string ingredients in item.Ingredients)
+        @if (Model.AvailableCombos != null && Model.AvailableCombos.Count > 0)
         {
-            <div>@ingredients</div>
+            <h2>Combos</h2>
+            <div class="menu-item-list">
+                @foreach(var item in Model.AvailableCombos)
+                {
+                    <div class="menu-item">
+                        <div class="menu-description"><h3>@item.Description</h3></div>
+                        <div class="menu-price">$@item.Price.ToString("N2")</div>
+                        <div class="menu-calories">@item.Calories Calories</div>
+                        <div class="menu-ingredients">
+                            <p>Ingredients</p>
+                            <ul>
+                                @foreach (var ingredient in item.Ingredients)
+                                {
+                                    <li>@ingredient</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>  
+                }
+            </div>
         }
-    </div>
-}
 
-<h2>Sides</h2>
-@foreach (IMenuItem item in Model.menu.AvailableSides)
-{
-<div class="menu-item">
-    @item.ToString();
+        @if (Model.AvailableEntrees != null && Model.AvailableEntrees.Count > 0)
+        {
+            <h2>Entree</h2>
+            <div class="menu-item-list">
+                @foreach (var item in Model.AvailableEntrees)
+                {
+                    <div class="menu-item">
+                        <div class="menu-description"><h3>@item.Description</h3></div>
+                        <div class="menu-price">$@item.Price.ToString("N2")</div>
+                        <div class="menu-calories">@item.Calories Calories</div>
+                        <div class="menu-ingredients">
+                            <p>Ingredients</p>
+                            <ul>
+                                @foreach (var ingredient in item.Ingredients)
+                                {
+                                    <li>@ingredient</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                }
+            </div>
+         }
 
-    <div>Price: @item.Price Calories: @item.Calories</div>
-
-    @foreach (string ingredients in item.Ingredients)
-    {
-        <div>@ingredients</div>
-    }
+        @if(Model.AvailableSides != null && Model.AvailableSides.Count > 0)
+        {
+            <h2>Sides</h2>
+            <div class="menu-item-list">
+                @foreach(var item in Model.AvailableSides)
+                {
+                <div class="menu-item">
+                    <div class="menu-description"><h3>@item.Description</h3></div>
+                    <div class="menu-price">$@item.Price.ToString("N2")</div>
+                    <div class="menu-calories">@item.Calories Calories</div>
+                    <div class="menu-ingredients">
+                        <p>Ingredients</p>
+                        <ul>
+                            @foreach (var ingredient in item.Ingredients)
+                            {
+                                <li>@ingredient</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                }
+             </div>
+         }
+        @if (Model.AvailableDrinks != null && Model.AvailableDrinks.Count > 0)
+        {
+            <h2>Drinks</h2>
+            <div class="menu-item-list">
+                @foreach(var item in Model.AvailableDrinks)
+                {
+                <div class="menu-item">
+                    <div class="menu-description"><h3>@item.Description</h3></div>
+                    <div class="menu-price">$@item.Price.ToString("N2")</div>
+                    <div class="menu-calories">@item.Calories Calories</div>
+                    <div class="menu-ingredients">
+                        <p>Ingredients</p>
+                        <ul>
+                            @foreach(var ingredient in item.Ingredients)
+                            {
+                                <li>@ingredient</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                }
+            </div>
+        }
 </div>
-}
 
-<h2>Drinks</h2>
-@foreach (IMenuItem item in Model.menu.AvailableDrinks)
-{
-    <div class="menu-item">
-        @item.ToString();
-        <div> Price: @item.Price Calories: @item.Calories </div>
-        @foreach (string ingredients in item.Ingredients)
+
+
+    <form method="post">
+        <h2>Search &Aacute; Filter</h2>
+        <div class="form-group">
+            <h3>Search</h3>
+            <input type="text" id="search" name="search" value="@Model.search" />
+        </div>
+        <input type="submit" value="Apply Filter(s)" />
+        <div class="form-group">
+            <h3>Filter by Type</h3>
+            <label>
+                <input type="checkbox" class="menu-category" value="Combo" name="menuCategory"
+                       checked="@Model.menuCategory.Contains("Combo")" />
+                Combo
+            </label>
+            <label>
+                <input type="checkbox" class="menu-category" value="Entree" name="menuCategory"
+                       checked="@Model.menuCategory.Contains("Entree")" />
+                Entree
+            </label>
+            <label>
+                <input type="checkbox" class="menu-category" value="Side" name="menuCategory"
+                       checked="@Model.menuCategory.Contains("Side")" />
+                Side
+            </label>
+            <label>
+                <input type="checkbox" class="menu-category" value="Drink" name="menuCategory"
+                       checked="@Model.menuCategory.Contains("Drink")" />
+                Drink
+            </label>
+        </div>
+        @if (Model.Menu.IngredientsNotDuplicated.Count > 0)
         {
-            <div>@ingredients</div>
+            <div class="form-group">
+                <h3>Excluded Ingredients</h3>
+                @foreach (var ingredient in Model.Menu.IngredientsNotDuplicated)
+                {
+                    <label>
+                        <input type="checkbox" class="exclude-ingredients" value="@ingredient" name="excludedIngredients"
+                               checked="@Model.excludedIngredients.Contains(ingredient)" />
+                        @ingredient
+                    </label>
+                }
+            </div>
         }
-    </div>
-}
-
-
-<form method="post">
-    <h2>Search</h2>
-    <input type="text" id="search" name="search" value="@Model.search"/>
-
-
-
-
-
-</form>
+    </form>
+</div>
 
 
 

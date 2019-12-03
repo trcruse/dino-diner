@@ -54,11 +54,28 @@ namespace DinoDiner.Menu
             }
             set
             {
+                if (side != null)
+                {
+                    side.PropertyChanged -= ComboItemPropertyChanged;
+                }
+                value.PropertyChanged += ComboItemPropertyChanged;
                 side = value;
                 NotifyOfPropertyChanged("Ingredients");
                 NotifyOfPropertyChanged("Special");
                 NotifyOfPropertyChanged("Price");
                 NotifyOfPropertyChanged("Calories");
+            }
+        }
+
+        private void ComboItemPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "Description")
+            {
+                NotifyOfPropertyChanged("Special");
+            }
+            else
+            {
+                NotifyOfPropertyChanged(e.PropertyName);
             }
         }
 
@@ -194,6 +211,7 @@ namespace DinoDiner.Menu
         /// <param name="entree">The entree to use</param>
         public CretaceousCombo(Entree entree)
         {
+            entree.PropertyChanged += ComboItemPropertyChanged;
             this.Entree = entree;
             this.Side = new Fryceritops();
             this.Drink = new Sodasaurus();

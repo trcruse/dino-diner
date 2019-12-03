@@ -140,11 +140,55 @@ namespace DinoDiner.Menu
         }
 
 
+        public static List<T> FilterByMinPrice<T>(List<T> menuItems, float min) where T : IMenuItem
+        {
+            List<T> results = new List<T>();
+            foreach(T item in menuItems)
+            {
+                if (item.Price >= min)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
+        public static List<T> FilterByMaxPrice<T>(List<T> menuItems, float max) where T : IMenuItem
+        {
+            List<T> results = new List<T>();
+            foreach(T item in menuItems)
+            {
+                if(item.Price <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
 
 
-
-
-
+        public static List<T> FilterByExcludedIngriedents<T>(List<T> menuItems, List<string> excludedIngredients)
+            where T : IMenuItem
+        {
+            List<T> results = new List<T>();
+            foreach(T item in menuItems)
+            {
+                bool passesFilter = true;
+                foreach(string ingredient in excludedIngredients)
+                {
+                    if (item.Ingredients.Contains(ingredient))
+                    {
+                        passesFilter = false;
+                        break;
+                    }
+                }
+                if (passesFilter)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
 
 
 
