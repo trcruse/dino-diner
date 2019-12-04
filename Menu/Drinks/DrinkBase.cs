@@ -115,28 +115,23 @@ namespace DinoDiner.Menu
             /// <summary>
             /// Gets a description of the order item
             /// </summary>
-            public virtual string Description
-            {
-                get
-                {
-                    return this.ToString();
-                }
-            }
+            public abstract string Description { get; }
+
+
+        /// <summary>
+        /// Special instructions for food requirements
+        /// All Drinks inherit Hold Ice method except for JurrasicJava
+        /// </summary>
+        public abstract string[] Special { get; }
             
-            /// <summary>
-            /// Special instructions for food requirements
-            /// All Drinks inherit Hold Ice method except for JurrasicJava
-            /// </summary>
-            public virtual string[] Special
-            {
-                get
-                {
-                    List<string> special = new List<string>();
-                    //If Ice is false
-                    if (!Ice) special.Add("Hold Ice");
-                    return special.ToArray();
-                }
-            }
+                //get
+                //{
+                //    List<string> special = new List<string>();
+                //    //If Ice is false
+                //    if (!Ice) special.Add("Hold Ice");
+                //    return special.ToArray();
+                //}
+            
 
 
     } //end of abstract Drink base class

@@ -10,30 +10,20 @@ namespace DinoDiner.Menu
     /// </summary>
     public interface IMenuItem 
     {
-
-        //public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// double Price property with a getter
         /// </summary>
-        double Price { get; set; }
+        double Price { get; }
         /// <summary>
         /// uint Calorie property with a getter
         /// </summary>
-        uint Calories { get; set; }
+        uint Calories { get; }
         /// <summary>
         /// Ingreidents of a list string for Ingredients
         /// </summary>
         List<string> Ingredients { get; }
-        object Description { get; }
+        //object Description { get; }
 
-        //string Description => ToString();
-
-        //string[] Special => Special.ToArray();
-
-        //public virtual void NotifyOfPropertyChanged(string propertyName)
-        //{
-        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        //}
-
+       
     } // End of IMenuItem interface
 }

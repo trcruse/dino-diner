@@ -1,19 +1,40 @@
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
 for details on configuring this project to bundle and minify static web assets. */
+
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-
-.menu-item {
-    padding-bottom: 20px;
+form {
+    width: 300px;
+    background-color: lightblue;
+    flex-grow: 0;
+    padding: 25px;
+    margin-left: 15px;
+    float: right;
 }
 
+h4 {
+    margin-bottom: 5px;
+}
+
+.menu-category-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.price {
+    width: 100px;
+}
+
+.ingredient-list {
+    display: flex;
+    flex-direction: column;
+}

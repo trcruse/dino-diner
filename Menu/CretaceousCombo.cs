@@ -13,6 +13,7 @@ namespace DinoDiner.Menu
         private Size size;
 
 
+
         private Entree entree;
         /// <summary>
         /// Gets and sets the entree
@@ -97,6 +98,11 @@ namespace DinoDiner.Menu
             }
             set
             {
+                if (drink != null)
+                {
+                    drink.PropertyChanged -= ComboItemPropertyChanged;
+                }
+                value.PropertyChanged += ComboItemPropertyChanged;
                 drink = value;
                 NotifyOfPropertyChanged("Ingredients");
                 NotifyOfPropertyChanged("Special");
@@ -140,10 +146,11 @@ namespace DinoDiner.Menu
                 size = value;
                 Drink.Size = value;
                 Side.Size = value;
-                NotifyOfPropertyChanged("Special");
+                //NotifyOfPropertyChanged("Special");
                 NotifyOfPropertyChanged("Size");
-                NotifyOfPropertyChanged("Price");
-                NotifyOfPropertyChanged("Calories");
+                //NotifyOfPropertyChanged("Price");
+                //NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
         }
 
@@ -204,6 +211,20 @@ namespace DinoDiner.Menu
             return $"{Entree} Combo";
         }
 
+        private void ComboPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "Description")
+            {
+                NotifyOfPropertyChanged("Special");
+            }
+            else
+            {
+                NotifyOfPropertyChanged(e.PropertyName);
+            }
+        }
+
+        public string Toy { get; private set; }
+
         /// <summary>
         /// Constructor
         /// Constructs a new combo with the specified entree
@@ -212,9 +233,10 @@ namespace DinoDiner.Menu
         public CretaceousCombo(Entree entree)
         {
             entree.PropertyChanged += ComboItemPropertyChanged;
-            this.Entree = entree;
-            this.Side = new Fryceritops();
-            this.Drink = new Sodasaurus();
+            Entree = entree;
+            Side = new Fryceritops();
+            Drink = new Sodasaurus();
+            Toy = "Dinosaur toy";
         }
 
 
