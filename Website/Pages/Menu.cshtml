@@ -121,13 +121,14 @@
 
         <h4>Filter by Price</h4>
         <div>
-            Min <input type="number" class="price" id="min-price" value="@Model.minPrice" />
-            Max <input type="number" class="price" id="max-price" value="@Model.maxPrice" />
+            
+            Min <input type="number" name="minPrice" class="price" id="minimum-price" value="@Model.minPrice" /><br />
+            Max <input type="number" name="maxPrice" class="price" id="maximum-price" value="@Model.maxPrice" /><br />
         </div>
+
         <h4>Exclude Ingredients</h4>
         <div class="ingredient-list">
-
-            @foreach (string ingredient in @Model.Menu.AvailableIngredients)
+            @foreach (string ingredient in @Model.Menu.PossibleIngredients)
             {
                 <label>
                     <input type="checkbox" class="exclude-ingredients" value="@ingredient" name="ingredient"

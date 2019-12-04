@@ -23,30 +23,60 @@ namespace Website.Pages
             }
         }
 
+        /// <summary>
+        /// List of Available Combos
+        /// </summary>
         public List<CretaceousCombo> AvailableCombos { get; set; } 
 
+        /// <summary>
+        /// List of Available Entrees
+        /// </summary>
         public List<Entree> AvailableEntrees { get; set; } 
 
+        /// <summary>
+        /// List of Available Sides
+        /// </summary>
         public List<Side> AvailableSides { get; set; }
 
+        /// <summary>
+        /// List of Available drinks
+        /// </summary>
         public List<Drink> AvailableDrinks { get; set; }
 
+        /// <summary>
+        /// Binding Property for search
+        /// </summary>
         [BindProperty]
         public string search { get; set; }
 
+        /// <summary>
+        /// Binding Property for menuCategory
+        /// </summary>
         [BindProperty]
-        public List<string> menuCategory { get; set; }
+        public List<string> menuCategory { get; set; } = new List<string>();
 
+        /// <summary>
+        /// Binding Property for minimum Price
+        /// </summary>
         [BindProperty]
         public float? minPrice { get; set; }
 
+        /// <summary>
+        /// Binding Property for maximum Price
+        /// </summary>
         [BindProperty] 
         public float? maxPrice { get; set; }
 
+        /// <summary>
+        /// Binding Property for a List of string ingredients
+        /// </summary>
         [BindProperty]
         public List<string> ingredient { get; set; } = new List<string>();
 
 
+        /// <summary>
+        /// Method to call to website
+        /// </summary>
         public void OnGet()
         {
             AvailableCombos = Menu.AvailableCombos;
@@ -56,7 +86,15 @@ namespace Website.Pages
            
         }
 
-        public void OnPost(string search, List<string> menuCategory, float? minPrice, float? maxPrice, List<string> ingredient)
+        /// <summary>
+        /// Method for each attribute set to post
+        /// </summary>
+        /// <param name="search"></param>
+        /// <param name="menuCategory"></param>
+        /// <param name="minPrice"></param>
+        /// <param name="maxPrice"></param>
+        /// <param name="ingredient"></param>
+        public void OnPost()
         {
             AvailableCombos = Menu.AvailableCombos;
             AvailableEntrees = Menu.AvailableEntrees;
@@ -66,6 +104,14 @@ namespace Website.Pages
             if (search != null)
             {
                 SearchName(search);
+            }
+            if(minPrice != null)
+            {
+                FilterByMinPrice(minPrice);
+            }
+            if(maxPrice != null)
+            {
+                FilterByMaximumPrice(maxPrice);
             }
             if (menuCategory.Count != 0)
             {
@@ -88,7 +134,10 @@ namespace Website.Pages
             }
         } // End of OnPost method
 
-
+        /// <summary>
+        /// Filters each menu item by their category
+        /// </summary>
+        /// <param name="menuCategory"></param>
         private void FilterByCategory(List<string> menuCategory)
         {
             if (!menuCategory.Contains("Combo"))
@@ -109,6 +158,10 @@ namespace Website.Pages
             }
         }
 
+            /// <summary>
+            /// Search method to operate Search button for each item
+            /// </summary>
+            /// <param name="search"></param>
             private void SearchName(string search)
             {
                 List<Entree> tempEntree = new List<Entree>();
@@ -154,7 +207,12 @@ namespace Website.Pages
             } // end of searchName method
 
 
-        private void filterByMinPrice(float? minPrice)
+        /// <summary>
+        /// the form is submitted with a minimum value, only the menu items 
+        /// with a price of more than or equal to the minimum are displayed.
+        /// </summary>
+        /// <param name="minPrice"></param>
+        private void FilterByMinPrice(float? minPrice)
         {
             List<Entree> tempEntree = new List<Entree>();
             foreach(Entree entree in AvailableEntrees)
@@ -198,12 +256,18 @@ namespace Website.Pages
 
         } // end of FilterByMinPrice method
 
+
+        /// <summary>
+        /// maximum price filter value, only the menu items with a price 
+        /// of less than or equal to the maximum are displayed
+        /// </summary>
+        /// <param name="maxPrice"></param>
         private void FilterByMaximumPrice(float? maxPrice)
         {
             List<Entree> tempEntree = new List<Entree>();
             foreach (Entree entree in AvailableEntrees)
             {
-                if (entree.Price >= maxPrice)
+                if (entree.Price <= maxPrice)
                 {
                     tempEntree.Add(entree);
                 }
@@ -213,7 +277,7 @@ namespace Website.Pages
             List<CretaceousCombo> tempCombo = new List<CretaceousCombo>();
             foreach (CretaceousCombo combo in AvailableCombos)
             {
-                if (combo.Price >= maxPrice)
+                if (combo.Price <= maxPrice)
                 {
                     tempCombo.Add(combo);
                 }
@@ -223,7 +287,7 @@ namespace Website.Pages
             List<Side> tempSide = new List<Side>();
             foreach (Side side in AvailableSides)
             {
-                if (side.Price >= maxPrice)
+                if (side.Price <= maxPrice)
                 {
                     tempSide.Add(side);
                 }
@@ -233,7 +297,7 @@ namespace Website.Pages
             List<Drink> tempDrink = new List<Drink>();
             foreach (Drink drink in AvailableDrinks)
             {
-                if (drink.Price >= maxPrice)
+                if (drink.Price <= maxPrice)
                 {
                     tempDrink.Add(drink);
                 }
@@ -242,6 +306,10 @@ namespace Website.Pages
         } // end of FilterByMaxPrice method
 
 
+        /// <summary>
+        /// Filters by ingredient associated to each menu item searched
+        /// </summary>
+        /// <param name="ingredient"></param>
         private void FilterByIngredient(List<string> ingredient)
         {
             List<Entree> tempEntree = new List<Entree>();
@@ -302,4 +370,4 @@ namespace Website.Pages
 
 
     }
- }
+ } // End of Menu.cshtml.cs class

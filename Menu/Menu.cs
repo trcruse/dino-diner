@@ -13,8 +13,6 @@ namespace DinoDiner.Menu
         /// should return a list containing one instance of every menu item 
         /// currently offered by DinoDiner
         /// </summary>
-        /// 
-
         public List<IMenuItem> AvailableMenuItems 
         {
             get
@@ -149,9 +147,9 @@ namespace DinoDiner.Menu
 
 
         /// <summary>
-        /// All Available Ingredients
+        /// Possible ingredient values represented by the Menu class’s 
         /// </summary>
-        public HashSet<string> AvailableIngredients
+        public HashSet<string> PossibleIngredients
         {
             get
             {

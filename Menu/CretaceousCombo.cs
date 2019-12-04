@@ -40,13 +40,11 @@ namespace DinoDiner.Menu
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+
         /// <summary>
         /// Gets and sets the side
         /// </summary>
-        
-
         private Side side;
-
         public Side Side
         {
             get
@@ -68,6 +66,11 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Notifies when combo property changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComboItemPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == "Description")
@@ -84,7 +87,6 @@ namespace DinoDiner.Menu
         /// Assigns drink class to sodasaurus
         /// </summary>
         private Drink drink = new Sodasaurus();
-
         /// <summary>
         /// Gets and sets the drink
         /// Notifys property change in Ingredients, Price, Calories, and Special per each food implementation in
