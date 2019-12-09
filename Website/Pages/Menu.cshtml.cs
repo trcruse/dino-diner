@@ -128,8 +128,8 @@ namespace Website.Pages
             {
                 if (maxPrice is float maximumPrice)
                 {
-                    AvailableEntrees = AvailableEntrees.Where(item => item.Price <= maximumPrice);
                     AvailableCombos = AvailableCombos.Where(item => item.Price <= maximumPrice);
+                    AvailableEntrees = AvailableEntrees.Where(item => item.Price <= maximumPrice);
                     AvailableEntrees = AvailableEntrees.Where(item => item.Price <= maximumPrice);
                     AvailableDrinks = AvailableDrinks.Where(item => item.Price <= maximumPrice);
                 }

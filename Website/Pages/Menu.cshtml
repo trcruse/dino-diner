@@ -57,20 +57,20 @@
 
         @if (Model.AvailableEntrees.Count() > 0)
         {
-    <div id="entrees" class="menu-class">
-        <h2>Entrees</h2>
-        @foreach (var item in Model.AvailableEntrees)
-        {
-            <h3>@item.ToString()</h3>
-            <div class="menu-item">
-                <ul>
-                    <li>Price: $@item.Price.ToString()</li>
-                    <li>Calories: @item.Calories</li>
-                    <li>Ingredients: @string.Join(", ", item.Ingredients)</li>
-                </ul>
+            <div id="entrees" class="menu-class">
+            <h2>Entrees</h2>
+                @foreach (var item in Model.AvailableEntrees)
+                {
+                    <h3>@item.ToString()</h3>
+                    <div class="menu-item">
+                        <ul>
+                            <li>Price: $@item.Price.ToString()</li>
+                            <li>Calories: @item.Calories</li>
+                            <li>Ingredients: @string.Join(", ", item.Ingredients)</li>
+                        </ul>
+                    </div>
+                }
             </div>
-        }
-    </div>
         }
 
         @if (Model.AvailableSides.Count() > 0)
@@ -80,14 +80,40 @@
                 @foreach (var item in Model.AvailableSides)
                 {
                     <div class="menu-item">
-                        <h3>@item.ToString()</h3>
-                        <ul>
-                            <li>Price: $@item.Price.ToString()</li>
-                            <li>Calories: @item.Calories</li>
-                            <li>Ingredients: @string.Join(", ", item.Ingredients)</li>
-                        </ul>
-                    </div>
-                }
+                    <div class="menu-description"><h3>@item.Description.Replace("Small", "")</h3></div>
+                    <div class="menu-sizetable">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Size</th>
+                                <th>Price</th>
+                                <th>Calories</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var size in Model.Sizes)
+                            {
+                                item.Size = size;
+                                <tr>
+                                    <th>@item.Size</th>
+                                    <td>$@item.Price.ToString()</td>
+                                    <td>@item.Calories</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="menu-ingredients">
+                    <p>Ingredients</p>
+                    <ul>
+                        @foreach(var ingredient in item.Ingredients)
+                        {
+                            <li>@ingredient</li>
+                        }
+                    </ul>
+                </div> 
+            </div>
+            }
             </div>
         }
 
@@ -98,16 +124,42 @@
                 @foreach (var item in Model.AvailableDrinks)
                 {
                     <div class="menu-item">
-                        <h3>@item.ToString()</h3>
-                        <ul>
-                            <li>Price: $@item.Price.ToString()</li>
-                            <li>Calories: @item.Calories</li>
-                            <li>Ingredients: @string.Join(", ", item.Ingredients)</li>
-                        </ul>
-                    </div>
-                }
+                    <div class="menu-description"><h3>@item.Description.Replace("Small", "")</h3></div>
+                    <div class="menu-sizetable">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Size</th>
+                                <th>Price</th>
+                                <th>Calories</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var size in Model.Sizes)
+                            {
+                                item.Size = size;
+                                <tr>
+                                    <th>@item.Size</th>
+                                    <td>$@item.Price.ToString()</td>
+                                    <td>@item.Calories</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="menu-ingredients">
+                    <p>Ingredients</p>
+                    <ul>
+                        @foreach (var ingredient in item.Ingredients)
+                        {
+                            <li>@ingredient</li>
+                        }
+                    </ul>
+                </div>
             </div>
         }
+     </div>
+  }
 
     </div>
 
