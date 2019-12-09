@@ -26,28 +26,29 @@ namespace Website.Pages
         /// <summary>
         /// List of Available Combos
         /// </summary>
-        public List<CretaceousCombo> AvailableCombos { get; set; } 
+        public IEnumerable<CretaceousCombo> AvailableCombos { get; set; }
 
         /// <summary>
         /// List of Available Entrees
         /// </summary>
-        public List<Entree> AvailableEntrees { get; set; } 
+        //public List<Entree> AvailableEntrees { get; set; } 
+        public IEnumerable<Entree> AvailableEntrees { get; set; }
 
         /// <summary>
         /// List of Available Sides
         /// </summary>
-        public List<Side> AvailableSides { get; set; }
+        public IEnumerable<Side> AvailableSides { get; set; }
 
         /// <summary>
         /// List of Available drinks
         /// </summary>
-        public List<Drink> AvailableDrinks { get; set; }
+        public IEnumerable<Drink> AvailableDrinks { get; set; }
 
         /// <summary>
-        /// Binding Property for search
+        ///search functionality to using Linq with IEnumberable.Where method
         /// </summary>
         [BindProperty]
-        public string search { get; set; }
+        public string search { get; set; } 
 
         /// <summary>
         /// Binding Property for menuCategory
@@ -73,6 +74,7 @@ namespace Website.Pages
         [BindProperty]
         public List<string> ingredient { get; set; } = new List<string>();
 
+        public List<Size> Sizes { get; } = new List<Size> { Size.Small, Size.Medium, Size.Large };
 
         /// <summary>
         /// Method to call to website
@@ -83,17 +85,11 @@ namespace Website.Pages
             AvailableEntrees = Menu.AvailableEntrees;
             AvailableSides = Menu.AvailableSides;
             AvailableDrinks = Menu.AvailableDrinks;
-           
         }
 
         /// <summary>
         /// Method for each attribute set to post
         /// </summary>
-        /// <param name="search"></param>
-        /// <param name="menuCategory"></param>
-        /// <param name="minPrice"></param>
-        /// <param name="maxPrice"></param>
-        /// <param name="ingredient"></param>
         public void OnPost()
         {
             AvailableCombos = Menu.AvailableCombos;
@@ -103,16 +99,42 @@ namespace Website.Pages
 
             if (search != null)
             {
-                SearchName(search);
+                //SearchName(search);
+                AvailableCombos = AvailableCombos.Where(item => item.Description.Contains(search, 
+                    StringComparison.OrdinalIgnoreCase));
+
+                AvailableEntrees = AvailableEntrees.Where(item => item.Description.Contains(search,
+                    StringComparison.OrdinalIgnoreCase));
+
+                AvailableSides = AvailableSides.Where(item => item.Description.Contains(search,
+                    StringComparison.OrdinalIgnoreCase));
+
+                AvailableDrinks = AvailableDrinks.Where(item => item.Description.Contains(search,
+                    StringComparison.OrdinalIgnoreCase));
             }
-            if(minPrice != null)
+            // MIN PRICE
+            if (minPrice != null)
             {
-                FilterByMinPrice(minPrice);
+                if (minPrice is float minimumPrice)
+                {
+                    AvailableCombos = AvailableCombos.Where(item => item.Price >= minimumPrice);
+                    AvailableEntrees = AvailableEntrees.Where(item => item.Price >= minimumPrice);
+                    AvailableSides = AvailableSides.Where(item => item.Price >= minimumPrice);
+                    AvailableDrinks = AvailableDrinks.Where(item => item.Price >= minimumPrice);
+                }
             }
-            if(maxPrice != null)
+            // MAX PRICE
+            if (maxPrice != null)
             {
-                FilterByMaximumPrice(maxPrice);
+                if (maxPrice is float maximumPrice)
+                {
+                    AvailableEntrees = AvailableEntrees.Where(item => item.Price <= maximumPrice);
+                    AvailableCombos = AvailableCombos.Where(item => item.Price <= maximumPrice);
+                    AvailableEntrees = AvailableEntrees.Where(item => item.Price <= maximumPrice);
+                    AvailableDrinks = AvailableDrinks.Where(item => item.Price <= maximumPrice);
+                }
             }
+
             if (menuCategory.Count != 0)
             {
                 if (!menuCategory.Contains("Combo"))
@@ -132,31 +154,62 @@ namespace Website.Pages
                     AvailableDrinks = new List<Drink>();
                 }
             }
+            
+
+            //INGREDIENT
+            if (ingredient.Count > 0)
+            {
+                AvailableCombos = AvailableCombos.Where(item =>
+                {
+                    foreach (string i in ingredient)
+                    {
+                        if (item.Ingredients.Contains(i))
+                        {
+                            return false;
+                        }
+                    }
+                    return true;
+                });
+
+                AvailableEntrees = AvailableEntrees.Where(item =>
+                {
+                    foreach (string i in ingredient)
+                    {
+                        if (item.Ingredients.Contains(i))
+                        {
+                            return false;
+                        }
+                    }
+                    return true;
+                });
+
+                AvailableSides = AvailableSides.Where(item =>
+                {
+                    foreach (string i in ingredient)
+                    {
+                        if (item.Ingredients.Contains(i))
+                        {
+                            return false;
+                        }
+                    }
+                    return true;
+                });
+
+                AvailableDrinks = AvailableDrinks.Where(item =>
+                {
+                    foreach (string i in ingredient)
+                    {
+                        if (item.Ingredients.Contains(i))
+                        {
+                            return false;
+                        }
+                    }
+                    return true;
+                });
+            }
         } // End of OnPost method
 
-        /// <summary>
-        /// Filters each menu item by their category
-        /// </summary>
-        /// <param name="menuCategory"></param>
-        private void FilterByCategory(List<string> menuCategory)
-        {
-            if (!menuCategory.Contains("Combo"))
-            {
-                AvailableCombos = new List<CretaceousCombo>();
-            }
-            if(!menuCategory.Contains("Entree"))
-            {
-                AvailableEntrees = new List<Entree>();
-            }
-            if (!menuCategory.Contains("Side"))
-            {
-                AvailableSides = new List<Side>();
-            }
-            if (!menuCategory.Contains("Drink"))
-            {
-                AvailableDrinks = new List<Drink>();
-            }
-        }
+        
 
             /// <summary>
             /// Search method to operate Search button for each item
@@ -203,58 +256,7 @@ namespace Website.Pages
                     }
                 }
                 AvailableDrinks = tempDrink;
-
             } // end of searchName method
-
-
-        /// <summary>
-        /// the form is submitted with a minimum value, only the menu items 
-        /// with a price of more than or equal to the minimum are displayed.
-        /// </summary>
-        /// <param name="minPrice"></param>
-        private void FilterByMinPrice(float? minPrice)
-        {
-            List<Entree> tempEntree = new List<Entree>();
-            foreach(Entree entree in AvailableEntrees)
-            {
-                if (entree.Price >= minPrice)
-                {
-                    tempEntree.Add(entree);
-                }
-            }
-            AvailableEntrees = tempEntree;
-
-            List<CretaceousCombo> tempCombo = new List<CretaceousCombo>();
-            foreach (CretaceousCombo combo in AvailableCombos)
-            {
-                if (combo.Price >= minPrice)
-                {
-                    tempCombo.Add(combo);
-                }
-            }
-            AvailableCombos = tempCombo;
-
-            List<Side> tempSide = new List<Side>();
-            foreach (Side side in AvailableSides)
-            {
-                if (side.Price >= minPrice)
-                {
-                    tempSide.Add(side);
-                }
-            }
-            AvailableSides = tempSide;
-
-            List<Drink> tempDrink = new List<Drink>();
-            foreach (Drink drink in AvailableDrinks)
-            {
-                if (drink.Price >= minPrice)
-                {
-                    tempDrink.Add(drink);
-                }
-            }
-            AvailableDrinks = tempDrink;
-
-        } // end of FilterByMinPrice method
 
 
         /// <summary>
@@ -262,109 +264,64 @@ namespace Website.Pages
         /// of less than or equal to the maximum are displayed
         /// </summary>
         /// <param name="maxPrice"></param>
-        private void FilterByMaximumPrice(float? maxPrice)
+        public static List<T> FilterByMaxPrice<T>(float maxPrice, List<T> menuItems) where T : IMenuItem
         {
-            List<Entree> tempEntree = new List<Entree>();
-            foreach (Entree entree in AvailableEntrees)
+            List<T> results = new List<T>();
+            foreach(T item in menuItems)
             {
-                if (entree.Price <= maxPrice)
+                if(item.Price <= maxPrice)
                 {
-                    tempEntree.Add(entree);
+                    results.Add(item);
                 }
             }
-            AvailableEntrees = tempEntree;
-
-            List<CretaceousCombo> tempCombo = new List<CretaceousCombo>();
-            foreach (CretaceousCombo combo in AvailableCombos)
-            {
-                if (combo.Price <= maxPrice)
-                {
-                    tempCombo.Add(combo);
-                }
-            }
-            AvailableCombos = tempCombo;
-
-            List<Side> tempSide = new List<Side>();
-            foreach (Side side in AvailableSides)
-            {
-                if (side.Price <= maxPrice)
-                {
-                    tempSide.Add(side);
-                }
-            }
-            AvailableSides = tempSide;
-
-            List<Drink> tempDrink = new List<Drink>();
-            foreach (Drink drink in AvailableDrinks)
-            {
-                if (drink.Price <= maxPrice)
-                {
-                    tempDrink.Add(drink);
-                }
-            }
-            AvailableDrinks = tempDrink;
+            return results;
         } // end of FilterByMaxPrice method
+
+
+        /// <summary>
+        /// the form is submitted with a minimum value, only the menu items 
+        /// with a price of more than or equal to the minimum are displayed.
+        /// </summary>
+        /// <param name="minPrice"></param>
+        public static List<T> FilterByMinPrice<T>(List<T> menuItems, float minPrice) where T : IMenuItem
+        {
+            List<T> results = new List<T>();
+            foreach (T item in menuItems)
+            {
+                if (item.Price >= minPrice)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
 
 
         /// <summary>
         /// Filters by ingredient associated to each menu item searched
         /// </summary>
         /// <param name="ingredient"></param>
-        private void FilterByIngredient(List<string> ingredient)
+        public static List<T> FilterByIngredient<T>(List<T> menuItems, List<string> ingredient)
+            where T : IMenuItem
         {
-            List<Entree> tempEntree = new List<Entree>();
-            List<CretaceousCombo> tempCombo = new List<CretaceousCombo>();
-            List<Side> tempSide = new List<Side>();
-            List<Drink> tempDrink = new List<Drink>();
-
-            foreach(string item in ingredient)
+            List<T> results = new List<T>();
+            foreach(T item in menuItems)
             {
-                foreach(Entree entree in AvailableEntrees)
+                bool filter = true;
+                foreach(string i in ingredient)
                 {
-                    if (entree.Ingredients != null && entree.Ingredients.Contains(item))
+                    if (item.Ingredients.Contains(i))
                     {
-                        tempEntree.Add(entree);
+                        filter = false;
+                        break;
                     }
                 }
-                foreach (CretaceousCombo combo in AvailableCombos)
+                if (filter)
                 {
-                    if (combo.ToString() != null && combo.Ingredients.Contains(item))
-                    {
-                        tempCombo.Add(combo);
-                    }
-                }
-                foreach (Side side in AvailableSides)
-                {
-                    if (side.ToString() != null && side.Ingredients.Contains(item))
-                    {
-                        tempSide.Add(side);
-                    }
-                }
-                foreach (Drink drink in AvailableDrinks)
-                {
-                    if (drink.ToString() != null && drink.Ingredients.Contains(item))
-                    {
-                        tempDrink.Add(drink);
-                    }
-                }
-
-                foreach(Entree entree in tempEntree)
-                {
-                    AvailableEntrees.Remove(entree);
-                }
-                foreach(CretaceousCombo combo in tempCombo)
-                {
-                    AvailableCombos.Remove(combo);
-                }
-                foreach(Side side in tempSide)
-                {
-                    AvailableSides.Remove(side);
-                }
-                foreach(Drink drink in tempDrink)
-                {
-                    AvailableDrinks.Remove(drink);
+                    results.Add(item);
                 }
             }
+            return results;
         } // End of FilterByIngredient method
 
 

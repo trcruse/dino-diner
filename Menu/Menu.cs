@@ -167,9 +167,6 @@ namespace DinoDiner.Menu
         } 
 
 
-
-
-
         /// <summary>
         /// should also override the ToString() method to display the full menu contents,
         /// separated by new line characters (\n).

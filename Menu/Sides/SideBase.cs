@@ -28,13 +28,13 @@ namespace DinoDiner.Menu
         /// <summary>
         /// inherited classes have their own access to the variable Price
         /// </summary>
-        private double price;
+        
         public double Price { get; set;}
 
         /// <summary>
         ///  inherited classes have their own access to the variable Calories
         /// </summary>
-        private uint calories;
+        
         public uint Calories { get; set; }
 
         /// <summary>

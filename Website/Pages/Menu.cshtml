@@ -10,75 +10,99 @@
 
 <div class="content">
     <div id="results">
-        @if (Model.AvailableCombos.Count > 0)
+        @if (Model.AvailableCombos.Count() > 0)
         {
-            <div id="combos" class="menu-class">
-                <h2>Combos</h2>
+        <div id="combos" class="menu-class">
+            <h2>Cretaceous Combos</h2>
 
-                @for (int i = 0; i < Model.AvailableCombos.Count; i++)
-                {
-                    <div class="menu-item">
-                        <h3>@Model.AvailableCombos[i].ToString()</h3>
+            @foreach (var item in Model.AvailableCombos)
+            {
+                <div class="menu-item">
+                    <div class="menu-description"><h3>@item.Description</h3></div>
+                    <div class="menu-sizetable">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Size</th>
+                                    <th>Price</th>
+                                    <th>Calories</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach  (var size in Model.Sizes)
+                                {
+                                    item.Size = size;
+                                    <tr>
+                                        <th>@item.Size</th>
+                                        <td>$@item.Price.ToString()</td>
+                                        <td>@item.Calories</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="menu-ingredients">
+                        <p>Ingredients</p>
                         <ul>
-                            <li>Price: $@Model.AvailableCombos[i].Price</li>
-                            <li>Calories: @Model.AvailableCombos[i].Calories</li>
-                            <li>Ingredients: @string.Join(", ", Model.AvailableCombos[i].Ingredients)</li>
-                            <li>Drink: @Model.AvailableCombos[i].Drink.ToString()</li>
-                            <li>Side: @Model.AvailableCombos[i].Side.ToString()</li>
+                            @foreach (var ingredient in item.Ingredients)
+                            {
+                                <li>@ingredient</li>
+                            }
                         </ul>
                     </div>
-                }
-            </div>
+                </div>
+            }
+        </div>
         }
 
-        @if (Model.AvailableEntrees.Count > 0)
+        @if (Model.AvailableEntrees.Count() > 0)
         {
-            <div id="entrees" class="menu-class">
-                <h2>Entrees</h2>
-                @for (int i = 0; i < Model.AvailableEntrees.Count; i++)
-                {
-                    <div class="menu-item">
-                        <h3>@Model.AvailableEntrees[i].ToString()</h3>
-                        <ul>
-                            <li>$@Model.AvailableEntrees[i].Price</li>
-                            <li>Calories: @Model.AvailableEntrees[i].Calories</li>
-                            <li>Ingredients: @string.Join(", ", Model.AvailableEntrees[i].Ingredients)</li>
-                        </ul>
-                    </div>
-                }
+    <div id="entrees" class="menu-class">
+        <h2>Entrees</h2>
+        @foreach (var item in Model.AvailableEntrees)
+        {
+            <h3>@item.ToString()</h3>
+            <div class="menu-item">
+                <ul>
+                    <li>Price: $@item.Price.ToString()</li>
+                    <li>Calories: @item.Calories</li>
+                    <li>Ingredients: @string.Join(", ", item.Ingredients)</li>
+                </ul>
             </div>
         }
+    </div>
+        }
 
-        @if (Model.AvailableSides.Count > 0)
+        @if (Model.AvailableSides.Count() > 0)
         {
             <div id="sides" class="menu-class">
                 <h2>Sides</h2>
-                @for (int i = 0; i < Model.AvailableSides.Count; i++)
+                @foreach (var item in Model.AvailableSides)
                 {
                     <div class="menu-item">
-                        <h3>@Model.AvailableSides[i].ToString()</h3>
+                        <h3>@item.ToString()</h3>
                         <ul>
-                            <li>$@Model.AvailableSides[i].Price</li>
-                            <li>Calories: @Model.AvailableSides[i].Calories</li>
-                            <li>Ingredients: @string.Join(", ", Model.AvailableSides[i].Ingredients)</li>
+                            <li>Price: $@item.Price.ToString()</li>
+                            <li>Calories: @item.Calories</li>
+                            <li>Ingredients: @string.Join(", ", item.Ingredients)</li>
                         </ul>
                     </div>
                 }
             </div>
         }
 
-        @if (Model.AvailableDrinks.Count > 0)
+        @if (Model.AvailableDrinks.Count() > 0)
         {
             <div id="drinks" class="menu-class">
                 <h2>Drinks</h2>
-                @for (int i = 0; i < Model.AvailableDrinks.Count; i++)
+                @foreach (var item in Model.AvailableDrinks)
                 {
                     <div class="menu-item">
-                        <h3>@Model.AvailableDrinks[i].ToString()</h3>
+                        <h3>@item.ToString()</h3>
                         <ul>
-                            <li>$@Model.AvailableDrinks[i].Price</li>
-                            <li>Calories: @Model.AvailableDrinks[i].Calories</li>
-                            <li>Ingredients: @string.Join(", ", Model.AvailableDrinks[i].Ingredients)</li>
+                            <li>Price: $@item.Price.ToString()</li>
+                            <li>Calories: @item.Calories</li>
+                            <li>Ingredients: @string.Join(", ", item.Ingredients)</li>
                         </ul>
                     </div>
                 }
@@ -128,7 +152,7 @@
 
         <h4>Exclude Ingredients</h4>
         <div class="ingredient-list">
-            @foreach (string ingredient in @Model.Menu.PossibleIngredients)
+            @foreach (string ingredient in Model.Menu.PossibleIngredients)
             {
                 <label>
                     <input type="checkbox" class="exclude-ingredients" value="@ingredient" name="ingredient"
