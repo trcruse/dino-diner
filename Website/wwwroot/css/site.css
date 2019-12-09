@@ -55,7 +55,7 @@ h4 {
 }
 
 #body-content a {
-    color: lightgreen;
+    color: lightblue;
 }
 
 .form-container {
@@ -63,3 +63,38 @@ h4 {
     grid-template-columns: 1fr 18em;
 }
 
+/* Footer */
+footer {
+    clear: both;
+    background-color: lightblue;
+    font-size: 0.75em;
+    padding: 0.5em 1em;
+    margin: 0 0 0 0;
+    display: flex;
+}
+
+    footer p {
+        padding: 0.25em 1em;
+        margin: auto;
+        color: black;
+        max-width: 70em;
+        text-align: right;
+    }
+
+        footer p.small {
+            font-size: 0.5em;
+        }
+/* End bottom */
+
+/* Table */
+table, th, td {
+    border: 0.1em solid lightblue;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table {
+    margin: 0.5em auto;
+    width: 95%;
+}
+/* End Table */
