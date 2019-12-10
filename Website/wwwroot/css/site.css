@@ -44,20 +44,6 @@ h4 {
     flex-direction: column;
 }
 
-
-
-#body-content {
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-    margin: 2em auto;
-    max-width: 70em;
-}
-
-#body-content a {
-    color: lightblue;
-}
-
 .form-container {
     display: grid;
     grid-template-columns: 1fr 18em;
@@ -73,17 +59,17 @@ footer {
     display: flex;
 }
 
-    footer p {
-        padding: 0.25em 1em;
-        margin: auto;
-        color: black;
-        max-width: 70em;
-        text-align: right;
-    }
+footer p {
+    padding: 0.25em 1em;
+    margin: auto;
+    color: black;
+    max-width: 70em;
+    text-align: right;
+}
 
-        footer p.small {
-            font-size: 0.5em;
-        }
+footer p.small {
+    font-size: 0.5em;
+}
 /* End bottom */
 
 /* Table */

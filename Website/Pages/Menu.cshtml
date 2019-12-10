@@ -66,9 +66,17 @@
                         <ul>
                             <li>Price: $@item.Price.ToString()</li>
                             <li>Calories: @item.Calories</li>
-                            <li>Ingredients: @string.Join(", ", item.Ingredients)</li>
                         </ul>
                     </div>
+                    <div class="menu-ingredients">
+                    <p>Ingredients</p>
+                    <ul>
+                        @foreach (var ingredient in item.Ingredients)
+                        {
+                            <li>@ingredient</li>
+                        }
+                    </ul>
+                </div>
                 }
             </div>
         }
